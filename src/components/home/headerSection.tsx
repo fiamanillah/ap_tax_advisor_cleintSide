@@ -1,59 +1,56 @@
 import Image from "next/image";
 import React from "react";
+import Link from "next/link";
+import { Button } from "../ui/button";
+
+const navItems = [
+  { name: "Home", href: "/" },
+  { name: "Tax advice", href: "/tax-advice" },
+  { name: "Personal Tax", href: "#" },
+  { name: "Corporate Tax", href: "#" },
+  { name: "About Us", href: "#" },
+];
 
 export default function HeaderSection() {
   return (
-    <header className="bg-white text-black p-4 w-full mx-auto">
-      <div className="container mx-auto flex justify-between items-center px-4 py-2">
-        {/* Logo Section */}
-        <div className="flex items-center space-x-2">
-          {/* <Image
-            src="https://placehold.co/40x40/000000/FFFFFF?text=AD"
-            alt="Company Logo"
-            className="rounded-full"
-            width={40}
-            height={40}
-          /> */}
-          <span className="text-xl font-bold">AD</span>
+    <header className="bg-[#F6F6F6] text-[#212121] p-4 w-full mx-auto">
+      <div className="mx-auto flex justify-between items-center px-4 py-2">
+        <div className="flex items-center gap-18">
+          {/* Logo Section */}
+          <div className="flex items-center space-x-2">
+            <Image
+              src={"/assets/logo.svg"}
+              alt="Company Logo"
+              className="rounded-full"
+              width={56}
+              height={44}
+            />
+          </div>
+
+          {/* Navigation Links */}
+          <nav className="hidden md:flex space-x-12">
+            {navItems.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                className="hover:text-[#009900] transition duration-150 ease-in-out font-medium text-md text-[#212121]"
+              >
+                {item.name}
+              </Link>
+            ))}
+          </nav>
         </div>
 
-        {/* Navigation Links */}
-        <nav className="hidden md:flex space-x-8">
-          <a
-            href="#"
-            className="hover:text-gray-300 transition duration-150 ease-in-out"
-          >
-            Home
-          </a>
-          <a
-            href="#"
-            className="hover:text-gray-300 transition duration-150 ease-in-out"
-          >
-            Personal Tax
-          </a>
-          <a
-            href="#"
-            className="hover:text-gray-300 transition duration-150 ease-in-out"
-          >
-            Corporate Tax
-          </a>
-          <a
-            href="#"
-            className="hover:text-gray-300 transition duration-150 ease-in-out"
-          >
-            About Us
-          </a>
-        </nav>
+        <Button className="bg-[#009900] font-semibold">Contact Us</Button>
 
-        {/* Contact Us Button - Styled like a shadcn/ui button */}
-        <button
+        {/* <button
           className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium
                      ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2
                      focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none
                      disabled:opacity-50 bg-green-500 text-white hover:bg-green-600 h-10 px-4 py-2"
         >
           Contact Us
-        </button>
+        </button> */}
       </div>
     </header>
   );
