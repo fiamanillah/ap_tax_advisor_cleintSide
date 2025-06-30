@@ -32,7 +32,7 @@ export default function HeroSection() {
             ))}
           </ul>
           <p className="text-gray-700">
-            Whether you're self-employed, running a company, or juggling
+            Whether you&apos;re self-employed, running a company, or juggling
             multiple income streams, we make tax straightforward, stress-free,
             and surprisingly human.
           </p>
