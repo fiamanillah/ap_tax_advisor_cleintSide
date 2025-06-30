@@ -40,7 +40,7 @@ export default function HeroSection() {
 
         {/* Image Section */}
         <div className="relative w-full max-w-[600px] flex justify-center items-center">
-          <div className="relative rounded-full overflow-hidden w-[300px] h-[300px] md:w-[360px] md:h-[360px] shadow-xl">
+          <div className="relative rounded-full overflow-hidden w-[300px] h-[300px] md:w-[360px] md:h-[360px]">
             <Image
               src="/assets/girl.png"
               alt="Support"
@@ -77,7 +77,12 @@ export default function HeroSection() {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <Image src="/whatsapp.svg" alt="WhatsApp" width={48} height={48} />
+        <Image
+          src="/assets/whatsapp.svg"
+          alt="WhatsApp"
+          width={48}
+          height={48}
+        />
       </a>
     </section>
   );

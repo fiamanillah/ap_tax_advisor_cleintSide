@@ -1,7 +1,11 @@
+"use client";
+
 import Image from "next/image";
 import React from "react";
 import Link from "next/link";
 import { Button } from "../ui/button";
+import { usePathname } from "next/navigation";
+import { cn } from "@/lib/utils";
 
 const navItems = [
   { name: "Home", href: "/" },
@@ -12,6 +16,8 @@ const navItems = [
 ];
 
 export default function HeaderSection() {
+  const pathname = usePathname();
+
   return (
     <header className="bg-[#F6F6F6] text-[#212121] p-4 w-full mx-auto">
       <div className="mx-auto flex justify-between items-center px-4 py-2">
@@ -29,15 +35,24 @@ export default function HeaderSection() {
 
           {/* Navigation Links */}
           <nav className="hidden md:flex space-x-12">
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="hover:text-[#009900] transition duration-150 ease-in-out font-medium text-md text-[#212121]"
-              >
-                {item.name}
-              </Link>
-            ))}
+            {navItems.map((item) => {
+              const isActive = pathname === item.href;
+
+              return (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className={cn(
+                    "hover:text-[#009900] transition duration-150 ease-in-out font-medium text-md text-[#212121]",
+                    {
+                      "text-[#009900]": isActive,
+                    }
+                  )}
+                >
+                  {item.name}
+                </Link>
+              );
+            })}
           </nav>
         </div>
 
