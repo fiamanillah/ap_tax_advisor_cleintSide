@@ -2,6 +2,7 @@ import TaxCategories from "@/components/tax-advice/TaxCategories";
 import Testimonial from "@/components/tax-advice/Testimonial";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
+import TaxAdviceService from "../../components/tax-advice/TaxAdviceService";
 
 export default function page() {
   return (
@@ -109,6 +110,17 @@ export default function page() {
               </button>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section>
+        <div className="container mx-auto px-4 py-8 lg:max-w-6xl flex flex-col items-center">
+          <h2 className="text-4xl font-bold text-gray-800 mb-12 text-center">
+            How Our <span className="text-yellow-500">Tax Advice service</span>{" "}
+            works
+          </h2>
+
+          <TaxAdviceService />
         </div>
       </section>
     </main>
