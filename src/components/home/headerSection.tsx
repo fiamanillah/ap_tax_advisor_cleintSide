@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
 const navItems = [
   { name: "Home", href: "/" },
   { name: "Tax advice", href: "/tax-advice" },
-  { name: "Personal Tax", href: "#" },
+  { name: "Personal Tax", href: "/personal-tax" },
   { name: "Corporate Tax", href: "#" },
   { name: "About Us", href: "#" },
 ];
