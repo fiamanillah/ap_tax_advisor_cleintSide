@@ -5,7 +5,7 @@ import { Card, CardContent } from "../ui/card";
 
 export default function HeroSection() {
   return (
-    <section className="bg-[#E5D4F7] py-16">
+    <section className="bg-[#E5D4F7] py-16 relative">
       <div className="mx-auto px-4 flex flex-col lg:flex-row items-center justify-center gap-10">
         {/* Text Section */}
         <div className="max-w-[700px] w-full space-y-6">
@@ -32,7 +32,7 @@ export default function HeroSection() {
             ))}
           </ul>
           <p className="text-gray-700">
-            Whether you're self-employed, running a company, or juggling
+            Whether you&apos;re self-employed, running a company, or juggling
             multiple income streams, we make tax straightforward, stress-free,
             and surprisingly human.
           </p>
@@ -40,7 +40,7 @@ export default function HeroSection() {
 
         {/* Image Section */}
         <div className="relative w-full max-w-[600px] flex justify-center items-center">
-          <div className="relative rounded-full overflow-hidden w-[300px] h-[300px] md:w-[360px] md:h-[360px] shadow-xl">
+          <div className="relative rounded-full overflow-hidden w-[300px] h-[300px] md:w-[360px] md:h-[360px]">
             <Image
               src="/assets/girl.png"
               alt="Support"
@@ -59,7 +59,7 @@ export default function HeroSection() {
             </CardContent>
           </Card>
 
-          <Card className="absolute bottom-12 right-8 bg-[#FFF4A0] text-sm shadow-md">
+          <Card className="absolute bottom-12 right-12 bg-[#FFF4A0] text-sm shadow-md">
             <CardContent className="flex items-top gap-2">
               Ready to approve
               <div className="bg-white rounded-full p-1">
@@ -72,12 +72,17 @@ export default function HeroSection() {
 
       {/* WhatsApp Floating Icon */}
       <a
-        href="https://wa.me/your-number"
-        className="fixed bottom-6 right-6 z-50"
+        href="#"
+        className="absolute bottom-6 right-6 z-50"
         target="_blank"
         rel="noopener noreferrer"
       >
-        <Image src="/whatsapp.svg" alt="WhatsApp" width={48} height={48} />
+        <Image
+          src="/assets/whatsapp.svg"
+          alt="WhatsApp"
+          width={48}
+          height={48}
+        />
       </a>
     </section>
   );
