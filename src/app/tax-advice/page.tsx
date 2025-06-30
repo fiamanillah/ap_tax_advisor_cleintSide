@@ -1,5 +1,6 @@
 import TaxCategories from "@/components/tax-advice/TaxCategories";
 import Testimonial from "@/components/tax-advice/Testimonial";
+import { steps } from "@/data/tax-advisor";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import TaxAdviceService from "../../components/tax-advice/TaxAdviceService";
@@ -116,11 +117,11 @@ export default function page() {
       <section>
         <div className="container mx-auto px-4 py-8 lg:max-w-6xl flex flex-col items-center">
           <h2 className="text-4xl font-bold text-gray-800 mb-12 text-center">
-            How Our <span className="text-yellow-500">Tax Advice service</span>{" "}
+            How Our <span className="text-yellow-500">Tax Advice service</span>
             works
           </h2>
 
-          <TaxAdviceService />
+          <TaxAdviceService data={steps} lg={3} />
         </div>
       </section>
     </main>

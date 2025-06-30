@@ -1,9 +1,54 @@
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 
-export default function TaxAdviceService() {
+type Step = {
+  id: number;
+  icon: string; // Path to the icon image
+  title: string;
+  description: string;
+};
+
+interface TaxAdviceServiceProps {
+  data: Step[];
+  classNames?: string;
+  lg?: 1 | 2 | 3 | 4 | 5 | 6;
+  xl?: 1 | 2 | 3 | 4 | 5 | 6;
+}
+
+export default function TaxAdviceService({
+  data,
+  classNames,
+  lg,
+  xl,
+}: TaxAdviceServiceProps) {
+  // Create explicit class mappings for Tailwind to detect
+  const lgClasses = {
+    1: "lg:grid-cols-1",
+    2: "lg:grid-cols-2",
+    3: "lg:grid-cols-3",
+    4: "lg:grid-cols-4",
+    5: "lg:grid-cols-5",
+    6: "lg:grid-cols-6",
+  };
+
+  const xlClasses = {
+    1: "xl:grid-cols-1",
+    2: "xl:grid-cols-2",
+    3: "xl:grid-cols-3",
+    4: "xl:grid-cols-4",
+    5: "xl:grid-cols-5",
+    6: "xl:grid-cols-6",
+  };
+
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-      {steps.map((step) => (
+    <div
+      className={cn(
+        "grid grid-cols-1 md:grid-cols-2 gap-8 mx-auto",
+        classNames,
+        lg ? lgClasses[lg] : "lg:grid-cols-4",
+        xl ? xlClasses[xl] : undefined
+      )}>
+      {data.map((step) => (
         <div
           key={step.id}
           className="bg-white rounded-xl p-6 flex flex-col items-center text-center border border-gray-200">
@@ -39,27 +84,3 @@ export default function TaxAdviceService() {
     </div>
   );
 }
-
-const steps = [
-  {
-    id: 1,
-    icon: "/icons/qa.svg", // Placeholder for Q&A icon
-    title: "Answer a few simple questions",
-    description:
-      "And we mean a few. After a couple of minutes of answering questions online we’ll have everything we need to start preparing your tax return.",
-  },
-  {
-    id: 2,
-    icon: "/icons/accountant.svg", // Placeholder for Users icon
-    title: "Get paired with a tax return accountant",
-    description:
-      "And we mean a few. After a couple of minutes of answering questions online we’ll have everything we need to start preparing your tax return.",
-  },
-  {
-    id: 3,
-    icon: "/icons/assesment.svg", // Placeholder for Documents icon
-    title: "We file your Self Assessment for you",
-    description:
-      "Once you’ve signed off your return, your AP Tax Advisor accountant will submit your return with HMRC for you.",
-  },
-];
