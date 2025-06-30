@@ -1,4 +1,3 @@
-import { Separator } from "@radix-ui/react-dropdown-menu";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";

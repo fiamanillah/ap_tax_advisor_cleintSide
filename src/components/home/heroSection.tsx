@@ -5,7 +5,7 @@ import { Card, CardContent } from "../ui/card";
 
 export default function HeroSection() {
   return (
-    <section className="bg-[#E5D4F7] py-16">
+    <section className="bg-[#E5D4F7] py-16 relative">
       <div className="mx-auto px-4 flex flex-col lg:flex-row items-center justify-center gap-10">
         {/* Text Section */}
         <div className="max-w-[700px] w-full space-y-6">
@@ -59,7 +59,7 @@ export default function HeroSection() {
             </CardContent>
           </Card>
 
-          <Card className="absolute bottom-12 right-8 bg-[#FFF4A0] text-sm shadow-md">
+          <Card className="absolute bottom-12 right-12 bg-[#FFF4A0] text-sm shadow-md">
             <CardContent className="flex items-top gap-2">
               Ready to approve
               <div className="bg-white rounded-full p-1">
@@ -72,8 +72,8 @@ export default function HeroSection() {
 
       {/* WhatsApp Floating Icon */}
       <a
-        href="https://wa.me/your-number"
-        className="fixed bottom-6 right-6 z-50"
+        href="#"
+        className="absolute bottom-6 right-6 z-50"
         target="_blank"
         rel="noopener noreferrer"
       >
