@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 
 export default function page() {
   return (
-    <main>
+    <main className="space-y-8">
       {/* reserve 64px for the fixed header */}
       <section className="relative min-h-[calc(100vh-64px)]">
         <video
@@ -52,6 +52,7 @@ export default function page() {
           <h2 className="text-3xl font-semibold mb-4 text-center">
             What are people saying
           </h2>
+
           <Testimonial />
         </div>
       </section>
