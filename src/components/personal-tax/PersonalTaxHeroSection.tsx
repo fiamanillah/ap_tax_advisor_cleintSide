@@ -1,22 +1,30 @@
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import React from "react";
+import { FaStar } from "react-icons/fa";
+import { Button } from "../ui/button";
 
 export default function PersonalTaxHeroSection() {
   return (
-    <section className="bg-[#E5D4F7] py-16 relative">
-      <div className="mx-auto px-4 flex flex-col lg:flex-row items-center justify-center gap-10 container">
+    <section className="bg-[#CFEDC7]">
+      <div className="bg-[#A4F5D3] p-1">
+        <p className="text-center text-[16px]">
+          New tax year, new return! File for 24/25 today🧑‍🚀
+        </p>
+      </div>
+
+      <div className="mx-auto px-4 flex flex-col lg:flex-row items-center justify-center gap-10 container py-16">
         {/* Text Section */}
-        <div className="max-w-[700px] w-full space-y-6">
-          <h2 className="text-[40px] font-semibold text-[#141414]">
+        <div className="space-y-6">
+          <h2 className="text-[40px] font-semibold">
             Self assessment,
             <p>stress-free tax</p>
           </h2>
-          <p className="text-gray-700 max-w-[400px]">
+          <p className="">
             Tax returns don’t need to be painful. well sort your self assessment
             for you.
           </p>
-          <ul className="text-gray-800 space-y-2">
+          <ul className="space-y-2">
             {[
               "Simple, fast, all online",
               "Sorted by an accredited accountant",
@@ -28,12 +36,21 @@ export default function PersonalTaxHeroSection() {
               </li>
             ))}
           </ul>
-          <p className="text-gray-700">Excellent reviews in</p>
+
+          <div className="flex items-center gap-2">
+            <span>Excellent reviews in</span>
+            <FaStar className="text-[#00B67A]" />
+            <span className="font-semibold">Trustpilot</span>
+          </div>
+
+          <Button className="bg-[#FFFFFF] text-[#000000] font-semibold py-2 px-4 rounded-none shadow-black transition duration-300 hover:bg-gray-100 cursor-pointer">
+            Get started
+          </Button>
         </div>
 
         {/* Image Section */}
         <div className=" w-full max-w-[600px] flex justify-center items-center">
-          <div className="relative rounded-full overflow-hidden w-[300px] h-[300px] md:w-[360px] md:h-[360px]">
+          <div className="relative rounded-full overflow-hidden w-[300px] h-[300px] md:w-[420px] md:h-[420px]">
             <Image
               src="/assets/man.png"
               alt="Support"
@@ -43,21 +60,6 @@ export default function PersonalTaxHeroSection() {
           </div>
         </div>
       </div>
-
-      {/* WhatsApp Floating Icon */}
-      <a
-        href="#"
-        className="absolute bottom-6 right-6 z-50"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <Image
-          src="/assets/whatsapp.svg"
-          alt="WhatsApp"
-          width={48}
-          height={48}
-        />
-      </a>
     </section>
   );
 }

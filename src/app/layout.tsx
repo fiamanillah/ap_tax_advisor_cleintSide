@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import HeaderSection from "@/components/home/headerSection";
 import FooterSection from "@/components/home/footerSection";
+import Image from "next/image";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,6 +33,21 @@ export default function RootLayout({
         <HeaderSection />
         {children}
         <FooterSection />
+
+        {/* WhatsApp Floating Icon */}
+        <a
+          href="#"
+          className="fixed bottom-4 right-4 z-50"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Image
+            src="/assets/whatsapp.svg"
+            alt="WhatsApp"
+            width={48}
+            height={48}
+          />
+        </a>
       </body>
     </html>
   );
