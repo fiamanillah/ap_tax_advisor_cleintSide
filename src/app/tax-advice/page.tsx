@@ -1,3 +1,4 @@
+import { FAQSection } from "@/components/home/FAQSection";
 import GetStarted from "@/components/Shared/GetStarted";
 import TaxCategories from "@/components/tax-advice/TaxCategories";
 import Testimonial from "@/components/tax-advice/Testimonial";
@@ -127,6 +128,8 @@ export default function page() {
       </section>
 
       <GetStarted />
+
+      <FAQSection />
     </main>
   );
 }
