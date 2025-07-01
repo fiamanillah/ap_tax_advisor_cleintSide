@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Button } from "../ui/button";
 
 export default function ConsultantSection() {
   return (
@@ -31,9 +32,7 @@ export default function ConsultantSection() {
               <span>Excellent 4.8 out of 5</span>
               <span className="text-yellow-500">⭐⭐⭐⭐⭐</span>
             </p>
-            <button className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 border-2 border-black text-black font-semibold text-sm sm:text-base rounded-lg shadow-sm hover:bg-gray-100 hover:shadow-md active:scale-95 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 transition-all duration-200">
-              Learn more
-            </button>
+            <Button>Learn more</Button>
           </div>
         </div>
       </div>

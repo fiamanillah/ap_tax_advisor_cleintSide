@@ -1,12 +1,13 @@
 import { taxList } from "@/data/tax-advisor";
 import Image from "next/image";
+import { Button } from "../ui/button";
 
 export default function CompanyTaxReturn() {
   return (
     <section>
       <div className="container mx-auto lg:max-w-6xl p-8 md:p-12 flex flex-col lg:flex-row items-center lg:items-start text-center lg:text-left">
         {/* Left Content */}
-        <div className="w-full lg:w-1/2 flex flex-col justify-center items-center lg:items-start mb-8 lg:mb-0 lg:pr-8">
+        <div className="w-full lg:w-2/3 flex flex-col justify-center items-center lg:items-start mb-8 lg:mb-0 lg:pr-8">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4 leading-tight">
             File your company tax return too
           </h2>
@@ -34,9 +35,7 @@ export default function CompanyTaxReturn() {
           <p className="text-gray-600 text-sm md:text-base mt-6 mb-8">
             Same easy AP Tax Advisors, brand new service.
           </p>
-          <button className="px-8 py-3 border-2 border-black text-black font-semibold rounded-lg shadow-sm hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 transition-colors duration-200 w-full sm:w-auto">
-            Learn more
-          </button>
+          <Button>Learn more</Button>
         </div>
 
         {/* Right Image */}
