@@ -1,3 +1,5 @@
+import { TTaxAdviceServiceProps } from "@/types/TaxAdviceService";
+
 export const steps = [
   {
     id: 1,
@@ -22,17 +24,6 @@ export const steps = [
   },
 ];
 
-export const taxList = [
-  {
-    id: 1,
-    title: "Get your own personal accountant",
-  },
-  {
-    id: 2,
-    title: "Simple, 100% online process",
-  },
-  {
-    id: 3,
-    title: "Transparent fixed pricing",
-  },
-];
+export const TaxAdviceServiceProps: TTaxAdviceServiceProps = {
+  data: steps,
+};
