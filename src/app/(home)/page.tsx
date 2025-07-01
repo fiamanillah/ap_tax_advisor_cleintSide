@@ -1,3 +1,4 @@
+import { FAQSection } from '@/components/home/FAQSection';
 import HeroSection from '@/components/home/heroSection';
 import OurApproach from '@/components/home/OurApproach';
 import ServicesSection from '@/components/home/servicesSection';
@@ -12,6 +13,7 @@ export default function Home() {
             <OurApproach />
             <SupportHighlights />
             <ServicesSection />
+            <FAQSection />
         </>
     );
 }
