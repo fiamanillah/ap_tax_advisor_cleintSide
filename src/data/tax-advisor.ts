@@ -21,3 +21,18 @@ export const steps = [
       "Once you've signed off your return, your AP Tax Advisor accountant will submit your return with HMRC for you.",
   },
 ];
+
+export const taxList = [
+  {
+    id: 1,
+    title: "Get your own personal accountant",
+  },
+  {
+    id: 2,
+    title: "Simple, 100% online process",
+  },
+  {
+    id: 3,
+    title: "Transparent fixed pricing",
+  },
+];

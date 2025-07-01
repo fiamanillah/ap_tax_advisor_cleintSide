@@ -1,5 +1,6 @@
 import { FAQSection } from "@/components/home/FAQSection";
 import GetStarted from "@/components/Shared/GetStarted";
+import CompanyTaxReturn from "@/components/tax-advice/CompanyTaxReturn";
 import TaxCategories from "@/components/tax-advice/TaxCategories";
 import Testimonial from "@/components/tax-advice/Testimonial";
 import { steps } from "@/data/tax-advisor";
@@ -130,6 +131,8 @@ export default function page() {
       <GetStarted />
 
       <FAQSection />
+
+      <CompanyTaxReturn />
     </main>
   );
 }
