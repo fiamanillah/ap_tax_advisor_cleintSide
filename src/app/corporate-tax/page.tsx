@@ -1,0 +1,30 @@
+import ServicesSection from "@/components/home/servicesSection";
+import { FAQSection } from "@/components/Shared/FAQSection";
+import GetStarted from "@/components/Shared/GetStarted";
+import Hero from "@/components/Shared/Hero";
+import TaxAdviceServiceSection from "@/components/Shared/TaxAdviceServiceSection";
+import TestimonialSection from "@/components/Shared/TestimonialSection";
+import CompanyTaxReturn from "@/components/tax-advice/CompanyTaxReturn";
+import { FAQSectionProps } from "./faqdata";
+import { heroSectionProps } from "./heroData";
+import { serviceSectionProps } from "./servicesData";
+import { TaxAdviceServiceProps } from "./taxAdviceServices";
+
+export default function page() {
+  return (
+    <main>
+      <Hero {...heroSectionProps} />
+      <TestimonialSection />
+      <TaxAdviceServiceSection {...TaxAdviceServiceProps} />
+      <ServicesSection {...serviceSectionProps} />
+      <GetStarted
+        title="Ready to file"
+        description={["Let’s get your corporate tax return sorted today."]}
+        buttonText="Get Started"
+        classNames="bg-[#FFF6BD]"
+      />
+      <FAQSection {...FAQSectionProps} />
+      <CompanyTaxReturn />
+    </main>
+  );
+}

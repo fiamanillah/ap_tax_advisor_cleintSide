@@ -1,8 +1,9 @@
 import { taxList } from "@/data/tax-advisor";
+import { TCompanyTaxReturnProps } from "@/types/TCompanyTaxReturn";
 import Image from "next/image";
 import { Button } from "../ui/button";
 
-export default function CompanyTaxReturn() {
+export default function CompanyTaxReturn({}: TCompanyTaxReturnProps) {
   return (
     <section>
       <div className="container mx-auto lg:max-w-6xl p-8 md:p-12 flex flex-col lg:flex-row items-center lg:items-start text-center lg:text-left">

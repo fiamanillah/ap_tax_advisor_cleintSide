@@ -1,17 +1,16 @@
 "use client";
 
-import Image from "next/image";
-import React from "react";
-import Link from "next/link";
-import { Button } from "../ui/button";
-import { usePathname, useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
+import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
+import { Button } from "../ui/button";
 
 const navItems = [
   { name: "Home", href: "/" },
   { name: "Tax advice", href: "/tax-advice" },
   { name: "Personal Tax", href: "/personal-tax" },
-  { name: "Corporate Tax", href: "#" },
+  { name: "Corporate Tax", href: "/corporate-tax" },
   { name: "About Us", href: "#" },
 ];
 
@@ -48,8 +47,7 @@ export default function HeaderSection() {
                     {
                       "text-[#009900]": isActive,
                     }
-                  )}
-                >
+                  )}>
                   {item.name}
                 </Link>
               );
@@ -58,9 +56,9 @@ export default function HeaderSection() {
         </div>
 
         <Button
+          variant="primary"
           onClick={() => router.push("/contact")}
-          className="bg-[#009900] font-semibold"
-        >
+          className="bg-[#009900] font-semibold">
           Contact Us
         </Button>
       </div>

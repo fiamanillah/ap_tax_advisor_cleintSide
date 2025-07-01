@@ -5,6 +5,7 @@ import GetStarted from "@/components/Shared/GetStarted";
 import TaxAdviceServiceSection from "@/components/Shared/TaxAdviceServiceSection";
 import TestimonialSection from "@/components/Shared/TestimonialSection";
 import CompanyTaxReturn from "@/components/tax-advice/CompanyTaxReturn";
+import { companyTaxReturnProps } from "../corporate-tax/companyTaxReturnData";
 import { FAQSectionProps } from "./faqdata";
 import { serviceSectionProps } from "./servicesData";
 import { TaxAdviceServiceProps } from "./taxAdviceServices";
@@ -19,10 +20,11 @@ export default function PersonalTaxPage() {
         title="Ready to file"
         description={["Let’s get your corporate tax return sorted today."]}
         buttonText="Get Started"
+        classNames="bg-[#FFF6BD]"
       />
       <ServicesSection {...serviceSectionProps} />
       <FAQSection {...FAQSectionProps} />
-      <CompanyTaxReturn />
+      <CompanyTaxReturn {...companyTaxReturnProps} />
       <GetStarted
         title="Why choose AP Tax Advisor?"
         description={[
@@ -30,6 +32,7 @@ export default function PersonalTaxPage() {
           "That includes VAT, last-minute changes and all the support you may need.",
         ]}
         buttonText="Get Started"
+        classNames="bg-[#A4F5D3]"
       />
     </main>
   );

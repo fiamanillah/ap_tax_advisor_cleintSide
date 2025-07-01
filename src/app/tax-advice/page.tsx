@@ -8,8 +8,9 @@ import TestimonialSection from "@/components/Shared/TestimonialSection";
 import ConsultantSection from "@/components/tax-advice/ConsultantSection";
 import HowItWorksSection from "@/components/tax-advice/HowItWorksSection";
 import TaxCategorySection from "@/components/tax-advice/TaxCategorySection";
+import Hero from "../../components/Shared/Hero";
 import { FAQSectionProps } from "./faqdata";
-import Hero from "./Hero";
+import { heroSectionProps } from "./heroData";
 import { HowItWorksProps } from "./howItWorkData";
 import { serviceSectionProps } from "./servicesData";
 import { TaxAdviceServiceProps } from "./taxAdviceServices";
@@ -18,7 +19,7 @@ import { taxCategoryProps } from "./taxCategoryData";
 export default function page() {
   return (
     <main className="space-y-8">
-      <Hero />
+      <Hero {...heroSectionProps} />
       <TestimonialSection />
       <TaxCategorySection {...taxCategoryProps} />
       <ConsultantSection />
@@ -28,6 +29,7 @@ export default function page() {
         title="Get Started with Your Taxes"
         description={["Let us help you with your tax return process."]}
         buttonText="Get Started"
+        classNames="bg-[#FFF6BD]"
       />
       <FAQSection {...FAQSectionProps} />
       <CompanyTaxReturn />
