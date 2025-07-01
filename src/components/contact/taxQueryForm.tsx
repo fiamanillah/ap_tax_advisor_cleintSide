@@ -131,7 +131,7 @@ export default function TaxQueryForm() {
         />
 
         {/* Date & Time Calendar */}
-        <div>
+        <div className="">
           <FormLabel className="text-[16px]">
             Schedule a meeting (if required)
           </FormLabel>

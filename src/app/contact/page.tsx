@@ -5,9 +5,9 @@ import React from "react";
 export default function page() {
   return (
     <main>
-      <section className="container mx-auto px-4 py-10 flex flex-col md:flex-row justify-between items-center gap-10">
+      <section className="container mx-auto px-4 py-10 flex flex-col md:flex-row justify-around items-center gap-10">
         {/* Form Section */}
-        <div className="w-full md:w-[60%]">
+        <div className="w-full md:w-[50%]">
           <TaxQueryForm />
         </div>
 
