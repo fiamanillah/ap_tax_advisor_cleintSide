@@ -3,11 +3,11 @@ import GetStarted from "@/components/Shared/GetStarted";
 import CompanyTaxReturn from "@/components/tax-advice/CompanyTaxReturn";
 
 import ServicesSection from "@/components/home/servicesSection";
+import TaxAdviceServiceSection from "@/components/Shared/TaxAdviceServiceSection";
+import TestimonialSection from "@/components/Shared/TestimonialSection";
 import ConsultantSection from "@/components/tax-advice/ConsultantSection";
 import HowItWorksSection from "@/components/tax-advice/HowItWorksSection";
-import TaxAdviceServiceSection from "@/components/tax-advice/TaxAdviceServiceSection";
 import TaxCategorySection from "@/components/tax-advice/TaxCategorySection";
-import TestimonialSection from "@/components/tax-advice/TestimonialSection";
 import { FAQSectionProps } from "./faqdata";
 import Hero from "./Hero";
 import { HowItWorksProps } from "./howItWorkData";
@@ -24,7 +24,11 @@ export default function page() {
       <ConsultantSection />
       <TaxAdviceServiceSection {...TaxAdviceServiceProps} />
       <ServicesSection {...serviceSectionProps} />
-      <GetStarted />
+      <GetStarted
+        title="Get Started with Your Taxes"
+        description={["Let us help you with your tax return process."]}
+        buttonText="Get Started"
+      />
       <FAQSection {...FAQSectionProps} />
       <CompanyTaxReturn />
       <HowItWorksSection {...HowItWorksProps} />

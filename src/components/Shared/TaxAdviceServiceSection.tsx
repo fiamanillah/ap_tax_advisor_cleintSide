@@ -1,5 +1,5 @@
 import { TTaxAdviceServiceProps } from "@/types/TaxAdviceService";
-import TaxAdviceService from "../Shared/TaxAdviceService";
+import TaxAdviceService from "./TaxAdviceService";
 
 export default function TaxAdviceServiceSection({
   data,
