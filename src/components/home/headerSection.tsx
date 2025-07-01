@@ -4,7 +4,7 @@ import Image from "next/image";
 import React from "react";
 import Link from "next/link";
 import { Button } from "../ui/button";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
 
 const navItems = [
@@ -17,6 +17,7 @@ const navItems = [
 
 export default function HeaderSection() {
   const pathname = usePathname();
+  const router = useRouter();
 
   return (
     <header className="bg-[#F6F6F6] text-[#212121] p-4 w-full mx-auto">
@@ -56,7 +57,12 @@ export default function HeaderSection() {
           </nav>
         </div>
 
-        <Button className="bg-[#009900] font-semibold">Contact Us</Button>
+        <Button
+          onClick={() => router.push("/contact")}
+          className="bg-[#009900] font-semibold"
+        >
+          Contact Us
+        </Button>
       </div>
     </header>
   );

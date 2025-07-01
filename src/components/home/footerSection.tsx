@@ -1,28 +1,30 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { FaFacebook } from "react-icons/fa";
 
 export default function FooterSection() {
   return (
-    <footer className=" mt-10">
-      <div className="container mx-auto px-4 py-10 flex flex-col md:flex-row justify-between gap-10">
+    <footer className="mt-10">
+      <div className="container mx-auto px-4 py-10 flex flex-col md:flex-row justify-between">
         {/* Left Section */}
         <div className="flex-1 space-y-4">
           <div className="flex items-center gap-3">
             <Image
               src="/assets/logo.svg"
               alt="AP Tax Advisors"
-              width={60}
-              height={60}
+              width={120}
+              height={86}
             />
           </div>
-          <div className="text-sm text-gray-600 space-y-1">
+          <p className="font-medium text-lg">AP Tax Advisors</p>
+          <div className="space-y-1">
             <p>Something you want to write here. Please comment.</p>
             <p>Something you want to write here. Please comment.</p>
             <p>Something you want to write here.</p>
           </div>
-          <Link href="#" className="text-blue-600 mt-2 text-xl">
-            <i className="fab fa-facebook" />
+          <Link href="#">
+            <FaFacebook className="size-7 text-blue-600" />
           </Link>
         </div>
 
@@ -58,7 +60,7 @@ export default function FooterSection() {
 
       <hr className="border-gray-300 container mx-auto" />
 
-      <div className="container mx-auto px-4 py-4 flex flex-col md:flex-row justify-between text-[16px] text-[#000000]">
+      <div className="container mx-auto px-4 py-4 flex flex-col md:flex-row justify-between">
         <p>@ 2025 AP Tax Advisors. All right reserved</p>
         <div className="flex gap-4">
           <Link href="#">Privacy Policy</Link>
