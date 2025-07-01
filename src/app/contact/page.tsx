@@ -1,18 +1,27 @@
 import TaxQueryForm from "@/components/contact/taxQueryForm";
+import Image from "next/image";
 import React from "react";
 
 export default function page() {
   return (
-    <section>
-      <div className="container mx-auto px-4 py-10 flex flex-col md:flex-row justify-between items-center">
+    <main>
+      <section className="container mx-auto px-4 py-10 flex flex-col md:flex-row justify-between items-center gap-10">
         {/* Form Section */}
-        <div>
+        <div className="w-full md:w-[60%]">
           <TaxQueryForm />
         </div>
 
         {/* Next Steps Flow */}
-        <div>next steps flow</div>
-      </div>
-    </section>
+        <div>
+          <Image
+            src="/assets/query-flow.png"
+            alt="Next Steps Flow"
+            width={500}
+            height={500}
+            className="w-[300px]"
+          />
+        </div>
+      </section>
+    </main>
   );
 }

@@ -3,15 +3,6 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Calendar } from "@/components/ui/calendar";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
-import { format } from "date-fns";
-import { useState } from "react";
-import { CalendarIcon } from "lucide-react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -24,6 +15,7 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import DateTimeCalendar from "./DateTimeCalendar";
 
 const formSchema = z.object({
   firstName: z.string().min(1, { message: "First name is required" }),
@@ -34,8 +26,6 @@ const formSchema = z.object({
 });
 
 export default function TaxQueryForm() {
-  const [date, setDate] = useState<Date | undefined>();
-
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -54,6 +44,7 @@ export default function TaxQueryForm() {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+        {/* First And Last Name */}
         <div className="space-y-2">
           <div className="flex gap-4">
             <FormField
@@ -62,7 +53,9 @@ export default function TaxQueryForm() {
               render={({ field }) => (
                 <FormItem className="w-1/2">
                   <FormLabel className="text-[16px]">
-                    First name <span className="text-red-500">*</span>
+                    <p>
+                      First name <span className="text-red-500">*</span>
+                    </p>
                   </FormLabel>
                   <FormControl>
                     <Input placeholder="Akash" {...field} />
@@ -77,9 +70,7 @@ export default function TaxQueryForm() {
               name="lastName"
               render={({ field }) => (
                 <FormItem className="w-1/2">
-                  <FormLabel className="text-[16px]">
-                    Last name <span className="text-red-500">*</span>
-                  </FormLabel>
+                  <FormLabel className="text-[16px]">Last name</FormLabel>
                   <FormControl>
                     <Input placeholder="Patel" {...field} />
                   </FormControl>
@@ -93,12 +84,17 @@ export default function TaxQueryForm() {
           </p>
         </div>
 
+        {/* Email Address */}
         <FormField
           control={form.control}
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="text-[16px]">Email Address*</FormLabel>
+              <FormLabel className="text-[16px]">
+                <p>
+                  Email Address <span className="text-red-500">*</span>
+                </p>
+              </FormLabel>
               <FormControl>
                 <Input
                   placeholder="demoemail@gmail.com"
@@ -111,12 +107,17 @@ export default function TaxQueryForm() {
           )}
         />
 
+        {/* Phone Number */}
         <FormField
           control={form.control}
           name="phone"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="text-[16px]">Phone number*</FormLabel>
+              <FormLabel className="text-[16px]">
+                <p>
+                  Phone number <span className="text-red-500">*</span>
+                </p>
+              </FormLabel>
               <FormControl>
                 <Input
                   placeholder="Enter phone number..."
@@ -129,56 +130,25 @@ export default function TaxQueryForm() {
           )}
         />
 
-        {/* Calendar */}
+        {/* Date & Time Calendar */}
         <div>
           <FormLabel className="text-[16px]">
             Schedule a meeting (if required)
           </FormLabel>
-          <Popover>
-            <PopoverTrigger asChild>
-              <Button variant="outline" className="w-full justify-between">
-                {date ? format(date, "PPP") : "Select a Date & Time"}
-                <CalendarIcon className="ml-2 h-4 w-4" />
-              </Button>
-            </PopoverTrigger>
-            <PopoverContent className="w-auto p-2">
-              <Calendar
-                mode="single"
-                selected={date}
-                onSelect={setDate}
-                autoFocus
-              />
-              <div className="mt-2 grid grid-cols-2 gap-2">
-                {[
-                  "12:00",
-                  "12:30",
-                  "13:00",
-                  "13:30",
-                  "14:00",
-                  "14:30",
-                  "15:00",
-                  "15:30",
-                  "16:00",
-                  "16:30",
-                ].map((time) => (
-                  <Button key={time} variant="outline" className="text-xs">
-                    {time}
-                  </Button>
-                ))}
-              </div>
-              <p className="text-xs text-muted-foreground mt-2">
-                Time zone: Central European Time (8:11pm)
-              </p>
-            </PopoverContent>
-          </Popover>
+          <DateTimeCalendar />
         </div>
 
+        {/* Query */}
         <FormField
           control={form.control}
           name="query"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="text-[16px]">Query*</FormLabel>
+              <FormLabel className="text-[16px]">
+                <p>
+                  Query <span className="text-red-500">*</span>
+                </p>
+              </FormLabel>
               <FormControl>
                 <Textarea
                   placeholder="Please provide detail about your tax query..."
