@@ -5,4 +5,6 @@ export interface TTaxAdviceServiceProps {
     title: string;
     description: string;
   }[];
+  sectionMainTitle: string;
+  colorTitle?: string;
 }

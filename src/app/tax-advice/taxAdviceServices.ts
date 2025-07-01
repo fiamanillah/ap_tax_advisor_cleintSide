@@ -26,4 +26,5 @@ export const steps = [
 
 export const TaxAdviceServiceProps: TTaxAdviceServiceProps = {
   data: steps,
+  sectionMainTitle: "How Our @Tax Advice service@ works",
 };

@@ -13,13 +13,14 @@ import Hero from "./Hero";
 import { HowItWorksProps } from "./howItWorkData";
 import { serviceSectionProps } from "./servicesData";
 import { TaxAdviceServiceProps } from "./taxAdviceServices";
+import { taxCategoryProps } from "./taxCategoryData";
 
 export default function page() {
   return (
     <main className="space-y-8">
       <Hero />
       <TestimonialSection />
-      <TaxCategorySection />
+      <TaxCategorySection {...taxCategoryProps} />
       <ConsultantSection />
       <TaxAdviceServiceSection {...TaxAdviceServiceProps} />
       <ServicesSection {...serviceSectionProps} />

@@ -1,6 +1,9 @@
+import { TTaxCategoryProps } from "@/types/TaxCategoryProps";
 import TaxCategories from "./TaxCategories";
 
-export default function TaxCategorySection() {
+export default function TaxCategorySection({
+  taxCategories,
+}: TTaxCategoryProps) {
   return (
     <section>
       <div className="container mx-auto px-4 py-8 lg:max-w-6xl flex flex-col items-center">
@@ -13,7 +16,7 @@ export default function TaxCategorySection() {
           clients bring to us – and we’ve got answers.
         </p>
 
-        <TaxCategories />
+        <TaxCategories taxCategories={taxCategories} />
       </div>
     </section>
   );
