@@ -1,4 +1,4 @@
-import ServicesSection from "@/components/home/servicesSection";
+import GetStarted from "@/components/Shared/GetStarted";
 import TaxCategories from "@/components/tax-advice/TaxCategories";
 import Testimonial from "@/components/tax-advice/Testimonial";
 import { steps } from "@/data/tax-advisor";
@@ -126,7 +126,7 @@ export default function page() {
         </div>
       </section>
 
-      <ServicesSection />
+      <GetStarted />
     </main>
   );
 }
