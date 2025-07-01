@@ -1,3 +1,5 @@
+import { Button } from "../ui/button";
+
 export default function GetStarted() {
   return (
     <section>
@@ -8,9 +10,7 @@ export default function GetStarted() {
             Let&apos;s get your Self Assessment sorted today
           </h2>
           <p className="text-black mb-6">Taxes as they should be done</p>
-          <button className="px-8 py-3 border-2 border-black text-black font-semibold rounded-lg shadow-sm hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 transition-colors duration-200">
-            Get started
-          </button>
+          <Button>Get started</Button>
         </div>
       </div>
     </section>

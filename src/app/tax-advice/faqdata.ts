@@ -75,7 +75,7 @@ const faqs = [
 
 export const FAQSectionProps: TFAQSectionProps = {
   faqs,
-  title: "Still got questions?",
+  title: "Tax advice FAQs",
   description:
     "Got more questions? Ask away! Get in touch with our UK-based support team either on support@aptaxadvisor.com or via the live chat on our homepage. They're happy to help.",
   contactEmail: "support@aptaxadvisor.com",
