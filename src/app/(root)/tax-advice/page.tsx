@@ -8,7 +8,7 @@ import TestimonialSection from "@/components/Shared/TestimonialSection";
 import ConsultantSection from "@/components/tax-advice/ConsultantSection";
 import HowItWorksSection from "@/components/tax-advice/HowItWorksSection";
 import TaxCategorySection from "@/components/tax-advice/TaxCategorySection";
-import Hero from "../../components/Shared/Hero";
+import Hero from "../../../components/Shared/Hero";
 import { companyTaxReturnProps } from "./companyTaxReturnData";
 import { FAQSectionProps } from "./faqdata";
 import { heroSectionProps } from "./heroData";

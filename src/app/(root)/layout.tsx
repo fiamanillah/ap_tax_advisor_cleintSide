@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import "../globals.css";
+import HeaderSection from "@/components/home/headerSection";
+import FooterSection from "@/components/home/footerSection";
+import FloatingIcon from "@/components/floatingIcon";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,7 +30,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <HeaderSection />
         {children}
+        <FooterSection />
+
+        {/* WhatsApp Floating Icon */}
+        <FloatingIcon />
       </body>
     </html>
   );
