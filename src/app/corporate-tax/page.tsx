@@ -29,6 +29,15 @@ export default function page() {
       <FAQSection {...FAQSectionProps} />
       <CompanyTaxReturn {...companyTaxReturnProps} />
       <SubscriptionPlan {...subscriptionProps} />
+      <GetStarted
+        title="Why choose AP Tax Advisor?"
+        description={[
+          "No matter how complicated it gets or why you need to do a return,it’ll cost £169.",
+          "That includes VAT, last-minute changes and all the support you may need.",
+        ]}
+        buttonText="Get Started"
+        classNames="bg-[#FFF6BD]"
+      />
     </main>
   );
 }
