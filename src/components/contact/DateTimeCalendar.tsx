@@ -19,14 +19,15 @@ export default function DateTimeCalendar() {
       <PopoverTrigger asChild>
         <Button
           variant="outline"
-          className="w-full justify-between font-normal"
+          className="w-full flex justify-between items-center font-normal"
         >
           {date
             ? format(date, "PPP")
             : "You can call a meeting for 30 mins in available time"}
-          <IoMdArrowDropdown className="ml-2 size-5" />
+          <IoMdArrowDropdown className="size-5" />
         </Button>
       </PopoverTrigger>
+
       <PopoverContent className="w-full p-0 flex h-100 md:h-124" align="center">
         <div className="border-r border-gray-200">
           <p className="text-[20px] font-semibold px-4 pt-4">

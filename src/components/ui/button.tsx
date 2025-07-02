@@ -8,7 +8,7 @@ const buttonVariants = cva("transition-all duration-200 ease-in-out", {
   variants: {
     variant: {
       default: "text-black bg-white border border-gray-200 btn-shadow",
-      primary: "text-white bg-blue-600 hover:bg-blue-700 rounded-md",
+      primary: "text-white bg-[#009900] hover:bg-green-700 rounded-md",
       secondary: "text-gray-700 bg-gray-100 hover:bg-gray-200",
       destructive: "text-white bg-red-600 hover:bg-red-700",
       outline:
