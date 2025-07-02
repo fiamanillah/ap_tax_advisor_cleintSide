@@ -11,4 +11,5 @@ export const companyTaxReturnProps: TCompanyTaxReturnProps = {
     "We handle your annual accounts and tax return",
   ],
   image: "/assets/tax-return.png",
+  hint: "Same easy AP Tax Advisors, brand new service.",
 };

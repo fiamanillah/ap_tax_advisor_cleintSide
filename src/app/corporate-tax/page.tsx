@@ -5,6 +5,7 @@ import Hero from "@/components/Shared/Hero";
 import TaxAdviceServiceSection from "@/components/Shared/TaxAdviceServiceSection";
 import TestimonialSection from "@/components/Shared/TestimonialSection";
 import CompanyTaxReturn from "@/components/tax-advice/CompanyTaxReturn";
+import { companyTaxReturnProps } from "./companyTaxReturnData";
 import { FAQSectionProps } from "./faqdata";
 import { heroSectionProps } from "./heroData";
 import { serviceSectionProps } from "./servicesData";
@@ -24,7 +25,7 @@ export default function page() {
         classNames="bg-[#FFF6BD]"
       />
       <FAQSection {...FAQSectionProps} />
-      <CompanyTaxReturn />
+      <CompanyTaxReturn {...companyTaxReturnProps} />
     </main>
   );
 }
