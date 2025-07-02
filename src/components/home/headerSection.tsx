@@ -1,22 +1,13 @@
 "use client";
 
 import { cn } from "@/lib/utils";
+import { Menu, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { Button } from "../ui/button";
-import { Menu, X } from "lucide-react";
 import { useState } from "react";
-import {
-  Drawer,
-  DrawerClose,
-  DrawerContent,
-  DrawerDescription,
-  DrawerFooter,
-  DrawerHeader,
-  DrawerTitle,
-  DrawerTrigger,
-} from "../ui/drawer";
+import { Button } from "../ui/button";
+import { Drawer, DrawerClose, DrawerContent, DrawerHeader } from "../ui/drawer";
 
 const navItems = [
   { name: "Home", href: "/" },
@@ -60,8 +51,7 @@ export default function HeaderSection() {
                     {
                       "text-primary": isActive,
                     }
-                  )}
-                >
+                  )}>
                   {item.name}
                 </Link>
               );
@@ -76,8 +66,7 @@ export default function HeaderSection() {
           <div className="md:hidden">
             <button
               className="flex items-center"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            >
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
               <Menu className="w-6 h-6" />
             </button>
           </div>
@@ -88,8 +77,7 @@ export default function HeaderSection() {
       <Drawer
         open={isMobileMenuOpen}
         onOpenChange={setIsMobileMenuOpen}
-        direction="left"
-      >
+        direction="left">
         <DrawerContent>
           <DrawerHeader>
             <div className="flex justify-end">
@@ -112,7 +100,7 @@ export default function HeaderSection() {
                         "text-primary": isActive,
                       }
                     )}
-                  >
+                    onClick={() => setIsMobileMenuOpen(false)}>
                     {item.name}
                   </Link>
                 </DrawerClose>

@@ -5,12 +5,14 @@ import GetStarted from "@/components/Shared/GetStarted";
 import TaxAdviceServiceSection from "@/components/Shared/TaxAdviceServiceSection";
 import TestimonialSection from "@/components/Shared/TestimonialSection";
 import CompanyTaxReturn from "@/components/tax-advice/CompanyTaxReturn";
+import { delay } from "@/lib/utils";
 import { companyTaxReturnProps } from "./companyTaxReturnData";
 import { FAQSectionProps } from "./faqdata";
 import { serviceSectionProps } from "./servicesData";
 import { TaxAdviceServiceProps } from "./taxAdviceServices";
 
-export default function PersonalTaxPage() {
+export default async function PersonalTaxPage() {
+  await delay(1000);
   return (
     <main>
       <PersonalTaxHeroSection />
