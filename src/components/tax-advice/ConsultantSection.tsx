@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Button } from "../ui/button";
+import { AppButton } from "../Shared/AppButton";
 
 export default function ConsultantSection() {
   return (
@@ -32,7 +32,7 @@ export default function ConsultantSection() {
               <span>Excellent 4.8 out of 5</span>
               <span className="text-yellow-500">⭐⭐⭐⭐⭐</span>
             </p>
-            <Button>Learn more</Button>
+            <AppButton>Learn more</AppButton>
           </div>
         </div>
       </div>

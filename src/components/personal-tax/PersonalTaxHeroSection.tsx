@@ -1,8 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
-import React from "react";
 import { FaStar } from "react-icons/fa";
-import { Button } from "../ui/button";
+import { AppButton } from "../Shared/AppButton";
 
 export default function PersonalTaxHeroSection() {
   return (
@@ -43,9 +42,7 @@ export default function PersonalTaxHeroSection() {
             <span className="font-semibold">Trustpilot</span>
           </div>
 
-          <Button className="bg-[#FFFFFF] text-[#000000] font-semibold py-2 px-4 rounded-none shadow-black transition duration-300 hover:bg-gray-100 cursor-pointer">
-            Get started
-          </Button>
+          <AppButton>Get started</AppButton>
         </div>
 
         {/* Image Section */}

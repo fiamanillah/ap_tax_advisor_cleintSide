@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import { TSubscriptionProps } from "@/types/SubscriptionProps";
+import { AppButton } from "../Shared/AppButton";
 
 export default function SubscriptionPlan({
   subscriptions,
@@ -87,14 +88,10 @@ export default function SubscriptionPlan({
           <div className="grid grid-cols-3 bg-white text-gray-800 text-sm md:text-base gap-x-1">
             <div className="p-4 font-medium bg-[#E6E6E6]/20">More details</div>
             <div className="p-4 flex items-center justify-center bg-[#A4F5D3]/20">
-              <button className="px-6 py-2 border-2 border-black text-black font-semibold rounded-lg shadow-sm hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 transition-colors duration-200 w-full max-w-[150px]">
-                Get started
-              </button>
+              <AppButton>Get started</AppButton>
             </div>
             <div className="p-4 flex items-center justify-center bg-[#E6E6E6]/20">
-              <button className="px-6 py-2 border-2 border-black text-black font-semibold rounded-lg shadow-sm hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 transition-colors duration-200 w-full max-w-[150px]">
-                Learn more
-              </button>
+              <AppButton>Learn more</AppButton>
             </div>
           </div>
         </div>

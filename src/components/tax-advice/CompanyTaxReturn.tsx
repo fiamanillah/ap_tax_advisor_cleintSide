@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 import { TCompanyTaxReturnProps } from "@/types/TCompanyTaxReturn";
 import Image from "next/image";
-import { Button } from "../ui/button";
+import { AppButton } from "../Shared/AppButton";
 
 export default function CompanyTaxReturn({
   title,
@@ -54,12 +54,12 @@ export default function CompanyTaxReturn({
               {hint}
             </p>
           )}
-          <Button
+          <AppButton
             className={cn({
               "mt-10": !hint,
             })}>
             {buttonText}
-          </Button>
+          </AppButton>
         </div>
 
         {/* Right Image */}

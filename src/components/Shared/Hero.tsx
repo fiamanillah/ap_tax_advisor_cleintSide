@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils";
 import { THeroSectionProps } from "@/types/HeroSectionProps";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
-import { Button } from "../ui/button";
+import { AppButton } from "./AppButton";
 
 export default function Hero({
   title,
@@ -75,7 +75,9 @@ export default function Hero({
               ))}
             </ul>
             {cta && (
-              <Button className="mr-auto mt-8 self-start">{cta.text}</Button>
+              <AppButton className="mr-auto mt-8 self-start">
+                {cta.text}
+              </AppButton>
             )}
           </div>
 
