@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import { TSubscriptionProps } from "@/types/SubscriptionProps";
 
 export default function SubscriptionPlan({
@@ -39,41 +40,58 @@ export default function SubscriptionPlan({
         </div>
 
         {/* Comparison Table */}
-        <div className="w-full max-w-4xl overflow-hidden">
+        <div className="w-full overflow-hidden">
           {/* Table Header */}
-          <div className="grid grid-cols-3 text-gray-700 font-semibold text-lef">
+          <div className="grid grid-cols-3 text-gray-700 font-semibold text-lef gap-x-1">
             <div className="p-4"></div>{" "}
             {/* Empty cell for the feature column header */}
-            <div className="p-4 text-center">One-off service</div>
-            <div className="p-4 text-center">Subscription service</div>
+            <div className="p-4 text-center bg-[#A4F5D3]">One-off service</div>
+            <div className="p-4 text-center bg-[#E6E6E6]">
+              Subscription service
+            </div>
           </div>
 
           {/* Table Body */}
           {subscriptions.map((row, index) => (
             <div
               key={index}
-              className={`grid grid-cols-3 text-gray-800 text-sm md:text-base ${
-                index % 2 === 0 ? "bg-white" : "bg-green-50"
-              } border-b border-gray-100 last:border-b-0`}>
-              <div className="p-4 font-medium">{row.feature}</div>
-              <div className="p-4 flex items-center justify-center">
+              className={`grid grid-cols-3 text-gray-800 text-sm md:text-base gap-x-1`}>
+              <div
+                className={cn("p-4", {
+                  "bg-[#E6E6E6]/20": index % 2 === 0,
+                  "bg-[#E6E6E6]": index % 2 !== 0,
+                })}>
+                {row.feature}
+              </div>
+              <div
+                className={cn(
+                  "p-4 flex items-center justify-center bg-[#A4F5D3]/20",
+                  {
+                    "bg-[#A4F5D3]/20": index % 2 === 0,
+                    "bg-[#A4F5D3]": index % 2 !== 0,
+                  }
+                )}>
                 <CheckOrDash value={row.oneOff} />
               </div>
-              <div className="p-4 flex items-center justify-center">
+              <div
+                className={cn("p-4 flex items-center justify-center", {
+                  "bg-[#E6E6E6]/20": index % 2 === 0,
+                  "bg-[#E6E6E6]": index % 2 !== 0,
+                })}>
                 <CheckOrDash value={row.subscription} />
               </div>
             </div>
           ))}
 
           {/* Table Footer - Buttons */}
-          <div className="grid grid-cols-3 bg-white text-gray-800 text-sm md:text-base border-t border-gray-200">
-            <div className="p-4 font-medium">More details</div>
-            <div className="p-4 flex items-center justify-center">
+          <div className="grid grid-cols-3 bg-white text-gray-800 text-sm md:text-base gap-x-1">
+            <div className="p-4 font-medium bg-[#E6E6E6]/20">More details</div>
+            <div className="p-4 flex items-center justify-center bg-[#A4F5D3]/20">
               <button className="px-6 py-2 border-2 border-black text-black font-semibold rounded-lg shadow-sm hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 transition-colors duration-200 w-full max-w-[150px]">
                 Get started
               </button>
             </div>
-            <div className="p-4 flex items-center justify-center">
+            <div className="p-4 flex items-center justify-center bg-[#E6E6E6]/20">
               <button className="px-6 py-2 border-2 border-black text-black font-semibold rounded-lg shadow-sm hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 transition-colors duration-200 w-full max-w-[150px]">
                 Learn more
               </button>
