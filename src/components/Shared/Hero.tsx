@@ -33,7 +33,7 @@ export default function Hero({
             New tax year, new return! File for 24/25 today🧑‍🚀
           </p>
         </div>
-        <div className="container mx-auto px-4 py-8 lg:max-w-6xl min-h-[calc(100vh-64px-40px)] flex items-center justify-between">
+        <div className="container mx-auto px-4 py-8 lg:max-w-6xl min-h-[calc(100vh-64px-40px)] flex max-lg:flex-col-reverse items-center justify-between gap-4">
           <div className="flex flex-col items-start justify-center h-full max-w-lg">
             <h2
               className={cn("text-4xl font-semibold mb-4", {
