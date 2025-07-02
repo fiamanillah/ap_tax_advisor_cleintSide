@@ -1,3 +1,4 @@
+import SubscriptionPlan from "@/components/corporate-tax/SubscriptionPlan";
 import ServicesSection from "@/components/home/servicesSection";
 import { FAQSection } from "@/components/Shared/FAQSection";
 import GetStarted from "@/components/Shared/GetStarted";
@@ -9,6 +10,7 @@ import { companyTaxReturnProps } from "./companyTaxReturnData";
 import { FAQSectionProps } from "./faqdata";
 import { heroSectionProps } from "./heroData";
 import { serviceSectionProps } from "./servicesData";
+import { subscriptionProps } from "./subscriptionData";
 import { TaxAdviceServiceProps } from "./taxAdviceServices";
 
 export default function page() {
@@ -26,6 +28,7 @@ export default function page() {
       />
       <FAQSection {...FAQSectionProps} />
       <CompanyTaxReturn {...companyTaxReturnProps} />
+      <SubscriptionPlan {...subscriptionProps} />
     </main>
   );
 }
