@@ -43,9 +43,9 @@ export default function HeaderSection() {
                   key={item.name}
                   href={item.href}
                   className={cn(
-                    "hover:text-[#009900] transition duration-150 ease-in-out font-medium text-md text-[#212121]",
+                    "hover:text-primary transition duration-150 ease-in-out font-medium text-md text-foreground",
                     {
-                      "text-[#009900]": isActive,
+                      "text-primary": isActive,
                     }
                   )}
                 >

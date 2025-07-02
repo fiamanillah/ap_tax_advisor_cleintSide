@@ -3,13 +3,13 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { Calendar } from "@/components/ui/calendar";
 import { FaEarthAsia } from "react-icons/fa6";
 
 import { format } from "date-fns";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { Button } from "../ui/button";
 import { useState } from "react";
+import { CustomCalendar } from "./customCalendar";
 
 export default function DateTimeCalendar() {
   const [date, setDate] = useState<Date | undefined>();
@@ -19,12 +19,14 @@ export default function DateTimeCalendar() {
       <PopoverTrigger asChild>
         <Button
           variant="outline"
-          className="w-full flex justify-between items-center font-normal"
+          className="w-full h-auto flex justify-between items-center flex-wrap font-normal"
         >
-          {date
-            ? format(date, "PPP")
-            : "You can call a meeting for 30 mins in available time"}
-          <IoMdArrowDropdown className="size-5" />
+          <span className="max-2xs:text-xs text-wrap">
+            {date
+              ? format(date, "PPP")
+              : "You can call a meeting for 30 mins in available time"}
+          </span>
+          <IoMdArrowDropdown className="size-5 max-2xs:hidden" />
         </Button>
       </PopoverTrigger>
 
@@ -33,11 +35,10 @@ export default function DateTimeCalendar() {
           <p className="text-[20px] font-semibold px-4 pt-4">
             Select a Date & Time
           </p>
-          <Calendar
+          <CustomCalendar
             mode="single"
             selected={date}
             onSelect={setDate}
-            className="md:[--cell-size:--spacing(12)]"
             autoFocus
           />
           <div className="space-y-1 px-4 pb-4">
