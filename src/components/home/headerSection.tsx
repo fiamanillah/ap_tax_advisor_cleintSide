@@ -23,7 +23,7 @@ const navItems = [
   { name: "Tax advice", href: "/tax-advice" },
   { name: "Personal Tax", href: "/personal-tax" },
   { name: "Corporate Tax", href: "/corporate-tax" },
-  { name: "About Us", href: "#" },
+  { name: "About Us", href: "/about-us" },
 ];
 
 export default function HeaderSection() {

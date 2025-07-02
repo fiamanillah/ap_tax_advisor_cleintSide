@@ -10,5 +10,5 @@ export const companyTaxReturnProps: TCompanyTaxReturnProps = {
     "Ongoing 1:1 online support from your accountant",
     "We handle your annual accounts and tax return",
   ],
-  image: "/assets/companyTaxReturn.png",
+  image: "/assets/tax-return.png",
 };

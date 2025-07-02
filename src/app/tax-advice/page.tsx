@@ -9,6 +9,7 @@ import ConsultantSection from "@/components/tax-advice/ConsultantSection";
 import HowItWorksSection from "@/components/tax-advice/HowItWorksSection";
 import TaxCategorySection from "@/components/tax-advice/TaxCategorySection";
 import Hero from "../../components/Shared/Hero";
+import { companyTaxReturnProps } from "./companyTaxReturnData";
 import { FAQSectionProps } from "./faqdata";
 import { heroSectionProps } from "./heroData";
 import { HowItWorksProps } from "./howItWorkData";
@@ -32,7 +33,7 @@ export default function page() {
         classNames="bg-[#FFF6BD]"
       />
       <FAQSection {...FAQSectionProps} />
-      <CompanyTaxReturn />
+      <CompanyTaxReturn {...companyTaxReturnProps} />
       <HowItWorksSection {...HowItWorksProps} />
     </main>
   );

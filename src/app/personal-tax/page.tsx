@@ -5,7 +5,7 @@ import GetStarted from "@/components/Shared/GetStarted";
 import TaxAdviceServiceSection from "@/components/Shared/TaxAdviceServiceSection";
 import TestimonialSection from "@/components/Shared/TestimonialSection";
 import CompanyTaxReturn from "@/components/tax-advice/CompanyTaxReturn";
-import { companyTaxReturnProps } from "../corporate-tax/companyTaxReturnData";
+import { companyTaxReturnProps } from "./companyTaxReturnData";
 import { FAQSectionProps } from "./faqdata";
 import { serviceSectionProps } from "./servicesData";
 import { TaxAdviceServiceProps } from "./taxAdviceServices";
