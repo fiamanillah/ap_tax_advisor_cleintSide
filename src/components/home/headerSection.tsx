@@ -1,12 +1,12 @@
 "use client";
 
 import { cn } from "@/lib/utils";
+import { Menu, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { Button } from "../ui/button";
-import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import { Button } from "../ui/button";
 import { Drawer, DrawerClose, DrawerContent, DrawerHeader } from "../ui/drawer";
 
 const navItems = [
@@ -103,6 +103,7 @@ export default function HeaderSection() {
                         "text-primary": isActive,
                       }
                     )}
+                    onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {item.name}
                   </Link>

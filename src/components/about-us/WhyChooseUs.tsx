@@ -1,3 +1,4 @@
+import { AppButton } from "../Shared/AppButton";
 import ChooseCard from "./ChooseCard";
 
 export default function WhyChooseUs() {
@@ -13,9 +14,7 @@ export default function WhyChooseUs() {
             running a company, or planning ahead, here&apos;s what makes our
             approach different:
           </p>
-          <button className="bg-[#009900] text-white px-4 py-2 rounded-md hover:bg-[#007700] transition">
-            Contact Us
-          </button>
+          <AppButton>Contact Us</AppButton>
         </div>
 
         <div className="flex lg:justify-end max-md:mt-10">

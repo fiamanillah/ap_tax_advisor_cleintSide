@@ -1,8 +1,9 @@
 import TaxQueryForm from "@/components/contact/taxQueryForm";
+import { delay } from "@/lib/utils";
 import Image from "next/image";
-import React from "react";
 
-export default function page() {
+export default async function page() {
+  await delay(1000);
   return (
     <main>
       <section className="container mx-auto px-4 py-10 flex flex-col md:flex-row justify-around items-center gap-10">

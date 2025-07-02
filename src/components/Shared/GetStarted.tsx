@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { Button } from "../ui/button";
+import { AppButton } from "./AppButton";
 
 interface GetStartedProps {
   title: string;
@@ -31,7 +31,7 @@ export default function GetStarted({
               <p key={index}>{line}</p>
             ))}
           </div>
-          <Button>{buttonText}</Button>
+          <AppButton>{buttonText}</AppButton>
         </div>
       </div>
     </section>

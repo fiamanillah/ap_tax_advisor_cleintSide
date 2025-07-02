@@ -8,6 +8,7 @@ import TestimonialSection from "@/components/Shared/TestimonialSection";
 import ConsultantSection from "@/components/tax-advice/ConsultantSection";
 import HowItWorksSection from "@/components/tax-advice/HowItWorksSection";
 import TaxCategorySection from "@/components/tax-advice/TaxCategorySection";
+import { delay } from "@/lib/utils";
 import Hero from "../../../components/Shared/Hero";
 import { companyTaxReturnProps } from "./companyTaxReturnData";
 import { FAQSectionProps } from "./faqdata";
@@ -17,7 +18,8 @@ import { serviceSectionProps } from "./servicesData";
 import { TaxAdviceServiceProps } from "./taxAdviceServices";
 import { taxCategoryProps } from "./taxCategoryData";
 
-export default function page() {
+export default async function page() {
+  await delay(1000);
   return (
     <main className="space-y-8">
       <Hero {...heroSectionProps} />
