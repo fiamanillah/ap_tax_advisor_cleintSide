@@ -161,7 +161,7 @@ export default function TaxQueryForm() {
           )}
         />
 
-        <Button type="submit" variant="primary" className="w-full">
+        <Button type="submit" className="w-full">
           Submit
         </Button>
       </form>

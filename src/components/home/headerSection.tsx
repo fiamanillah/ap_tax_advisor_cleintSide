@@ -47,7 +47,8 @@ export default function HeaderSection() {
                     {
                       "text-[#009900]": isActive,
                     }
-                  )}>
+                  )}
+                >
                   {item.name}
                 </Link>
               );
@@ -55,12 +56,7 @@ export default function HeaderSection() {
           </nav>
         </div>
 
-        <Button
-          variant="primary"
-          onClick={() => router.push("/contact")}
-          className="bg-[#009900] font-semibold">
-          Contact Us
-        </Button>
+        <Button onClick={() => router.push("/contact")}>Contact Us</Button>
       </div>
     </header>
   );
