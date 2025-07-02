@@ -161,10 +161,7 @@ export default function TaxQueryForm() {
           )}
         />
 
-        <Button
-          type="submit"
-          className="w-full bg-[#009900] hover:bg-green-700 rounded-[5px]"
-        >
+        <Button type="submit" className="w-full">
           Submit
         </Button>
       </form>
