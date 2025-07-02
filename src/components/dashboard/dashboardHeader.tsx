@@ -8,16 +8,16 @@ import { Button } from "../ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Drawer, DrawerClose, DrawerContent, DrawerHeader } from "../ui/drawer";
+import { RiArrowDownSFill } from "react-icons/ri";
 
 const navItems = [
-  { name: "Home", href: "/" },
-  { name: "Tax advice", href: "/tax-advice" },
-  { name: "Personal Tax", href: "/personal-tax" },
-  { name: "Corporate Tax", href: "/corporate-tax" },
-  { name: "About Us", href: "/about-us" },
+  { name: "Overview", href: "/" },
+  { name: "My finances", href: "/tax-advice" },
+  { name: "Tax returns", href: "/personal-tax" },
+  { name: "Accountant", href: "/corporate-tax" },
 ];
 
-export default function HeaderSection() {
+export default function DashboardHeader() {
   const pathname = usePathname();
   const router = useRouter();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
@@ -25,43 +25,46 @@ export default function HeaderSection() {
   return (
     <header className="bg-[#F6F6F6] text-[#212121] p-4 w-full mx-auto">
       <div className="mx-auto flex justify-between items-center px-4 py-2">
-        <div className="flex items-center gap-18">
-          {/* Logo Section */}
-          <div className="flex items-center space-x-2">
-            <Image
-              src={"/assets/logo.svg"}
-              alt="Company Logo"
-              className="rounded-full"
-              width={56}
-              height={44}
-            />
-          </div>
-
-          {/* Navigation Links */}
-          <nav className="hidden md:flex space-x-12">
-            {navItems.map((item) => {
-              const isActive = pathname === item.href;
-
-              return (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className={cn(
-                    "hover:text-primary transition duration-150 ease-in-out font-medium text-md text-foreground",
-                    {
-                      "text-primary": isActive,
-                    }
-                  )}
-                >
-                  {item.name}
-                </Link>
-              );
-            })}
-          </nav>
+        {/* Logo Section */}
+        <div className="flex items-center space-x-2">
+          <Image
+            src={"/assets/logo.svg"}
+            alt="Company Logo"
+            className="rounded-full"
+            width={56}
+            height={44}
+          />
         </div>
 
+        {/* Navigation Links */}
+        <nav className="hidden md:flex space-x-12">
+          {navItems.map((item) => {
+            const isActive = pathname === item.href;
+
+            return (
+              <Link
+                key={item.name}
+                href={item.href}
+                className={cn(
+                  "hover:text-primary transition duration-150 ease-in-out font-medium text-md text-foreground",
+                  {
+                    "text-primary": isActive,
+                  }
+                )}
+              >
+                {item.name}
+              </Link>
+            );
+          })}
+        </nav>
+
         <div className="flex items-center gap-4">
-          <Button onClick={() => router.push("/contact")}>Contact Us</Button>
+          <Button
+            onClick={() => router.push("#")}
+            className="flex items-center gap-1"
+          >
+            Peter <RiArrowDownSFill className="size-5" />
+          </Button>
 
           {/* Mobile Menu Button */}
           <div className="md:hidden">
