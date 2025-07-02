@@ -1,3 +1,4 @@
+import OurInSights from "@/components/about-us/OurInSights";
 import OurMission from "@/components/about-us/OurMission";
 import OurValues from "@/components/about-us/OurValues";
 import Hero from "@/components/Shared/Hero";
@@ -10,6 +11,7 @@ export default function page() {
       <Hero {...heroSectionProps} />
       <OurMission />
       <OurValues {...ourValueSectionProps} />
+      <OurInSights />
     </main>
   );
 }
