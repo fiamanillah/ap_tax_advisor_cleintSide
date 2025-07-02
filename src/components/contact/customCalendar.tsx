@@ -77,14 +77,14 @@ function CustomCalendar({
         caption_label: cn(
           "select-none font-medium",
           captionLayout === "label"
-            ? "text-[16px]"
+            ? "text-sm md:text-[16px]"
             : "rounded-md pl-2 pr-1 flex items-center gap-1 text-sm h-8 [&>svg]:text-muted-foreground [&>svg]:size-3.5",
           defaultClassNames.caption_label
         ),
         table: "w-full border-collapse",
         weekdays: cn("flex", defaultClassNames.weekdays),
         weekday: cn(
-          "text-muted-foreground rounded-md flex-1 font-medium text-[1rem] select-none",
+          "text-muted-foreground rounded-md flex-1 font-medium text-[0.8rem] md:text-[1rem] select-none",
           defaultClassNames.weekday
         ),
         week: cn("flex w-full mt-2", defaultClassNames.week),
