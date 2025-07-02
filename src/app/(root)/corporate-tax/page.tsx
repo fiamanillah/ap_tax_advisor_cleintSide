@@ -15,7 +15,7 @@ import { TaxAdviceServiceProps } from "./taxAdviceServices";
 
 export default function page() {
   return (
-    <main>
+    <main className="space-y-8">
       <Hero {...heroSectionProps} />
       <TestimonialSection />
       <TaxAdviceServiceSection {...TaxAdviceServiceProps} />
