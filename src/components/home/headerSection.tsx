@@ -7,7 +7,13 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
 import { Button } from "../ui/button";
-import { Drawer, DrawerClose, DrawerContent, DrawerHeader } from "../ui/drawer";
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerHeader,
+  DrawerTitle,
+} from "../ui/drawer";
 
 const navItems = [
   { name: "Home", href: "/" },
@@ -23,8 +29,8 @@ export default function HeaderSection() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
 
   return (
-    <header className="p-4 w-full mx-auto">
-      <div className="mx-auto flex justify-between items-center px-4 py-2">
+    <header className="bg-[#F6F6F6] text-[#212121] w-full">
+      <div className="mx-auto flex justify-between items-center px-4 py-4">
         <div className="flex items-center gap-18">
           {/* Logo Section */}
           <div className="flex items-center space-x-2">
@@ -51,8 +57,7 @@ export default function HeaderSection() {
                     {
                       "text-primary": isActive,
                     }
-                  )}
-                >
+                  )}>
                   {item.name}
                 </Link>
               );
@@ -67,8 +72,7 @@ export default function HeaderSection() {
           <div className="md:hidden">
             <button
               className="flex items-center"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            >
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
               <Menu className="w-6 h-6" />
             </button>
           </div>
@@ -79,10 +83,10 @@ export default function HeaderSection() {
       <Drawer
         open={isMobileMenuOpen}
         onOpenChange={setIsMobileMenuOpen}
-        direction="left"
-      >
+        direction="left">
         <DrawerContent>
           <DrawerHeader>
+            <DrawerTitle className="sr-only">Navigation Menu</DrawerTitle>
             <div className="flex justify-end">
               <DrawerClose className="flex items-center justify-center bg-secondary-3 p-1 rounded-md">
                 <X className="w-6 h-6" />
@@ -103,8 +107,7 @@ export default function HeaderSection() {
                         "text-primary": isActive,
                       }
                     )}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
+                    onClick={() => setIsMobileMenuOpen(false)}>
                     {item.name}
                   </Link>
                 </DrawerClose>
