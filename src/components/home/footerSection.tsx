@@ -5,11 +5,11 @@ import { FaFacebook } from "react-icons/fa";
 
 export default function FooterSection() {
   return (
-    <footer className="mt-10">
-      <div className="container mx-auto px-4 py-10 flex flex-col md:flex-row justify-between">
+    <footer className="md:mt-10">
+      <div className="container mx-auto px-4 md:py-10 flex flex-col md:flex-row justify-between max-md:gap-4">
         {/* Left Section */}
-        <div className="flex-1 space-y-4">
-          <div className="flex items-center gap-3">
+        <div className="flex flex-col max-md:items-center space-y-4">
+          <div className="">
             <Image
               src="/assets/logo.svg"
               alt="AP Tax Advisors"
@@ -18,7 +18,7 @@ export default function FooterSection() {
             />
           </div>
           <p className="font-medium text-lg">AP Tax Advisors</p>
-          <div className="space-y-1">
+          <div className="space-y-1 max-md:text-center">
             <p>Something you want to write here. Please comment.</p>
             <p>Something you want to write here. Please comment.</p>
             <p>Something you want to write here.</p>
@@ -28,7 +28,7 @@ export default function FooterSection() {
           </Link>
         </div>
 
-        <div className="flex flex-col md:flex-row gap-20 items-start">
+        <div className="flex flex-row gap-4 md:gap-20 items-start max-md:py-4 max-md:justify-between">
           <div className="space-y-2">
             <h4 className="font-semibold">AP Tax Advisor</h4>
             <ul className="space-y-1 text-sm text-gray-700">

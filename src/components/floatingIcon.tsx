@@ -13,7 +13,7 @@ export default function FloatingIcon() {
         <a
           href="#"
           className="fixed bottom-4 right-4 z-50"
-          target="_blank"
+          // target="_blank"
           rel="noopener noreferrer"
         >
           <Image
