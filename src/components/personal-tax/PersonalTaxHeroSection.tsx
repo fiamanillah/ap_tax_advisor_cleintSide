@@ -5,9 +5,10 @@ import { AppButton } from "../Shared/AppButton";
 
 export default function PersonalTaxHeroSection() {
   return (
-    <section className="bg-[#CFEDC7]">
-      <div className="bg-[#A4F5D3] p-1">
-        <p className="text-center text-[16px]">
+    <section className="bg-[#CFEDC7] overflow-hidden">
+      {/* Announcement Bar */}
+      <div className="bg-[#A4F5D3] py-2 px-4">
+        <p className="text-center text-sm sm:text-base font-medium text-black">
           New tax year, new return! File for 24/25 today🧑‍🚀
         </p>
       </div>
