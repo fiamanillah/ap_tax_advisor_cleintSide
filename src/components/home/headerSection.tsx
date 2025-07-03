@@ -23,7 +23,7 @@ export default function HeaderSection() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
 
   return (
-    <header className="bg-[#F6F6F6] text-[#212121] p-4 w-full mx-auto">
+    <header className="p-4 w-full mx-auto">
       <div className="mx-auto flex justify-between items-center px-4 py-2">
         <div className="flex items-center gap-18">
           {/* Logo Section */}

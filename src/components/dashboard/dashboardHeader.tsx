@@ -11,7 +11,7 @@ import { Drawer, DrawerClose, DrawerContent, DrawerHeader } from "../ui/drawer";
 import { RiArrowDownSFill } from "react-icons/ri";
 
 const navItems = [
-  { name: "Overview", href: "/" },
+  { name: "Overview", href: "/dashboard" },
   { name: "My finances", href: "/tax-advice" },
   { name: "Tax returns", href: "/personal-tax" },
   { name: "Accountant", href: "/corporate-tax" },
@@ -23,7 +23,7 @@ export default function DashboardHeader() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
 
   return (
-    <header className="bg-[#F6F6F6] text-[#212121] p-4 w-full mx-auto">
+    <header className="px-4 py-2 w-full mx-auto shadow">
       <div className="mx-auto flex justify-between items-center px-4 py-2">
         {/* Logo Section */}
         <div className="flex items-center space-x-2">
@@ -46,9 +46,9 @@ export default function DashboardHeader() {
                 key={item.name}
                 href={item.href}
                 className={cn(
-                  "hover:text-primary transition duration-150 ease-in-out font-medium text-md text-foreground",
+                  "hover:text-primary-1 transition duration-150 ease-in-out font-medium text-md text-foreground",
                   {
-                    "text-primary": isActive,
+                    "text-primary-1": isActive,
                   }
                 )}
               >
