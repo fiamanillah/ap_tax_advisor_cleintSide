@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import { TService } from "@/types/TService";
 import Image from "next/image";
 import { Card } from "../ui/card";
@@ -14,14 +15,18 @@ export default function ServicesSection({ data }: TService) {
           {data.map((service, index) => (
             <div
               key={index}
-              className={`flex flex-col w-full ${
-                service.align === "left" ? "items-start" : "items-end"
-              }`}>
+              className={cn("flex flex-col w-full", {
+                "items-start": service.align === "left",
+                "items-end": service.align === "right",
+              })}>
               {service.items && (
                 <div
-                  className={`w-full flex items-center gap-8 justify-between ${
-                    service.align === "right" ? "flex-row-reverse" : ""
-                  }`}>
+                  className={cn(
+                    "w-full flex max-lg:flex-col items-center gap-8 justify-between",
+                    {
+                      "md:flex-row-reverse": service.align === "right",
+                    }
+                  )}>
                   <div>
                     <h1 className="text-2xl mb-5 font-medium">
                       {service.title}
@@ -41,7 +46,7 @@ export default function ServicesSection({ data }: TService) {
                     </ul>
                   </div>
 
-                  <Card className="p-4 flex flex-col items-center relative">
+                  <Card className="p-4 flex flex-col items-center relative w-full sm:w-fit">
                     <Image
                       src={service.image}
                       alt="Separator"
