@@ -19,22 +19,24 @@ export default function Testimonial() {
   const [api, setApi] = useState<CarouselApi>();
 
   return (
-    <div className="relative w-full mt-8">
-      <Carousel className="w-full" setApi={setApi}>
-        <CarouselContent className="px-4">
+    <div className="relative mt-8 w-full">
+      <Carousel className="mx-auto max-w-7xl" setApi={setApi}>
+        <CarouselContent>
           {testimonials.map((testimonial, index) => (
             <CarouselItem
               key={index}
-              className="pl-4 basis-full md:basis-1/2 lg:basis-1/4">
+              className="basis-full pl-4 md:basis-1/2 lg:basis-1/4"
+            >
               {/* Removed the extra p-1 div around the Card, as CardContent handles padding */}
-              <Card className="bg-[#f9fafb] shadow-md rounded-none border-none h-full">
+              <Card className="bg-primary-gradient h-full rounded-none border-none shadow-none">
                 <CardContent className="flex flex-col items-start justify-start p-6">
-                  <div className="flex items-center space-x-1 mb-2">
+                  <div className="mb-2 flex items-center space-x-1">
                     {Array.from({ length: Math.floor(testimonial.stars) }).map(
                       (_, starIndex) => (
                         <div
                           key={starIndex}
-                          className="flex items-center justify-center">
+                          className="flex items-center justify-center"
+                        >
                           <div className="bg-[#00B67A] p-1">
                             <Star
                               size={16}
@@ -44,11 +46,11 @@ export default function Testimonial() {
                             />
                           </div>
                         </div>
-                      )
+                      ),
                     )}
                     {testimonial.stars % 1 !== 0 && (
                       <div className="flex items-center justify-center">
-                        <div className="bg-[#00B67A] p-1 relative overflow-hidden">
+                        <div className="relative overflow-hidden bg-[#00B67A] p-1">
                           <Star
                             size={16}
                             strokeWidth={1.5}
@@ -56,7 +58,7 @@ export default function Testimonial() {
                             stroke="#fff"
                           />
                           {/* Mask for half star - for perfect half, you might need SVG or more precise masking */}
-                          <div className="absolute top-0 right-0 w-1/2 h-full bg-[#f9fafb]"></div>
+                          <div className="absolute top-0 right-0 h-full w-1/2 bg-[#f9fafb]"></div>
                         </div>
                       </div>
                     )}
@@ -68,39 +70,41 @@ export default function Testimonial() {
                           fill="#A9A9A9"
                           stroke="#fff"
                         />
-                        <span className="text-sm font-semibold text-gray-600 ml-1">
+                        <span className="ml-1 text-sm font-semibold text-gray-600">
                           Verified
                         </span>
                       </div>
                     )}
                   </div>
-                  <h3 className="text-lg font-semibold mb-2">
+                  <h3 className="mb-2 text-lg font-semibold">
                     {testimonial.title}
                   </h3>
-                  <p className="text-black font-semibold text-xs flex-grow mb-4">
+                  <p className="mb-4 flex-grow text-xs font-semibold text-black">
                     {testimonial.review}
                   </p>
-                  <div className="text-xs mt-auto">
+                  <div className="mt-auto text-xs">
                     <span className="font-semibold text-gray-600">
                       {testimonial.author},{" "}
                     </span>
-                    <span className="text-gray-500 font-semibold">
+                    <span className="font-semibold text-gray-500">
                       {testimonial.time_ago}
                     </span>
                   </div>
                 </CardContent>
               </Card>
             </CarouselItem>
-          ))}{" "}
+          ))}
         </CarouselContent>
         <button
-          className="absolute left-2 md:-left-8 lg:-left-12 top-1/2 -translate-y-1/2 z-10 transition-all duration-200 disabled:opacity-50 cursor-pointer"
-          onClick={() => api?.scrollPrev()}>
+          className="text-background absolute top-1/2 left-2 z-10 -translate-y-1/2 cursor-pointer transition-all duration-200 disabled:opacity-50 md:-left-8 lg:-left-12"
+          onClick={() => api?.scrollPrev()}
+        >
           <CircleChevronLeft size={20} strokeWidth={1.5} />
         </button>
         <button
-          className="absolute right-2 md:-right-8 lg:-right-12 top-1/2 -translate-y-1/2 z-10 transition-all duration-200 disabled:opacity-50 cursor-pointer"
-          onClick={() => api?.scrollNext()}>
+          className="text-background absolute top-1/2 right-2 z-10 -translate-y-1/2 cursor-pointer transition-all duration-200 disabled:opacity-50 md:-right-8 lg:-right-12"
+          onClick={() => api?.scrollNext()}
+        >
           <CircleChevronRight size={20} strokeWidth={1.5} />
         </button>
       </Carousel>

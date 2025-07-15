@@ -104,7 +104,6 @@
   --primary-foreground: oklch(0.205 0 0);
   --secondary: oklch(0.269 0 0);
   --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
   --accent: oklch(0.269 0 0);
   --accent-foreground: oklch(0.985 0 0);
   --destructive: oklch(0.704 0.191 22.216);
@@ -135,6 +134,7 @@
   --primary-gradient: oklch(97.489% 0.00409 55.496);
   --secondary-gradient: oklch(94.72% 0.02539 78.873);
   --muted-foreground: oklch(18.22% 0.00002 271.152);
+  --muted: lch(100% 0.01 296.81 / 0.205);
 }
 
 @layer base {
