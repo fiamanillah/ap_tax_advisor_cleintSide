@@ -43,39 +43,41 @@ export default function TaxAdviceService({
   return (
     <div
       className={cn(
-        "grid grid-cols-1 md:grid-cols-2 gap-8 mx-auto",
+        "mx-auto grid grid-cols-1 gap-8 md:grid-cols-2",
         classNames,
         lg ? lgClasses[lg] : "lg:grid-cols-4",
-        xl ? xlClasses[xl] : undefined
-      )}>
+        xl ? xlClasses[xl] : undefined,
+      )}
+    >
       {data.map((step) => (
         <div
           key={step.id}
-          className="bg-white rounded-xl p-6 flex flex-col items-center text-center border border-gray-200">
+          className="inverted-radius bg-background flex flex-col items-center rounded-xl p-6"
+        >
           {/* Icon with concentric circles */}
-          <div className="relative flex items-center justify-center w-48 h-48 mb-6">
+          <div className="relative mb-6 flex h-48 w-48 items-center justify-center">
             <Image
               src={step.icon}
               alt={`Step ${step.id} icon`}
               width={500}
               height={500}
-              className="w-full h-full object-contain z-10"
+              className="z-10 h-full w-full object-contain"
               unoptimized
             />
           </div>
           <div className="flex flex-col items-start">
             {/* Step Number */}
-            <p className="text-[#F1A141] text-sm font-semibold mb-2 text-start">
+            <p className="mb-2 text-start text-sm font-semibold text-[#F1A141]">
               Step {step.id}
             </p>
 
             {/* Title */}
-            <h3 className="text-xl font-semibold text-black mb-3 text-start">
+            <h3 className="mb-3 text-start text-xl font-semibold text-black">
               {step.title}
             </h3>
 
             {/* Description */}
-            <p className="text-black text-sm leading-relaxed text-start">
+            <p className="text-start text-sm leading-relaxed text-black">
               {step.description}
             </p>
           </div>

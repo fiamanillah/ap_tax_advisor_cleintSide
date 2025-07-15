@@ -153,7 +153,7 @@
 }
 
 @layer utilities {
-  .bg-main-gradient {
+  .main-gradient {
     @apply bg-gradient-to-r from-[var(--color-primary-gradient)] to-[var(--color-secondary-gradient)];
   }
 }
@@ -389,4 +389,87 @@ html {
   line-clamp: 6;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+/* 
+@Card Inverted Radius
+==========================================================================================
+*/
+
+/* 
+@Card Inverted Radius
+==========================================================================================
+*/
+
+/* HTML: <div class="inverted-radius"></div> */
+.inverted-radius {
+  --r: 20px;
+  --s: 30px;
+  --x: 20px;
+  --y: 10px;
+  aspect-ratio: 1;
+  border-radius: var(--r);
+  position: relative;
+  z-index: 1;
+  background: red;
+  --_m: /calc(2 * var(--r)) calc(2 * var(--r))
+    radial-gradient(#000 70%, #0000 72%);
+  --_g: conic-gradient(at var(--r) var(--r), #000 75%, #0000 0);
+  --_d: (var(--s) + var(--r));
+  mask:
+    calc(var(--_d) + var(--x)) 0 var(--_m),
+    0 calc(var(--_d) + var(--y)) var(--_m),
+    radial-gradient(var(--s) at 0 0, #0000 99%, #000 calc(100% + 1px))
+      calc(var(--r) + var(--x)) calc(var(--r) + var(--y)),
+    var(--_g) calc(var(--_d) + var(--x)) 0,
+    var(--_g) 0 calc(var(--_d) + var(--y));
+  mask-repeat: no-repeat;
+  -webkit-mask:
+    calc(var(--_d) + var(--x)) 0 var(--_m),
+    0 calc(var(--_d) + var(--y)) var(--_m),
+    radial-gradient(var(--s) at 0 0, #0000 99%, #000 calc(100% + 1px))
+      calc(var(--r) + var(--x)) calc(var(--r) + var(--y)),
+    var(--_g) calc(var(--_d) + var(--x)) 0,
+    var(--_g) 0 calc(var(--_d) + var(--y));
+  -webkit-mask-repeat: no-repeat;
+}
+
+.inverted-radius::before {
+  content: "";
+  position: absolute;
+  width: 99.99%;
+  height: 99.99%;
+  inset: -1px;
+  left: -2px;
+  z-index: -1;
+  border-radius: calc(var(--r));
+  background: var(--color-background);
+  border-left: 2px solid red;
+  border-top: 2px solid red;
+  /* All variables +2px for border effect */
+  --r: 22px;
+  --s: 32px;
+  --x: 22px;
+  --y: 12px;
+  --_m: /calc(2 * var(--r)) calc(2 * var(--r))
+    radial-gradient(#000 70%, #0000 72%);
+  --_g: conic-gradient(at var(--r) var(--r), #000 75%, #0000 0);
+  --_d: (var(--s) + var(--r));
+  mask:
+    calc(var(--_d) + var(--x)) 0 var(--_m),
+    0 calc(var(--_d) + var(--y)) var(--_m),
+    radial-gradient(var(--s) at 0 0, #0000 99%, #000 calc(100% + 1px))
+      calc(var(--r) + var(--x)) calc(var(--r) + var(--y)),
+    var(--_g) calc(var(--_d) + var(--x)) 0,
+    var(--_g) 0 calc(var(--_d) + var(--y));
+  mask-repeat: no-repeat;
+  -webkit-mask:
+    calc(var(--_d) + var(--x)) 0 var(--_m),
+    0 calc(var(--_d) + var(--y)) var(--_m),
+    radial-gradient(var(--s) at 0 0, #0000 99%, #000 calc(100% + 1px))
+      calc(var(--r) + var(--x)) calc(var(--r) + var(--y)),
+    var(--_g) calc(var(--_d) + var(--x)) 0,
+    var(--_g) 0 calc(var(--_d) + var(--y));
+  -webkit-mask-repeat: no-repeat;
+  pointer-events: none;
 }
