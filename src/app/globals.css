@@ -51,6 +51,8 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+  --color-primary-gradient: var(--primary-gradient);
+  --color-secondary-gradient: var(--secondary-gradient);
 }
 
 :root {
@@ -94,8 +96,6 @@
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.205 0 0);
@@ -105,7 +105,6 @@
   --secondary: oklch(0.269 0 0);
   --secondary-foreground: oklch(0.985 0 0);
   --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
   --accent: oklch(0.269 0 0);
   --accent-foreground: oklch(0.985 0 0);
   --destructive: oklch(0.704 0.191 22.216);
@@ -125,6 +124,17 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+  /* 
+  @Custom Added for the project 
+  ==========================================================================================
+  */
+  --background: oklch(23.503% 0.00003 271.152);
+  --foreground: oklch(1 0 0);
+  /* For Heading Title */
+  --primary-foreground: oklch(0.205 0 0);
+  --primary-gradient: oklch(97.489% 0.00409 55.496);
+  --secondary-gradient: oklch(94.72% 0.02539 78.873);
+  --muted-foreground: oklch(18.22% 0.00002 271.152);
 }
 
 @layer base {
@@ -139,6 +149,12 @@
 @layer components {
   .btn-shadow {
     box-shadow: 1px 2px 0px 4px black;
+  }
+}
+
+@layer utilities {
+  .bg-main-gradient {
+    @apply bg-gradient-to-r from-[var(--color-primary-gradient)] to-[var(--color-secondary-gradient)];
   }
 }
 
@@ -208,6 +224,35 @@
   50% {
     background-color: rgb(203, 213, 225);
   }
+}
+
+/* Active menu Curves */
+.curve {
+  position: relative;
+}
+
+.curve::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -25px;
+  width: 25px;
+  height: 25px;
+  background: var(--color-background);
+  border-bottom-right-radius: 15px;
+  box-shadow: 13px 0 0 var(--color-primary-gradient);
+}
+
+.curve::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: -25px;
+  width: 25px;
+  height: 25px;
+  background: var(--color-background);
+  border-bottom-left-radius: 15px;
+  box-shadow: -13px 0 0 var(--color-primary-gradient);
 }
 
 /* Animation classes */

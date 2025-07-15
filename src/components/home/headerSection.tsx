@@ -2,11 +2,10 @@
 
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { Button } from "../ui/button";
+import { ReactSVG } from "react-svg";
 import {
   Drawer,
   DrawerClose,
@@ -25,26 +24,24 @@ const navItems = [
 
 export default function HeaderSection() {
   const pathname = usePathname();
-  const router = useRouter();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
 
   return (
-    <header className="bg-[#F6F6F6] text-[#212121] w-full">
-      <div className="mx-auto flex justify-between items-center px-4 py-4">
+    <header className="">
+      <div className="container mx-auto flex items-center justify-between">
         <div className="flex items-center gap-18">
           {/* Logo Section */}
           <div className="flex items-center space-x-2">
-            <Image
-              src={"/assets/logo.svg"}
-              alt="Company Logo"
-              className="rounded-full"
-              width={56}
-              height={44}
-            />
+            <Link
+              href="/"
+              className="text-foreground flex items-center text-5xl font-bold"
+            >
+              AP
+            </Link>
           </div>
 
           {/* Navigation Links */}
-          <nav className="hidden md:flex space-x-12">
+          <nav className="hidden h-full space-x-12 pt-2 md:flex">
             {navItems.map((item) => {
               const isActive = pathname === item.href;
 
@@ -53,11 +50,12 @@ export default function HeaderSection() {
                   key={item.name}
                   href={item.href}
                   className={cn(
-                    "hover:text-primary transition duration-150 ease-in-out font-medium text-md text-foreground",
+                    "text-md text-foreground h-full rounded-t-4xl px-8 py-4 font-medium transition duration-150 ease-in-out",
                     {
-                      "text-primary": isActive,
-                    }
-                  )}>
+                      "bg-primary-gradient text-background curve": isActive,
+                    },
+                  )}
+                >
                   {item.name}
                 </Link>
               );
@@ -66,14 +64,21 @@ export default function HeaderSection() {
         </div>
 
         <div className="flex items-center gap-4">
-          <Button onClick={() => router.push("/contact")}>Contact Us</Button>
+          <Link
+            href="/contact"
+            className="hover:text-primary text-md text-foreground flex items-center gap-2 font-medium transition duration-150 ease-in-out"
+          >
+            <span>Contact us</span>
+            <ReactSVG src="/icons/arrow-circle-right.svg" />
+          </Link>
 
           {/* Mobile Menu Button */}
           <div className="md:hidden">
             <button
               className="flex items-center"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
-              <Menu className="w-6 h-6" />
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              <Menu className="h-6 w-6" />
             </button>
           </div>
         </div>
@@ -83,17 +88,18 @@ export default function HeaderSection() {
       <Drawer
         open={isMobileMenuOpen}
         onOpenChange={setIsMobileMenuOpen}
-        direction="left">
+        direction="left"
+      >
         <DrawerContent>
           <DrawerHeader>
             <DrawerTitle className="sr-only">Navigation Menu</DrawerTitle>
             <div className="flex justify-end">
-              <DrawerClose className="flex items-center justify-center bg-secondary-3 p-1 rounded-md">
-                <X className="w-6 h-6" />
+              <DrawerClose className="bg-secondary-3 flex items-center justify-center rounded-md p-1">
+                <X className="h-6 w-6" />
               </DrawerClose>
             </div>
           </DrawerHeader>
-          <div className="py-2 px-4 flex flex-col gap-2">
+          <div className="flex flex-col gap-2 px-4 py-2">
             {navItems.map((item) => {
               const isActive = pathname === item.href;
 
@@ -102,12 +108,13 @@ export default function HeaderSection() {
                   <Link
                     href={item.href}
                     className={cn(
-                      "hover:text-primary transition duration-150 ease-in-out font-medium text-md text-foreground border-t border-gray-200 pt-2 last:border-b last:pb-2",
+                      "hover:text-primary text-md text-foreground border-t border-gray-200 pt-2 font-medium transition duration-150 ease-in-out last:border-b last:pb-2",
                       {
                         "text-primary": isActive,
-                      }
+                      },
                     )}
-                    onClick={() => setIsMobileMenuOpen(false)}>
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
                     {item.name}
                   </Link>
                 </DrawerClose>
