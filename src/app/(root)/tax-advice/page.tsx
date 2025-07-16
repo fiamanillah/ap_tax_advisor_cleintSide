@@ -1,18 +1,11 @@
-import { FAQSection } from "@/components/Shared/FAQSection";
-import GetStarted from "@/components/Shared/GetStarted";
-import CompanyTaxReturn from "@/components/tax-advice/CompanyTaxReturn";
-
 import ServicesSection from "@/components/home/servicesSection";
 import TaxAdviceServiceSection from "@/components/Shared/TaxAdviceServiceSection";
 import TestimonialSection from "@/components/Shared/TestimonialSection";
 import ConsultantSection from "@/components/tax-advice/ConsultantSection";
-import HowItWorksSection from "@/components/tax-advice/HowItWorksSection";
+import Feature from "@/components/tax-advice/Feature";
 import TaxCategorySection from "@/components/tax-advice/TaxCategorySection";
 import { delay } from "@/lib/utils";
 import Hero from "../../../components/Shared/Hero";
-import { companyTaxReturnProps } from "./companyTaxReturnData";
-import { FAQSectionProps } from "./faqdata";
-import { HowItWorksProps } from "./howItWorkData";
 import { serviceSectionProps } from "./servicesData";
 import { TaxAdviceServiceProps } from "./taxAdviceServices";
 import { taxCategoryProps } from "./taxCategoryData";
@@ -27,15 +20,16 @@ export default async function page() {
       <ConsultantSection />
       <TaxAdviceServiceSection {...TaxAdviceServiceProps} />
       <ServicesSection {...serviceSectionProps} />
-      <GetStarted
+      {/* <GetStarted
         title="Get Started with Your Taxes"
         description={["Let us help you with your tax return process."]}
         buttonText="Get Started"
         classNames="bg-[#FFF6BD]"
-      />
-      <FAQSection {...FAQSectionProps} />
-      <CompanyTaxReturn {...companyTaxReturnProps} />
-      <HowItWorksSection {...HowItWorksProps} />
+      /> */}
+      <Feature />
+      {/* <FAQSection {...FAQSectionProps} />
+      <CompanyTaxReturn {...companyTaxReturnProps} /> */}
+      {/* <HowItWorksSection {...HowItWorksProps} /> */}
     </main>
   );
 }
