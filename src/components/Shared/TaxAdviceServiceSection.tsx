@@ -5,17 +5,14 @@ export default function TaxAdviceServiceSection({
   data,
   sectionMainTitle,
 }: TTaxAdviceServiceProps) {
-  const titles = sectionMainTitle.split("@");
-
   return (
     <section className="py-8 sm:py-12 md:py-16 lg:py-20">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-6xl flex flex-col items-center">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-8 sm:mb-10 md:mb-12 lg:mb-16 text-center leading-tight">
-          {titles[0]} <span className="text-yellow-500">{titles[1]}</span>
-          {titles[2]}
+      <div className="container mx-auto flex flex-col items-center px-4 sm:px-6 lg:px-8">
+        <h2 className="text-foreground mb-8 text-center text-2xl leading-tight font-medium sm:mb-10 sm:text-3xl md:mb-12 md:text-4xl lg:mb-16 lg:text-[40px]">
+          {sectionMainTitle}
         </h2>
 
-        <TaxAdviceService data={data} lg={3} />
+        <TaxAdviceService data={data} lg={4} />
       </div>
     </section>
   );

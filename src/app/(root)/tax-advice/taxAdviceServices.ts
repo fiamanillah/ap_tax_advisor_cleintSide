@@ -22,9 +22,16 @@ export const steps = [
     description:
       "Once you've signed off your return, your AP Tax Advisor accountant will submit your return with HMRC for you.",
   },
+  {
+    id: 4,
+    icon: "/icons/assesment.svg", // Placeholder for Documents icon
+    title: "We file your Self Assessment for you",
+    description:
+      "Once you've signed off your return, your AP Tax Advisor accountant will submit your return with HMRC for you.",
+  },
 ];
 
 export const TaxAdviceServiceProps: TTaxAdviceServiceProps = {
   data: steps,
-  sectionMainTitle: "How Our @Tax Advice service@ works",
+  sectionMainTitle: "How Our Tax Advice Service Works",
 };
