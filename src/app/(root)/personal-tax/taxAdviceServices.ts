@@ -22,6 +22,13 @@ export const steps = [
     description:
       "Provide some final information and documents. Your accountant will then prepare your year-end accounts and corporate tax return and submit them to Companies House and HMRC.",
   },
+  {
+    id: 4,
+    icon: "/icons/tax.svg", // Placeholder for Documents icon
+    title: "We’ll file your company accounts and tax return for you!",
+    description:
+      "Provide some final information and documents. Your accountant will then prepare your year-end accounts and corporate tax return and submit them to Companies House and HMRC.",
+  },
 ];
 
 export const TaxAdviceServiceProps: TTaxAdviceServiceProps = {

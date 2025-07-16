@@ -1,60 +1,41 @@
-import { ArrowRight } from "lucide-react";
 import Image from "next/image";
-import { FaStar } from "react-icons/fa";
 import { AppButton } from "../Shared/AppButton";
 
 export default function PersonalTaxHeroSection() {
   return (
-    <section className="bg-[#CFEDC7] overflow-hidden">
-      {/* Announcement Bar */}
-      <div className="bg-[#A4F5D3] py-2 px-4">
-        <p className="text-center text-sm sm:text-base font-medium text-black">
-          New tax year, new return! File for 24/25 today🧑‍🚀
-        </p>
-      </div>
+    <section className="relative">
+      <div className="container mx-auto">
+        <div className="main-gradient flex flex-col items-center justify-center gap-8 rounded-xl py-6 sm:gap-10 sm:py-8 lg:flex-row lg:gap-12 lg:p-10 xl:gap-16 xl:p-20">
+          {/* Text Section */}
+          <div className="w-full max-w-none space-y-4 sm:space-y-5 md:space-y-6 lg:max-w-[700px]">
+            <h2 className="text-primary-foreground text-2xl leading-tight font-semibold sm:text-3xl md:text-4xl lg:text-[36px] xl:text-[40px]">
+              Personal tax returns - We handle the numbers. You stay in control.
+            </h2>
 
-      <div className="mx-auto px-4 flex flex-col lg:flex-row items-center justify-center gap-10 container py-16">
-        {/* Text Section */}
-        <div className="space-y-6">
-          <h2 className="text-[40px] font-semibold">
-            Self assessment,
-            <p>stress-free tax</p>
-          </h2>
-          <p className="">
-            Tax returns don’t need to be painful. well sort your self assessment
-            for you.
-          </p>
-          <ul className="space-y-2">
-            {[
-              "Simple, fast, all online",
-              "Sorted by an accredited accountant",
-              "Field in as little as 48 hours",
-            ].map((text, idx) => (
-              <li key={idx} className="flex items-start gap-2">
-                <ArrowRight className=" mt-1 w-4 h-4" />
-                {text}
-              </li>
-            ))}
-          </ul>
+            <p className="text-primary-foreground text-sm leading-relaxed sm:text-base md:text-lg">
+              Whether you’re a high earner, landlord, freelancer, have overseas
+              income or multiple income sources, we take the stress out of Self
+              Assessment. Our process is simple, professional and designed to
+              give you complete peace of mind - no guesswork, no generic
+              software, just a real tax expert handling your return.
+            </p>
 
-          <div className="flex items-center gap-2">
-            <span>Excellent reviews in</span>
-            <FaStar className="text-[#00B67A]" />
-            <span className="font-semibold">Trustpilot</span>
+            <AppButton>Get Started</AppButton>
           </div>
 
-          <AppButton>Get started</AppButton>
-        </div>
-
-        {/* Image Section */}
-        <div className=" w-full max-w-[600px] flex justify-center items-center">
-          <div className="relative rounded-full overflow-hidden w-[300px] h-[300px] md:w-[420px] md:h-[420px]">
-            <Image
-              src="/assets/man.png"
-              alt="Support"
-              fill
-              className="object-cover"
-            />
+          {/* Image Section */}
+          <div className="relative mt-8 flex w-full max-w-[400px] items-center justify-center sm:max-w-[450px] md:max-w-[500px] lg:mt-0">
+            <div>
+              <Image
+                src="/assets/personal-tax-hero.png"
+                alt="Professional tax advisor support"
+                className="object-cover"
+                priority
+                height={720}
+                width={1080}
+                sizes="(max-width: 640px) 250px, (max-width: 768px) 280px, (max-width: 1024px) 320px, (max-width: 1280px) 360px, 400px"
+              />
+            </div>
           </div>
         </div>
       </div>
