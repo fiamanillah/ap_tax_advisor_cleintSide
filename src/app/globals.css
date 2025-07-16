@@ -156,6 +156,10 @@
   .main-gradient {
     @apply bg-gradient-to-r from-[var(--color-primary-gradient)] to-[var(--color-secondary-gradient)];
   }
+
+  .main-gradient-reverse {
+    @apply bg-gradient-to-r from-[var(--color-secondary-gradient)] to-[var(--color-primary-gradient)];
+  }
 }
 
 /* YouTube-like loading animations */

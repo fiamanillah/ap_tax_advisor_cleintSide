@@ -1,52 +1,43 @@
+import { cn } from "@/lib/utils";
 import { TTaxCategory } from "@/types/TaxCategoryProps";
-import React from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
-
-interface IconProps {
-  name: string;
-  className?: string;
-}
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "../ui/card";
 
 export default function TaxCategories({
   taxCategories,
 }: {
   taxCategories: TTaxCategory[];
 }) {
-  const Icon: React.FC<IconProps> = ({ name, className }) => {
-    switch (name) {
-      case "User":
-        return <span className={`text-xl ${className}`}>👤</span>;
-      case "Briefcase":
-        return <span className={`text-xl ${className}`}>🏢</span>;
-      case "Home":
-        return <span className={`text-xl ${className}`}>🏠</span>;
-      case "TrendingUp":
-        return <span className={`text-xl ${className}`}>📈</span>;
-      case "Mail":
-        return <span className={`text-xl ${className}`}>✉️</span>;
-      case "DollarSign":
-        return <span className={`text-xl ${className}`}>💰</span>; // Using a generic money icon for Self-Employed for now
-      default:
-        return null;
-    }
-  };
-
   return (
     <div className="flex items-center justify-center">
       <div className="container mx-auto p-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {taxCategories.map((category) => (
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {taxCategories.map((category, idx) => (
             <Card
-              key={category.id}
-              className={`rounded-xl flex flex-col items-center px-4 border-none w-full ${category.bgColor}`}>
-              <CardHeader className="flex items-start justify-center w-full px-2">
-                <Icon name={category.icon} className=" text-gray-700" />
-                <CardTitle className="text-lg text-center font-bold text-gray-800">
+              key={idx}
+              className={cn(
+                "flex w-full flex-col items-center rounded-xl border-none px-4",
+                {
+                  "main-gradient": idx % 2 === 0,
+                  "main-gradient-reverse": idx % 2 !== 0,
+                },
+              )}
+            >
+              <CardHeader className="flex w-full flex-col items-start justify-center px-2">
+                <CardTitle className="text-background w-full text-center text-lg font-bold">
                   {category.title}
                 </CardTitle>
+                <CardDescription className="text-muted-foreground text-center text-sm">
+                  {category.questions[0]}
+                </CardDescription>
               </CardHeader>
               <CardContent>
-                <ul className="list-disc space-y-2 text-gray-700">
+                <ul className="text-muted-foreground list-disc space-y-2">
                   {category.questions.map((question, index) => (
                     <li key={index} className="pl-2 text-sm">
                       {question}
