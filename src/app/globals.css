@@ -59,7 +59,6 @@
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
@@ -135,6 +134,7 @@
   --secondary-gradient: oklch(94.72% 0.02539 78.873);
   --muted-foreground: oklch(18.22% 0.00002 271.152);
   --muted: lch(100% 0.01 296.81 / 0.205);
+  --card: oklch(90.833% 0.14056 108.477);
 }
 
 @layer base {
