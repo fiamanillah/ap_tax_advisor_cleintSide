@@ -1,3 +1,4 @@
+import FeatureSection from "@/components/home/featureSection";
 import HeroSection from "@/components/home/heroSection";
 import ServicesSection from "@/components/home/servicesSection";
 import SupportHighlights from "@/components/home/SupportHighlights";
@@ -6,6 +7,7 @@ import OurApproach from "@/components/Shared/OurApproach";
 import TestimonialSection from "@/components/Shared/TestimonialSection";
 import { delay } from "@/lib/utils";
 import { FAQSectionProps } from "./faqdata";
+import { featureData } from "./featureData";
 import { OurApproachData } from "./ourApproachData";
 import { serviceSectionProps } from "./servicesData";
 
@@ -18,6 +20,7 @@ export default async function Home() {
       <HeroSection />
       <TestimonialSection />
       <OurApproach OurApproachData={OurApproachData} />
+      <FeatureSection data={featureData} />
       <SupportHighlights />
       <ServicesSection {...serviceSectionProps} />
       <FAQSection {...FAQSectionProps} />

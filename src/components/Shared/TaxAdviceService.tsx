@@ -78,7 +78,7 @@ export default function TaxAdviceService({
               </div>
             </div>
 
-            <div className="bg-card hidden h-full flex-col items-start justify-end gap-3 rounded-xl p-6 text-center group-hover:flex group-hover:rotate-y-180">
+            <div className="bg-card hidden h-full rotate-y-180 flex-col items-start justify-end gap-3 rounded-xl p-6 text-center group-hover:flex">
               <h1 className="text-background text-lg font-medium">
                 📝 Get in touch
               </h1>
