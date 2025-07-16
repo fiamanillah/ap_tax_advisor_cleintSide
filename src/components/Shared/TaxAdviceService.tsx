@@ -50,36 +50,36 @@ export default function TaxAdviceService({
       )}
     >
       {data.map((step) => (
-        <div
-          key={step.id}
-          className="inverted-radius bg-background flex flex-col items-center rounded-xl p-6"
-        >
-          {/* Icon with concentric circles */}
-          <div className="relative mb-6 flex h-48 w-48 items-center justify-center">
-            <Image
-              src={step.icon}
-              alt={`Step ${step.id} icon`}
-              width={500}
-              height={500}
-              className="z-10 h-full w-full object-contain"
-              unoptimized
-            />
-          </div>
-          <div className="flex flex-col items-start">
-            {/* Step Number */}
-            <p className="mb-2 text-start text-sm font-semibold text-[#F1A141]">
-              Step {step.id}
-            </p>
+        <div key={step.id} className="relative flex h-full w-full">
+          <span className="absolute top-5 left-5 text-white">/02</span>
+          <div className="inverted-radius bg-background relative flex h-full flex-col items-center rounded-xl p-6">
+            {/* Icon with concentric circles */}
+            <div className="relative mb-6 flex h-32 w-32 items-center justify-center">
+              <Image
+                src={step.icon}
+                alt={`Step ${step.id} icon`}
+                width={1280}
+                height={720}
+                className="z-10 h-full w-full object-contain"
+                unoptimized
+              />
+            </div>
+            <div className="flex flex-col items-start">
+              {/* Step Number */}
+              <p className="mb-2 text-start text-sm font-semibold text-[#F1A141]">
+                Step {step.id}
+              </p>
 
-            {/* Title */}
-            <h3 className="mb-3 text-start text-xl font-semibold text-black">
-              {step.title}
-            </h3>
+              {/* Title */}
+              <h3 className="mb-3 text-start text-xl font-semibold text-black">
+                {step.title}
+              </h3>
 
-            {/* Description */}
-            <p className="text-start text-sm leading-relaxed text-black">
-              {step.description}
-            </p>
+              {/* Description */}
+              <p className="text-start text-sm leading-relaxed text-black">
+                {step.description}
+              </p>
+            </div>
           </div>
         </div>
       ))}

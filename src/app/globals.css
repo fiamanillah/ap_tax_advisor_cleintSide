@@ -411,7 +411,12 @@ html {
   border-radius: var(--r);
   position: relative;
   z-index: 1;
-  background: red;
+  background: linear-gradient(
+    90deg,
+    var(--color-primary-gradient),
+    var(--color-secondary-gradient),
+    var(--color-primary-gradient)
+  );
   --_m: /calc(2 * var(--r)) calc(2 * var(--r))
     radial-gradient(#000 70%, #0000 72%);
   --_g: conic-gradient(at var(--r) var(--r), #000 75%, #0000 0);
@@ -437,20 +442,16 @@ html {
 .inverted-radius::before {
   content: "";
   position: absolute;
-  width: 99.99%;
-  height: 99.99%;
-  inset: -1px;
-  left: -2px;
+  inset: 0;
   z-index: -1;
   border-radius: calc(var(--r));
   background: var(--color-background);
-  border-left: 2px solid red;
-  border-top: 2px solid red;
+  transform: scale(0.999);
   /* All variables +2px for border effect */
-  --r: 22px;
-  --s: 32px;
-  --x: 22px;
-  --y: 12px;
+  --r: 20px;
+  --s: 30px;
+  --x: 20px;
+  --y: 10px;
   --_m: /calc(2 * var(--r)) calc(2 * var(--r))
     radial-gradient(#000 70%, #0000 72%);
   --_g: conic-gradient(at var(--r) var(--r), #000 75%, #0000 0);
