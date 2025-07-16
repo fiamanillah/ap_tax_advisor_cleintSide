@@ -1,15 +1,9 @@
 import { THeroSectionProps } from "@/types/HeroSectionProps";
 
 export const heroData = {
-  title: "Tax advice, made simple :)",
+  title: "Bespoke tax advice to protect, grow and preserve your wealth",
   description: [
-    "For tax-based problem? Get simple, one-off tax advice from an accredited accountant. 139, all in.",
-  ],
-  video: "/videos/tax-hero.mp4",
-  features: [
-    "We match you with an accredited accountant.",
-    "Professional support with your tax situation",
-    "1-1 consultation by phone or video call",
+    "We work closely with you to build a proactive tax strategy that aligns with your goals, ensures your affairs are structured efficiently, and helps you retain more of your wealth. From optimising your current position to planning for the long term, our advice is designed to support growth, protection, and smart succession...  whatever your ambitions.",
   ],
 };
 

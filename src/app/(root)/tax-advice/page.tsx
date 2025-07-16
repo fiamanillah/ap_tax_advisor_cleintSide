@@ -12,7 +12,6 @@ import { delay } from "@/lib/utils";
 import Hero from "../../../components/Shared/Hero";
 import { companyTaxReturnProps } from "./companyTaxReturnData";
 import { FAQSectionProps } from "./faqdata";
-import { heroSectionProps } from "./heroData";
 import { HowItWorksProps } from "./howItWorkData";
 import { serviceSectionProps } from "./servicesData";
 import { TaxAdviceServiceProps } from "./taxAdviceServices";
@@ -22,7 +21,7 @@ export default async function page() {
   await delay(1000);
   return (
     <main className="space-y-8">
-      <Hero {...heroSectionProps} />
+      <Hero />
       <TestimonialSection />
       <TaxCategorySection {...taxCategoryProps} />
       <ConsultantSection />
