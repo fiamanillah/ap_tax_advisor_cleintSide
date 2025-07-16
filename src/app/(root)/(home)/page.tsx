@@ -1,7 +1,5 @@
 import FeatureSection from "@/components/home/featureSection";
 import HeroSection from "@/components/home/heroSection";
-import ServicesSection from "@/components/home/servicesSection";
-import SupportHighlights from "@/components/home/SupportHighlights";
 import { FAQSection } from "@/components/Shared/FAQSection";
 import OurApproach from "@/components/Shared/OurApproach";
 import TestimonialSection from "@/components/Shared/TestimonialSection";
@@ -9,7 +7,6 @@ import { delay } from "@/lib/utils";
 import { FAQSectionProps } from "./faqdata";
 import { featureData } from "./featureData";
 import { OurApproachData } from "./ourApproachData";
-import { serviceSectionProps } from "./servicesData";
 
 export default async function Home() {
   // Simulate a delay to show the loading state
@@ -21,8 +18,8 @@ export default async function Home() {
       <TestimonialSection />
       <OurApproach OurApproachData={OurApproachData} />
       <FeatureSection data={featureData} />
-      <SupportHighlights />
-      <ServicesSection {...serviceSectionProps} />
+      {/* <SupportHighlights /> */}
+      {/* <ServicesSection {...serviceSectionProps} /> */}
       <FAQSection {...FAQSectionProps} />
     </main>
   );

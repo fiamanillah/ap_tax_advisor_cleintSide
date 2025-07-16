@@ -106,7 +106,6 @@
   --accent: oklch(0.269 0 0);
   --accent-foreground: oklch(0.985 0 0);
   --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 15%);
   --ring: oklch(0.556 0 0);
   --chart-1: oklch(0.488 0.243 264.376);
@@ -135,6 +134,7 @@
   --muted-foreground: oklch(18.22% 0.00002 271.152);
   --muted: lch(100% 0.01 296.81 / 0.205);
   --card: oklch(90.833% 0.14056 108.477);
+  --border: oklch(18.22% 0.00002 271.152 / 0.176);
 }
 
 @layer base {
