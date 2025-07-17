@@ -16,18 +16,10 @@ import {
 
 const navItems = [
   { name: "Home", href: "/" },
-  { name: "Tax advice", href: "/tax-advice", className: "text-primary" },
-  {
-    name: "Personal Tax",
-    href: "/personal-tax",
-    className: "personal-tax-curve",
-  },
-  {
-    name: "Corporate Tax",
-    href: "/corporate-tax",
-    className: "corporate-tax-curve",
-  },
-  { name: "About Us", href: "/about-us", className: "about-us-curve" },
+  { name: "Tax advice", href: "/tax-advice" },
+  { name: "Personal Tax", href: "/personal-tax" },
+  { name: "Corporate Tax", href: "/corporate-tax" },
+  { name: "About Us", href: "/about-us" },
 ];
 
 export default function HeaderSection() {

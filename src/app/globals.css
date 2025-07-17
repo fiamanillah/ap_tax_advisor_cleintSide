@@ -232,10 +232,7 @@
 
 /* Active menu Curves */
 .curve,
-.contact-curve,
-.personal-tax-curve,
-.corporate-tax-curve,
-.about-us-curve {
+.contact-curve {
   position: relative;
 }
 
@@ -247,35 +244,15 @@
   left: -25px;
   width: 25px;
   height: 25px;
-  border-bottom-right-radius: 15px;
-}
-
-.curve::before {
   background: var(--color-background);
+  border-bottom-right-radius: 15px;
   box-shadow: 13px 0 0 var(--color-primary-gradient);
 }
-
 .contact-curve::before {
   box-shadow: 13px 0 0 var(--color-secondary-gradient);
-  background: var(--color-secondary-gradient);
+  background: var(--color-background);
 }
 
-.personal-tax-curve::before {
-  box-shadow: 13px 0 0 #f8f4ed;
-  background: #f8f4ed;
-}
-
-.corporate-tax-curve::before {
-  box-shadow: 13px 0 0 #f8f2ea;
-  background: #f8f2ea;
-}
-
-.about-us-curve::before {
-  box-shadow: 13px 0 0 #f8f1e8;
-  background: #f8f1e8;
-}
-
-/* ========================= */
 .curve::after {
   content: "";
   position: absolute;
@@ -283,30 +260,9 @@
   right: -25px;
   width: 25px;
   height: 25px;
-  border-bottom-left-radius: 15px;
-}
-
-.curve::after {
-  box-shadow: -13px 0 0 var(--color-primary-gradient);
   background: var(--color-background);
-}
-
-.contact-curve::after {
-  box-shadow: -13px 0 0 var(--color-secondary-gradient);
-  background: var(--color-secondary-gradient);
-}
-.personal-tax-curve::after {
-  box-shadow: -13px 0 0 #f8f4ed;
-  background: #f8f4ed;
-}
-.corporate-tax-curve::after {
-  box-shadow: -13px 0 0 #f8f2ea;
-  background: #f8f2ea;
-}
-
-.about-us-curve::after {
-  box-shadow: -13px 0 0 #f8f1e8;
-  background: #f8f1e8;
+  border-bottom-left-radius: 15px;
+  box-shadow: -13px 0 0 var(--color-primary-gradient);
 }
 
 /* Animation classes */

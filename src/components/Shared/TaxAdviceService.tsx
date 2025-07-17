@@ -1,3 +1,5 @@
+"use client";
+
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 
@@ -43,7 +45,7 @@ export default function TaxAdviceService({
   return (
     <div
       className={cn(
-        "mx-auto grid grid-cols-1 gap-8 md:grid-cols-2",
+        "box mx-auto grid grid-cols-1 gap-8 md:grid-cols-2",
         classNames,
         lg ? lgClasses[lg] : "lg:grid-cols-4",
         xl ? xlClasses[xl] : undefined,
