@@ -5,4 +5,6 @@ export interface THeroSectionProps {
     text: string;
     link: string;
   };
+  features?: string[];
+  image: string;
 }

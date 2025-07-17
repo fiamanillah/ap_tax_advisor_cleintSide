@@ -16,7 +16,7 @@ export const heroData = {
     link: "/get-started",
   },
 
-  images: "/assets/about-us-hero.png",
+  image: "/assets/about-us-hero.png",
 };
 
 export const heroSectionProps: THeroSectionProps = {

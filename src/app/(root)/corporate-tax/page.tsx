@@ -8,6 +8,7 @@ import CompanyTaxReturn from "@/components/tax-advice/CompanyTaxReturn";
 import { delay } from "@/lib/utils";
 import { companyTaxReturnProps } from "./companyTaxReturnData";
 import { FAQSectionProps } from "./faqdata";
+import { heroSectionProps } from "./heroData";
 import { newFormedProps } from "./newFormedData";
 import { serviceSectionProps } from "./servicesData";
 import { subscriptionProps } from "./subscriptionData";
@@ -17,7 +18,7 @@ export default async function page() {
   await delay(1000);
   return (
     <main className="space-y-8">
-      <Hero />
+      <Hero {...heroSectionProps} />
       <TestimonialSection />
       <TaxAdviceServiceSection {...TaxAdviceServiceProps} />
       <ServicesSection {...serviceSectionProps} />
