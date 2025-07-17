@@ -5,4 +5,5 @@ export interface TCompanyTaxReturnProps {
   features: string[];
   image: string;
   hint?: string;
+  reverseLayout?: boolean;
 }

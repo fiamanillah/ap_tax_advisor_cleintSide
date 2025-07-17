@@ -24,7 +24,7 @@ export default function ServicesSection({ data }: TService) {
                 {service.items && (
                   <div
                     className={cn(
-                      "flex w-full items-center justify-between gap-8 max-lg:flex-col",
+                      "mx-auto flex w-full max-w-5xl items-center justify-between gap-8 max-lg:flex-col",
                       {
                         "md:flex-row-reverse": service.align === "right",
                       },

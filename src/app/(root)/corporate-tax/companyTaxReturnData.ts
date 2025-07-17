@@ -1,14 +1,13 @@
 import { TCompanyTaxReturnProps } from "@/types/TCompanyTaxReturn";
 
 export const companyTaxReturnProps: TCompanyTaxReturnProps = {
-  title: "Is your company newly formed or outside the filing period?",
-  description:
-    "Our monthly subscription service offers extra support whenever you need it.",
-  buttonText: "Get Started",
+  title: "File your company tax return",
+  description: "We can now help LTD companies file their tax return.",
+  buttonText: "Learn More",
   features: [
-    "Kick-off call to get you started",
-    "Ongoing 1:1 online support from your accountant",
-    "We handle your annual accounts and tax return",
+    "Get your own personal accountant",
+    "Simple, 100% online process",
+    "Same easy AP Tax Advisors, brand new service.",
   ],
   image: "/assets/tax-return.png",
 };
