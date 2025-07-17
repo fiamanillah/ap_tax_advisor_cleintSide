@@ -1,4 +1,3 @@
-import OurInSights from "@/components/about-us/OurInSights";
 import OurMission from "@/components/about-us/OurMission";
 import OurValues from "@/components/about-us/OurValues";
 import WhyChooseUs from "@/components/about-us/WhyChooseUs";
@@ -16,7 +15,7 @@ export default async function page() {
       <TestimonialSection />
       <OurMission />
       <OurValues {...ourValueSectionProps} />
-      <OurInSights />
+      {/* <OurInSights /> */}
       <WhyChooseUs />
     </main>
   );

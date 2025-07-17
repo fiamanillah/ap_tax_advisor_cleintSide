@@ -1,32 +1,40 @@
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 
 export default function ChooseCard({
   title,
   description,
   icon,
+  className,
 }: {
   title: string;
   description: string;
   icon: string;
+  className?: string;
 }) {
   return (
-    <div className="group flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6 p-6 sm:p-8 bg-white rounded-lg border border-gray-200 hover:border-blue-200 hover:shadow-lg transition-all duration-300 h-full">
-      <div className="flex-shrink-0 flex justify-center sm:justify-start">
-        <div className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 flex items-center justify-center bg-blue-50 rounded-full group-hover:bg-blue-100 transition-colors duration-300">
+    <div
+      className={cn(
+        "group flex flex-1 flex-col gap-4 p-6 transition-all duration-300 sm:flex-row sm:items-start sm:gap-6 sm:p-8",
+        className,
+      )}
+    >
+      <div className="flex flex-shrink-0 justify-center sm:justify-start">
+        <div className="flex h-16 w-16 items-center justify-center rounded-full transition-colors duration-300 sm:h-20 sm:w-20 lg:h-24 lg:w-24">
           <Image
             src={icon}
             alt={title}
             width={40}
             height={40}
-            className="sm:w-12 sm:h-12 lg:w-14 lg:h-14 object-contain"
+            className="object-contain sm:h-12 sm:w-12 lg:h-14 lg:w-14"
           />
         </div>
       </div>
-      <div className="space-y-3 sm:space-y-4 text-center sm:text-left">
-        <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-800 group-hover:text-blue-600 transition-colors duration-300">
+      <div className="space-y-3 text-center sm:space-y-4 sm:text-left">
+        <h3 className="text-muted-foreground text-lg font-bold transition-colors duration-300">
           {title}
         </h3>
-        <p className="text-sm sm:text-base lg:text-lg font-medium text-gray-600 leading-relaxed">
+        <p className="text-sm leading-relaxed font-medium text-gray-600">
           {description}
         </p>
       </div>
