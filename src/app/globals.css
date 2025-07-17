@@ -248,6 +248,9 @@
   border-bottom-right-radius: 15px;
   box-shadow: 13px 0 0 var(--color-primary-gradient);
 }
+.contact-curve::before {
+  box-shadow: 13px 0 0 var(--color-secondary-gradient);
+}
 
 .curve::after {
   content: "";

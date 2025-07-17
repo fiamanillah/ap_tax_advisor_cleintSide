@@ -19,7 +19,7 @@ export default function DateTimeCalendar() {
       <PopoverTrigger asChild>
         <Button
           variant="outline"
-          className="hover:text-muted-foreground flex h-auto w-full flex-wrap items-center justify-between font-normal"
+          className="hover:text-muted-foreground flex h-auto w-full flex-wrap items-center justify-between rounded-none !bg-white font-normal"
         >
           <span className="max-2xs:text-xs text-wrap">
             {date

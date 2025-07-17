@@ -69,7 +69,7 @@ export default function HeaderSection() {
             className={cn(
               "text-md text-foreground flex h-full items-center gap-2 rounded-t-4xl px-8 py-4 font-medium transition duration-150 ease-in-out",
               {
-                "bg-primary-gradient text-background contact-curve":
+                "bg-secondary-gradient text-background contact-curve":
                   pathname === "/contact",
               },
             )}

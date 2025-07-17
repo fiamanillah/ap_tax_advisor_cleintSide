@@ -58,7 +58,11 @@ export default function TaxQueryForm() {
                     </p>
                   </FormLabel>
                   <FormControl>
-                    <Input placeholder="Akash" {...field} />
+                    <Input
+                      placeholder="Akash"
+                      {...field}
+                      className="rounded-none !bg-white"
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -74,7 +78,11 @@ export default function TaxQueryForm() {
                     Last name
                   </FormLabel>
                   <FormControl>
-                    <Input placeholder="Patel" {...field} />
+                    <Input
+                      placeholder="Patel"
+                      {...field}
+                      className="rounded-none !bg-white"
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -102,6 +110,7 @@ export default function TaxQueryForm() {
                   placeholder="demoemail@gmail.com"
                   type="email"
                   {...field}
+                  className="rounded-none !bg-white"
                 />
               </FormControl>
               <FormMessage />
@@ -125,6 +134,7 @@ export default function TaxQueryForm() {
                   placeholder="Enter phone number..."
                   type="tel"
                   {...field}
+                  className="rounded-none !bg-white"
                 />
               </FormControl>
               <FormMessage />
@@ -156,6 +166,7 @@ export default function TaxQueryForm() {
                   placeholder="Please provide detail about your tax query..."
                   rows={4}
                   {...field}
+                  className="text-muted-foreground rounded-none !bg-white"
                 />
               </FormControl>
               <FormMessage />
@@ -163,7 +174,7 @@ export default function TaxQueryForm() {
           )}
         />
 
-        <Button type="submit" className="w-full">
+        <Button type="submit" className="w-full bg-[#009900] text-white">
           Submit
         </Button>
       </form>
