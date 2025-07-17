@@ -6,21 +6,23 @@ export default async function page() {
   await delay(1000);
   return (
     <main>
-      <section className="container mx-auto px-4 py-10 flex flex-col md:flex-row justify-around items-center gap-10">
+      <section className="container mx-auto -mt-1">
         {/* Form Section */}
-        <div className="w-full md:w-[50%]">
-          <TaxQueryForm />
-        </div>
+        <div className="main-gradient flex flex-col items-center justify-around gap-10 rounded-tl-xl rounded-b-xl px-4 py-10 md:flex-row">
+          <div className="w-full md:w-[50%]">
+            <TaxQueryForm />
+          </div>
 
-        {/* Next Steps Flow */}
-        <div>
-          <Image
-            src="/assets/query-flow.png"
-            alt="Next Steps Flow"
-            width={500}
-            height={500}
-            className="w-[300px]"
-          />
+          {/* Next Steps Flow */}
+          <div>
+            <Image
+              src="/assets/query-flow.png"
+              alt="Next Steps Flow"
+              width={500}
+              height={500}
+              className="w-[300px]"
+            />
+          </div>
         </div>
       </section>
     </main>

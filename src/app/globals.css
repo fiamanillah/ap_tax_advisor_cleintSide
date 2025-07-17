@@ -231,11 +231,13 @@
 }
 
 /* Active menu Curves */
-.curve {
+.curve,
+.contact-curve {
   position: relative;
 }
 
-.curve::before {
+.curve::before,
+.contact-curve::before {
   content: "";
   position: absolute;
   bottom: 0;

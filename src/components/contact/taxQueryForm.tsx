@@ -52,7 +52,7 @@ export default function TaxQueryForm() {
               name="firstName"
               render={({ field }) => (
                 <FormItem className="w-1/2">
-                  <FormLabel className="text-[16px]">
+                  <FormLabel className="text-muted-foreground text-[16px]">
                     <p>
                       First name <span className="text-red-500">*</span>
                     </p>
@@ -70,7 +70,9 @@ export default function TaxQueryForm() {
               name="lastName"
               render={({ field }) => (
                 <FormItem className="w-1/2">
-                  <FormLabel className="text-[16px]">Last name</FormLabel>
+                  <FormLabel className="text-muted-foreground text-[16px]">
+                    Last name
+                  </FormLabel>
                   <FormControl>
                     <Input placeholder="Patel" {...field} />
                   </FormControl>
@@ -79,7 +81,7 @@ export default function TaxQueryForm() {
               )}
             />
           </div>
-          <p className="text-sm">
+          <p className="text-muted-foreground text-sm">
             Give your full legal name - no nicknames please!
           </p>
         </div>
@@ -90,7 +92,7 @@ export default function TaxQueryForm() {
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="text-[16px]">
+              <FormLabel className="text-muted-foreground text-[16px]">
                 <p>
                   Email Address <span className="text-red-500">*</span>
                 </p>
@@ -113,7 +115,7 @@ export default function TaxQueryForm() {
           name="phone"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="text-[16px]">
+              <FormLabel className="text-muted-foreground text-[16px]">
                 <p>
                   Phone number <span className="text-red-500">*</span>
                 </p>
@@ -131,8 +133,8 @@ export default function TaxQueryForm() {
         />
 
         {/* Date & Time Calendar */}
-        <div className="">
-          <FormLabel className="text-[16px]">
+        <div className="text-muted-foreground hover:text-muted-foreground">
+          <FormLabel className="text-muted-foreground hover:text-muted-foreground text-[16px]">
             Schedule a meeting (if required)
           </FormLabel>
           <DateTimeCalendar />
@@ -144,7 +146,7 @@ export default function TaxQueryForm() {
           name="query"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="text-[16px]">
+              <FormLabel className="text-muted-foreground text-[16px]">
                 <p>
                   Query <span className="text-red-500">*</span>
                 </p>

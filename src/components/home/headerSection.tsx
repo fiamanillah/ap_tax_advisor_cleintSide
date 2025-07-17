@@ -66,7 +66,13 @@ export default function HeaderSection() {
         <div className="flex items-center gap-4">
           <Link
             href="/contact"
-            className="hover:text-primary text-md text-foreground flex items-center gap-2 font-medium transition duration-150 ease-in-out"
+            className={cn(
+              "text-md text-foreground flex h-full items-center gap-2 rounded-t-4xl px-8 py-4 font-medium transition duration-150 ease-in-out",
+              {
+                "bg-primary-gradient text-background contact-curve":
+                  pathname === "/contact",
+              },
+            )}
           >
             <span>Contact us</span>
             <ReactSVG src="/icons/arrow-circle-right.svg" />

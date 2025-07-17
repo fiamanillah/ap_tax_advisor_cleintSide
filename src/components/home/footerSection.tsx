@@ -5,7 +5,7 @@ import { FaFacebook } from "react-icons/fa";
 export default function FooterSection() {
   return (
     <footer className="px-16 md:mt-10">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto">
         <div className="main-gradient rounded-xl py-6 sm:gap-10 sm:py-8 lg:flex-row lg:gap-12 lg:p-10 xl:gap-16 xl:px-20">
           <div className="flex flex-col justify-between max-md:gap-4 md:flex-row">
             {/* Left Section */}
