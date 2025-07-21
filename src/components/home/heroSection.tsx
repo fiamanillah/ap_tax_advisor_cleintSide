@@ -1,13 +1,43 @@
+"use client";
 import { list1, list2 } from "@/app/(root)/(home)/list";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 import { Check, Plus } from "lucide-react";
 import Image from "next/image";
+import { useRef } from "react";
 import Icon from "../Shared/Icon";
 import { Card, CardContent } from "../ui/card";
 
 export default function HeroSection() {
+  const container = useRef(null);
+
+  useGSAP(
+    () => {
+      const cards = gsap.utils.toArray<Element>("[data-card]");
+
+      cards.forEach((card) => {
+        gsap
+          .timeline({
+            repeat: -1,
+            yoyo: true,
+          })
+          .to(card, {
+            y: -10,
+            duration: 1,
+            ease: "power1.inOut",
+          })
+          .to(card, {
+            y: 0,
+            duration: 1,
+            ease: "power1.inOut",
+          });
+      });
+    },
+    { scope: container },
+  );
   return (
     <section className="">
-      <div className="container mx-auto">
+      <div className="container mx-auto" ref={container}>
         <div className="main-gradient flex flex-col items-center justify-center gap-8 rounded-3xl py-6 sm:gap-10 sm:py-8 lg:flex-row lg:gap-12 lg:p-10 xl:gap-16 xl:p-20">
           {/* Text Section */}
           <div className="w-full max-w-none space-y-4 sm:space-y-5 md:space-y-6 lg:max-w-[700px]">
@@ -71,7 +101,10 @@ export default function HeroSection() {
             </div>
 
             {/* Floating Cards - Responsive positioning */}
-            <Card className="absolute top-8 -left-2 max-w-[140px] bg-[#A4F5D3] shadow-lg transition-shadow duration-300 hover:shadow-xl sm:top-10 sm:left-2 sm:max-w-[160px] md:top-12 md:left-4 md:max-w-[380px] lg:top-14 lg:left-6">
+            <Card
+              data-card
+              className="absolute top-8 -left-2 max-w-[140px] bg-[#A4F5D3] shadow-lg transition-shadow duration-300 hover:shadow-xl sm:top-10 sm:left-2 sm:max-w-[160px] md:top-12 md:left-4 md:max-w-[380px] lg:top-14 lg:left-6"
+            >
               <CardContent className="px-4">
                 <div className="flex items-center gap-1 sm:gap-2">
                   <span className="max-w-[140px] text-xs font-medium text-gray-800 sm:text-sm md:text-base">
@@ -84,7 +117,10 @@ export default function HeroSection() {
               </CardContent>
             </Card>
 
-            <Card className="absolute -right-2 bottom-8 max-w-[140px] bg-[#FFF4A0] shadow-lg transition-shadow duration-300 hover:shadow-xl sm:right-2 sm:bottom-10 sm:max-w-[160px] md:right-8 md:bottom-12 md:max-w-[180px] lg:right-12 lg:bottom-12">
+            <Card
+              data-card
+              className="absolute -right-2 bottom-8 max-w-[140px] bg-[#FFF4A0] shadow-lg transition-shadow duration-300 hover:shadow-xl sm:right-2 sm:bottom-10 sm:max-w-[160px] md:right-8 md:bottom-12 md:max-w-[180px] lg:right-12 lg:bottom-12"
+            >
               <CardContent className="px-4">
                 <div className="flex items-center gap-1 sm:gap-2">
                   <span className="max-w-[140px] text-xs font-medium text-gray-800 sm:text-sm md:text-base">
