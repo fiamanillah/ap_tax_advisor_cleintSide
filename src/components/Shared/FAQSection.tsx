@@ -8,7 +8,7 @@ import {
 export function FAQSection(FAQSectionProps: TFAQSectionProps) {
   return (
     <section>
-      <div className="container mx-auto my-10 flex gap-5 px-4 py-16 max-md:flex-col sm:px-6 lg:px-8">
+      <div className="container mx-auto my-10 flex gap-5 py-16 max-md:flex-col">
         <div className="section-inverted-radius">
           <div className="flex">
             <div className={"flex basis-1/2 flex-col gap-4"}>

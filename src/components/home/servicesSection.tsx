@@ -7,7 +7,7 @@ import { Card } from "../ui/card";
 export default function ServicesSection({ data }: TService) {
   return (
     <section>
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto py-8">
         <div className="section-inverted-radius-reverse">
           <h1 className="text-background mb-8 text-center text-[40px] font-medium">
             What&apos;s Included

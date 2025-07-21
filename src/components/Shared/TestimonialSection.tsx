@@ -29,7 +29,7 @@ export default function TestimonialSection() {
 
   return (
     <section className="py-8 md:py-16 lg:py-24">
-      <div ref={sectionRef} className="container mx-auto px-4 py-8">
+      <div ref={sectionRef} className="container mx-auto py-8">
         <h2 className="text-foreground border-muted mx-auto mb-8 w-fit border-b-2 pb-8 text-center text-xl font-medium md:text-3xl lg:text-[40px]">
           What are people saying
         </h2>

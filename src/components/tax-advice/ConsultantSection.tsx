@@ -4,7 +4,7 @@ import { AppButton } from "../Shared/AppButton";
 export default function ConsultantSection() {
   return (
     <section>
-      <div className="container mx-auto px-4 py-8 md:py-12 lg:py-16">
+      <div className="container mx-auto py-8 md:py-12 lg:py-16">
         <div className="section-inverted-radius-reverse">
           <div className="flex flex-col items-center justify-center gap-8 md:gap-12 lg:flex-row lg:gap-20">
             {/* Left Section - Image */}

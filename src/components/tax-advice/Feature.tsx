@@ -1,7 +1,7 @@
 export default function Feature() {
   return (
     <section>
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto py-8">
         <div className="section-inverted-radius-reverse">
           <div className="grid grid-cols-1 gap-8 p-6 md:grid-cols-2 lg:grid-cols-3">
             {data.map((feature, idx) => (
