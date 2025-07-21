@@ -76,10 +76,10 @@ export default function Testimonial() {
                       </div>
                     )}
                   </div>
-                  <h3 className="mb-2 text-lg font-semibold">
+                  <h3 className="text-background mb-2 text-lg font-semibold">
                     {testimonial.title}
                   </h3>
-                  <p className="mb-4 flex-grow text-xs font-semibold text-black">
+                  <p className="text-muted-foreground mb-4 flex-grow text-xs font-semibold">
                     {testimonial.review}
                   </p>
                   <div className="mt-auto text-xs">

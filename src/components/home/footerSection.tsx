@@ -1,6 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
-import { FaFacebook } from "react-icons/fa";
+import Icon from "../Shared/Icon";
 
 export default function FooterSection() {
   return (
@@ -21,10 +23,17 @@ export default function FooterSection() {
               <p className="text-back text-background text-lg font-medium">
                 AP Tax Advisors
               </p>
-
-              <Link href="#">
-                <FaFacebook className="size-7 text-blue-600" />
-              </Link>
+              <div className="flex gap-8">
+                <Link href="#">
+                  <Icon src="/icons/facebook.svg" />
+                </Link>
+                <Link href="#">
+                  <Icon src="/icons/instagram.svg" />
+                </Link>
+                <Link href="#">
+                  <Icon src="/icons/tiktok.svg" />
+                </Link>
+              </div>
             </div>
 
             <div className="flex flex-row items-start gap-4 max-md:justify-between max-md:py-4 md:gap-20">
@@ -59,7 +68,7 @@ export default function FooterSection() {
             </div>
           </div>
 
-          <hr className="mt-4 border-gray-300" />
+          <hr className="border-muted-foreground mt-4" />
 
           <div className="text-muted-foreground mt-4 flex flex-col justify-between md:flex-row">
             <p>@ 2025 AP Tax Advisors. All right reserved</p>

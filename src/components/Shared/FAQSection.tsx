@@ -5,6 +5,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "../ui/accordionCustom";
+import { AppButton } from "./AppButton";
 export function FAQSection(FAQSectionProps: TFAQSectionProps) {
   return (
     <section>
@@ -18,6 +19,8 @@ export function FAQSection(FAQSectionProps: TFAQSectionProps) {
               <p className="text-muted-foreground lg:w-2/3">
                 {FAQSectionProps.description}
               </p>
+
+              <AppButton className="w-fit">Contact us</AppButton>
             </div>
             <div className={"basis-1/2"}>
               <AccordionCustom type="single" collapsible className="w-full">

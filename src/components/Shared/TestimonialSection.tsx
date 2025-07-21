@@ -34,7 +34,7 @@ export default function TestimonialSection() {
           What are people saying
         </h2>
 
-        <div className="main-gradient rounded-lg p-6">
+        <div className="main-gradient section-inverted-radius rounded-lg">
           <Testimonial />
           <p className="text-background mt-5 text-center text-sm">
             Rated 4.5 / 5 based on 6230 reviews, Showing our latest reviews.
