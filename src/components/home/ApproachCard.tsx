@@ -1,84 +1,56 @@
 "use client";
-import { cn } from "@/lib/utils";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Image from "next/image";
-import { useRef, useState } from "react";
 
-gsap.registerPlugin(ScrollTrigger);
+import { cn } from "@/lib/utils";
+import Image from "next/image";
+import { motion } from "framer-motion"; // Import motion
+
+// Define animation variants for the card
+const cardVariants = {
+  hidden: { opacity: 0, y: 75 }, // Start 75px below and invisible
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }, // Animate to original position and visible
+};
 
 interface ApproachCardProps {
   title: string;
   description: string;
   index: number;
-  icon?: string; // Optional icon prop, if needed
+  icon?: string;
 }
 
 export default function ApproachCard({
   title,
   description,
   index,
-  icon = "/assets/default-icon.svg", // Default icon if none provided
+  icon = "/assets/default-icon.svg",
 }: ApproachCardProps) {
-  const cardRef = useRef(null);
-  const [flipped, setFlipped] = useState<boolean>(false);
-
-  useGSAP(() => {
-    if (index === 0) {
-      gsap.to(cardRef.current, {
-        rotationY: 180,
-        duration: 0.6,
-        scrollTrigger: {
-          trigger: cardRef.current,
-          start: "top 80%",
-          end: "bottom 20%",
-          once: true, // Animation will only happen once
-        },
-      });
-
-      setFlipped(true);
-    }
-  }, []);
-
-  const handleFlip = (event: React.MouseEvent<HTMLDivElement>) => {
-    if (event.target === cardRef.current) return; // Prevent flipping when clicking on the card content
-    if (flipped) {
-      gsap.to(cardRef.current, {
-        rotationY: 0,
-        duration: 0.6,
-      });
-    } else {
-      gsap.to(cardRef.current, {
-        rotationY: 180,
-        duration: 0.6,
-      });
-    }
-
-    setFlipped(!flipped);
-  };
-
   return (
-    <>
+    // Wrap the card in a motion.div and apply the variants
+    <motion.div
+      variants={cardVariants}
+      className="group h-72 w-60 cursor-pointer [perspective:1000px]"
+    >
       <div
-        className={cn("thecard", { flipped })}
-        ref={cardRef}
-        onClick={handleFlip}
+        className={cn(
+          "thecard relative h-full w-full rounded-lg transition-transform duration-700",
+          "[transform-style:preserve-3d] group-hover:rotate-y-180",
+        )}
       >
         <div
           className={cn(
-            "absolute top-2 left-2 h-fit w-fit transition delay-700",
-            {
-              "right-2 rotate-y-180": flipped,
-            },
+            "absolute top-2 left-2 z-20 h-fit w-fit text-white",
+            "transition-all duration-700",
+            "group-hover:text-white group-hover:left-2 group-hover:rotate-y-180 ",
           )}
         >
           /{(index + 1).toString().padStart(2, "0")}
         </div>
 
+        {/* Front Face of the Card */}
         <div
-          className="thefront inverted-radius flex flex-col items-center justify-center px-2 py-8"
-          onClick={handleFlip}
+          className={cn(
+            "thefront inverted-radius absolute inset-0 flex flex-col items-center justify-center px-2 py-8",
+            "[backface-visibility:hidden]",
+          )}
         >
           <Image
             src={icon}
@@ -87,23 +59,26 @@ export default function ApproachCard({
             height={150}
             className="rounded-lg"
           />
-          <h3 className="text-background text-center text-lg font-semibold">
+          <h3 className="text-center text-[17px] font-semibold text-white">
             {title}
           </h3>
         </div>
 
+        {/* Back Face of the Card */}
         <div
-          className="theback inverted-radius-reverse flex flex-col items-start justify-center space-y-4 px-3"
-          onClick={handleFlip}
+          className={cn(
+            "theback inverted-radius-reverse absolute inset-0 flex flex-col items-start justify-center space-y-4 px-3",
+            "[backface-visibility:hidden] rotate-y-180",
+          )}
         >
-          <h3 className="text-background text-start text-lg font-semibold">
+          <h3 className="text-start text-lg font-semibold text-background">
             📝 Get in touch
           </h3>
-          <p className="text-muted-foreground text-start text-xs">
+          <p className="text-start text-xs text-muted-foreground">
             {description}
           </p>
         </div>
       </div>
-    </>
+    </motion.div>
   );
 }
