@@ -5,8 +5,8 @@ import { FAQSection } from "@/components/Shared/FAQSection";
 import TaxAdviceServiceSection from "@/components/Shared/TaxAdviceServiceSection";
 import TestimonialSection from "@/components/Shared/TestimonialSection";
 import CompanyTaxReturn from "@/components/tax-advice/CompanyTaxReturn";
+import ConsultantSection from "@/components/tax-advice/ConsultantSection";
 import { delay } from "@/lib/utils";
-import { companyTaxReturnProps } from "./companyTaxReturnData";
 import { FAQSectionProps } from "./faqdata";
 import { newFormedProps } from "./newFormedData";
 import { serviceSectionProps } from "./servicesData";
@@ -27,7 +27,8 @@ export default async function page() {
         buttonText="Get Started"
         classNames="bg-[#FFF6BD]"
       /> */}
-      <CompanyTaxReturn {...companyTaxReturnProps} />
+      {/* <CompanyTaxReturn {...companyTaxReturnProps} /> */}
+      <ConsultantSection buttonText="Book now" />
       <FAQSection {...FAQSectionProps} />
       <CompanyTaxReturn {...newFormedProps} />
       <SubscriptionPlan {...subscriptionProps} />
