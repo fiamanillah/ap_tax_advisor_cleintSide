@@ -1,12 +1,36 @@
 "use client";
 
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap/all";
 import Image from "next/image";
 import Link from "next/link";
+import { useRef } from "react";
 import Icon from "../Shared/Icon";
 
 export default function FooterSection() {
+  const container = useRef<HTMLDivElement>(null);
+
+  // Image section animation (from right)
+  useGSAP(
+    () => {
+      // Since ScrollTrigger is imported from "gsap/all", it's already registered.
+      gsap.from(container.current, {
+        opacity: 0,
+        y: 80,
+        duration: 1.2,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: container.current,
+          start: "top 95%", // Trigger when the top of the footer is 95% from the viewport top
+          toggleActions: "play none none none", // Play animation once on entering viewport
+        },
+      });
+    },
+    { scope: container },
+  );
+
   return (
-    <footer className="px-16 md:mt-10">
+    <footer ref={container} className="px-16 md:mt-10">
       <div className="container mx-auto">
         <div className="main-gradient rounded-xl py-6 sm:gap-10 sm:py-8 lg:flex-row lg:gap-12 lg:p-10 xl:gap-16 xl:px-20">
           <div className="flex flex-col justify-between max-md:gap-4 md:flex-row">
