@@ -7,14 +7,16 @@ interface ApproachCardProps {
   title: string;
   description: string;
   index: number;
-  icon?: string;
+  icon: string;
+  cta: string;
 }
 
 export default function ApproachCard({
   title,
   description,
   index,
-  icon = "/assets/default-icon.svg",
+  icon,
+  cta,
 }: ApproachCardProps) {
   return (
     <div className="group h-72 w-60 cursor-pointer [perspective:1000px]">
@@ -28,7 +30,7 @@ export default function ApproachCard({
           className={cn(
             "absolute top-2 left-2 z-20 h-fit w-fit text-white",
             "transition-all duration-700",
-            "group-hover:text-white group-hover:left-2 group-hover:rotate-y-180 ",
+            "group-hover:left-2 group-hover:rotate-y-180 group-hover:text-white",
           )}
         >
           /{(index + 1).toString().padStart(2, "0")}
@@ -48,7 +50,7 @@ export default function ApproachCard({
             height={150}
             className="rounded-lg"
           />
-          <h3 className="text-center text-[17px] font-semibold text-white">
+          <h3 className="mt-3 text-center text-[17px] font-semibold text-white">
             {title}
           </h3>
         </div>
@@ -57,13 +59,13 @@ export default function ApproachCard({
         <div
           className={cn(
             "theback inverted-radius-reverse absolute inset-0 flex flex-col items-start justify-center space-y-4 px-3",
-            "[backface-visibility:hidden] rotate-y-180",
+            "rotate-y-180 [backface-visibility:hidden]",
           )}
         >
-          <h3 className="text-start text-lg font-semibold text-background">
-            📝 Get in touch
+          <h3 className="text-background text-start text-lg font-semibold">
+            {cta}
           </h3>
-          <p className="text-start text-xs text-muted-foreground">
+          <p className="text-muted-foreground text-start text-xs">
             {description}
           </p>
         </div>

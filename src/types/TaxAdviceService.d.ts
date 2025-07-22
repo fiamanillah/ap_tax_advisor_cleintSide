@@ -3,6 +3,7 @@ export interface TTaxAdviceServiceProps {
     id: number;
     icon: string;
     title: string;
+    cta: string;
     description: string;
   }[];
   sectionMainTitle: string;
