@@ -17,7 +17,7 @@ export default async function page() {
       <HeroSection />
       <TestimonialSection />
       <TaxCategorySection {...taxCategoryProps} />
-      <ConsultantSection />
+      <ConsultantSection buttonText="Book now" />
       <TaxAdviceServiceSection {...TaxAdviceServiceProps} />
       <ServicesSection {...serviceSectionProps} />
       {/* <GetStarted
