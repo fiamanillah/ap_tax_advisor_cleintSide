@@ -6,7 +6,7 @@ export default function Feature() {
           <div className="grid grid-cols-1 gap-8 p-6 md:grid-cols-2 lg:grid-cols-3">
             {data.map((feature, idx) => (
               <div key={idx} className="space-y-4">
-                <h2 className="text-primary-foreground text-center text-2xl font-semibold">
+                <h2 className="text-primary-foreground text-center text-2xl font-medium">
                   {feature.title}
                 </h2>
                 <p className="text-muted-foreground text-center text-base">
