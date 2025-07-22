@@ -12,7 +12,7 @@ export default function TagCard({ title, checked, className }: TagCardProps) {
     <Card
       data-card
       className={cn(
-        "absolute max-w-[200px] border-0 px-4 pt-4 pb-7 shadow-lg transition-shadow duration-300",
+        "absolute max-w-[230px] border-0 px-4 pt-4 pb-7 shadow-lg transition-shadow duration-300",
         {
           "bg-[#A4F4D3]": checked,
           "bg-[#FFF4A0]": !checked,

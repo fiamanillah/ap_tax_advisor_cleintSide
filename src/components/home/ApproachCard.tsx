@@ -39,7 +39,7 @@ export default function ApproachCard({
         {/* Front Face of the Card */}
         <div
           className={cn(
-            "thefront inverted-radius absolute inset-0 flex flex-col items-center justify-center px-2 py-8",
+            "thefront inverted-radius absolute inset-0 flex flex-col items-center justify-center px-2 px-4 py-8",
             "[backface-visibility:hidden]",
           )}
         >
@@ -50,7 +50,7 @@ export default function ApproachCard({
             height={150}
             className="rounded-lg"
           />
-          <h3 className="mt-3 text-center text-[17px] font-semibold text-white">
+          <h3 className="text-foreground mt-3 text-center text-lg font-medium">
             {title}
           </h3>
         </div>
