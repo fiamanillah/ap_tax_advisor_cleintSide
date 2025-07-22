@@ -39,7 +39,7 @@ export default function ApproachCard({
         {/* Front Face of the Card */}
         <div
           className={cn(
-            "thefront inverted-radius absolute inset-0 flex flex-col items-center justify-center px-2 px-4 py-8",
+            "thefront inverted-radius absolute inset-0 flex flex-col items-center justify-center px-4 py-8",
             "[backface-visibility:hidden]",
           )}
         >
