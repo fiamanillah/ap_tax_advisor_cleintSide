@@ -2,13 +2,6 @@
 
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import { motion } from "framer-motion"; // Import motion
-
-// Define animation variants for the card
-const cardVariants = {
-  hidden: { opacity: 0, y: 75 }, // Start 75px below and invisible
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }, // Animate to original position and visible
-};
 
 interface ApproachCardProps {
   title: string;
@@ -24,11 +17,7 @@ export default function ApproachCard({
   icon = "/assets/default-icon.svg",
 }: ApproachCardProps) {
   return (
-    // Wrap the card in a motion.div and apply the variants
-    <motion.div
-      variants={cardVariants}
-      className="group h-72 w-60 cursor-pointer [perspective:1000px]"
-    >
+    <div className="group h-72 w-60 cursor-pointer [perspective:1000px]">
       <div
         className={cn(
           "thecard relative h-full w-full rounded-lg transition-transform duration-700",
@@ -79,6 +68,6 @@ export default function ApproachCard({
           </p>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }
