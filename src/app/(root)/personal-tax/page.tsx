@@ -23,7 +23,7 @@ export default async function PersonalTaxPage() {
         classNames="bg-[#FFF6BD]"
       /> */}
       <ServicesSection {...serviceSectionProps} />
-      <ConsultantSection />
+      <ConsultantSection buttonText="Book now" />
       <FAQSection {...FAQSectionProps} />
 
       {/* <CompanyTaxReturn {...companyTaxReturnProps} /> */}
