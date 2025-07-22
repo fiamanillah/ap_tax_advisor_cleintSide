@@ -1,14 +1,13 @@
 import SubscriptionPlan from "@/components/corporate-tax/SubscriptionPlan";
+import HeroSection from "@/components/home/heroSection";
 import ServicesSection from "@/components/home/servicesSection";
 import { FAQSection } from "@/components/Shared/FAQSection";
-import Hero from "@/components/Shared/Hero";
 import TaxAdviceServiceSection from "@/components/Shared/TaxAdviceServiceSection";
 import TestimonialSection from "@/components/Shared/TestimonialSection";
 import CompanyTaxReturn from "@/components/tax-advice/CompanyTaxReturn";
 import { delay } from "@/lib/utils";
 import { companyTaxReturnProps } from "./companyTaxReturnData";
 import { FAQSectionProps } from "./faqdata";
-import { heroSectionProps } from "./heroData";
 import { newFormedProps } from "./newFormedData";
 import { serviceSectionProps } from "./servicesData";
 import { subscriptionProps } from "./subscriptionData";
@@ -18,7 +17,7 @@ export default async function page() {
   await delay(1000);
   return (
     <main className="space-y-8">
-      <Hero {...heroSectionProps} />
+      <HeroSection />
       <TestimonialSection />
       <TaxAdviceServiceSection {...TaxAdviceServiceProps} />
       <ServicesSection {...serviceSectionProps} />

@@ -1,12 +1,11 @@
 "use client";
-import { list2 } from "@/app/(root)/(home)/list";
+import { list1, list2 } from "@/app/(root)/(home)/list";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import Image from "next/image";
-
 import { useRef } from "react";
-import { AppButton } from "../Shared/AppButton";
 import Icon from "../Shared/Icon";
+import TagCard from "../Shared/TagCard";
 
 export default function HeroSection() {
   const container = useRef(null);
@@ -75,24 +74,31 @@ export default function HeroSection() {
             className="w-full max-w-none space-y-4 sm:space-y-5 md:space-y-6 lg:max-w-[700px]"
           >
             <h2 className="text-primary-foreground text-2xl leading-tight font-semibold sm:text-3xl md:text-4xl lg:text-[36px] xl:text-[40px]">
-              From compliance to strategy, we handle the detail so you can focus
-              on growth.
+              Tax doesn&apos;t have to be taxing.
             </h2>
             <p className="text-primary-foreground text-sm leading-relaxed sm:text-base md:text-lg">
-              Running a company comes with complex tax responsibilities, but
-              with the right support, it doesn’t have to be difficult.
+              You’ve got enough on your plate so let us take care of the
+              numbers.
             </p>
             <p className="text-primary-foreground text-sm leading-relaxed sm:text-base md:text-lg">
-              At AP Tax Advisors, we take care of the compliance essentials and
-              CFO-level support, while also helping directors, shareholders, and
-              growing businesses plan ahead with confidence.
+              We’re not your average accountant. Instead of waiting for your
+              paperwork, we’re proactive, personal, and by your side all year
+              round. We don’t just meet HMRC’s expectations, we build our
+              service around you.
             </p>
-
+            <ul className="text-primary-foreground space-y-2 sm:space-y-3">
+              {list1.map(({ icon, text }, idx) => (
+                <li key={idx} className="flex items-start gap-2 sm:gap-3">
+                  <Icon className="h-6 w-6" src={icon} />
+                  <span className="text-sm sm:text-base md:text-lg">
+                    {text}
+                  </span>
+                </li>
+              ))}
+            </ul>
             <p className="text-primary-foreground text-sm leading-relaxed sm:text-base md:text-lg">
-              Whether you need a trusted compliance partner or strategic tax
-              advice around structuring, profit extraction or future exit, we’ll
-              make sure your business is fully supported and fully
-              tax-efficient.
+              We specialise in tax so you don&apos;t have to! Our service is
+              straightforward, stress-free, and even a little bit human.
             </p>
 
             <div className="max-w-2xl">
@@ -110,8 +116,6 @@ export default function HeroSection() {
                   </li>
                 ))}
               </ul>
-
-              <AppButton className="mt-8">Get started</AppButton>
             </div>
           </div>
 
@@ -122,7 +126,7 @@ export default function HeroSection() {
           >
             <div className="relative h-[250px] w-[250px] overflow-hidden rounded-full sm:h-[280px] sm:w-[280px] md:h-[320px] md:w-[320px] lg:h-[360px] lg:w-[360px] xl:h-[400px] xl:w-[400px]">
               <Image
-                src="/assets/corporate-tax-hero.png"
+                src="/assets/girl.png"
                 alt="Professional tax advisor support"
                 fill
                 className="object-cover"
@@ -130,6 +134,20 @@ export default function HeroSection() {
                 sizes="(max-width: 640px) 250px, (max-width: 768px) 280px, (max-width: 1024px) 320px, (max-width: 1280px) 360px, 400px"
               />
             </div>
+
+            {/* Floating Cards - Responsive positioning */}
+
+            <TagCard
+              title="Documents submitted"
+              checked={true}
+              className="top-20 left-20"
+            />
+
+            <TagCard
+              title="Ready to approve"
+              checked={false}
+              className="right-0 bottom-20"
+            />
           </div>
         </div>
       </div>
