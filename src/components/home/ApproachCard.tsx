@@ -63,7 +63,7 @@ export default function ApproachCard({
       <div
         className={cn("thecard", { flipped })}
         ref={cardRef}
-        onMouseEnter={handleFlip}
+        onClick={handleFlip}
       >
         <div
           className={cn(
@@ -78,7 +78,7 @@ export default function ApproachCard({
 
         <div
           className="thefront inverted-radius flex flex-col items-center justify-center px-2 py-8"
-          onMouseEnter={handleFlip}
+          onClick={handleFlip}
         >
           <Image
             src={icon}
@@ -94,7 +94,7 @@ export default function ApproachCard({
 
         <div
           className="theback inverted-radius-reverse flex flex-col items-start justify-center space-y-4 px-3"
-          onMouseEnter={handleFlip}
+          onClick={handleFlip}
         >
           <h3 className="text-background text-start text-lg font-semibold">
             📝 Get in touch
