@@ -56,6 +56,12 @@ const faqs = [
       </div>
     ),
   },
+  {
+    id: "q6",
+    question: "Is this a one-off service or ongoing support?",
+    answer:
+      "We primarily offer one-off, high-quality advice but many clients return to us for further support as their personal or business circumstances evolve. We’re always here when you need us.",
+  },
 ];
 
 export const FAQSectionProps: TFAQSectionProps = {
