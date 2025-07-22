@@ -29,19 +29,19 @@ export default function HeaderSection() {
   return (
     <header className="">
       <div className="container mx-auto flex items-center justify-between">
-        <div className="flex items-center gap-18">
+        <div className="flex items-center gap-4">
           {/* Logo Section */}
-          <div className="flex items-center space-x-2">
+          <div className="ml-10 flex items-center">
             <Link
               href="/"
-              className="text-foreground flex items-center text-5xl font-bold"
+              className="text-foreground flex items-center text-4xl font-semibold"
             >
               AP
             </Link>
           </div>
 
           {/* Navigation Links */}
-          <nav className="hidden h-full space-x-12 pt-2 md:flex">
+          <nav className="hidden h-full space-x-2 pt-2 md:flex">
             {navItems.map((item) => {
               const isActive = pathname === item.href;
 

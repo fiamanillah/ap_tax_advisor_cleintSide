@@ -66,6 +66,17 @@ export default function ApproachCard({
         onMouseEnter={handleFlip}
       >
         <div
+          className={cn(
+            "absolute top-2 left-2 h-fit w-fit transition delay-700",
+            {
+              "right-2 rotate-y-180": flipped,
+            },
+          )}
+        >
+          /{(index + 1).toString().padStart(2, "0")}
+        </div>
+
+        <div
           className="thefront inverted-radius flex flex-col items-center justify-center px-2 py-8"
           onMouseEnter={handleFlip}
         >

@@ -2,7 +2,6 @@ import FloatingIcon from "@/components/floatingIcon";
 import FooterSection from "@/components/home/footerSection";
 import HeaderSection from "@/components/home/headerSection";
 import SmoothScroll from "@/components/Shared/SmoothScroll";
-import { SmoothCursor } from "@/components/ui/smooth-cursor";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
@@ -32,7 +31,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <SmoothCursor />;
+        {/* <SmoothCursor />; */}
         <SmoothScroll>
           <HeaderSection />
           {children}
