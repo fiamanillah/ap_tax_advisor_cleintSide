@@ -1,14 +1,14 @@
 "use client";
-import { list1, list2 } from "@/app/(root)/(home)/list";
+import { list2 } from "@/app/(root)/(home)/list";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { Check, Plus } from "lucide-react";
 import Image from "next/image";
 import { useRef } from "react";
+import { AppButton } from "../Shared/AppButton";
 import Icon from "../Shared/Icon";
-import { Card, CardContent } from "../ui/card";
+import TagCard from "../Shared/TagCard";
 
-export default function PersonalTaxHeroSection() {
+export default function HeroSection() {
   const container = useRef(null);
   useGSAP(
     () => {
@@ -75,31 +75,16 @@ export default function PersonalTaxHeroSection() {
             className="w-full max-w-none space-y-4 sm:space-y-5 md:space-y-6 lg:max-w-[700px]"
           >
             <h2 className="text-primary-foreground text-2xl leading-tight font-semibold sm:text-3xl md:text-4xl lg:text-[36px] xl:text-[40px]">
-              Tax doesn&apos;t have to be taxing.
+              Protect, grow and preserve your wealth
             </h2>
+
             <p className="text-primary-foreground text-sm leading-relaxed sm:text-base md:text-lg">
-              You’ve got enough on your plate so let us take care of the
-              numbers.
-            </p>
-            <p className="text-primary-foreground text-sm leading-relaxed sm:text-base md:text-lg">
-              We’re not your average accountant. Instead of waiting for your
-              paperwork, we’re proactive, personal, and by your side all year
-              round. We don’t just meet HMRC’s expectations, we build our
-              service around you.
-            </p>
-            <ul className="text-primary-foreground space-y-2 sm:space-y-3">
-              {list1.map(({ icon, text }, idx) => (
-                <li key={idx} className="flex items-start gap-2 sm:gap-3">
-                  <Icon className="h-6 w-6" src={icon} />
-                  <span className="text-sm sm:text-base md:text-lg">
-                    {text}
-                  </span>
-                </li>
-              ))}
-            </ul>
-            <p className="text-primary-foreground text-sm leading-relaxed sm:text-base md:text-lg">
-              We specialise in tax so you don&apos;t have to! Our service is
-              straightforward, stress-free, and even a little bit human.
+              We work closely with you to build a proactive tax strategy that
+              aligns with your goals, ensures your affairs are structured
+              efficiently, and helps you retain more of your wealth. From
+              optimising your current position to planning for the long term,
+              our advice is designed to support growth, protection, and smart
+              succession... whatever your ambitions.
             </p>
 
             <div className="max-w-2xl">
@@ -117,6 +102,8 @@ export default function PersonalTaxHeroSection() {
                   </li>
                 ))}
               </ul>
+
+              <AppButton className="mt-10">Get started</AppButton>
             </div>
           </div>
 
@@ -125,9 +112,9 @@ export default function PersonalTaxHeroSection() {
             ref={imageRef}
             className="relative mt-8 flex w-full max-w-[400px] items-center justify-center sm:max-w-[450px] md:max-w-[500px] lg:mt-0 lg:max-w-[600px]"
           >
-            <div className="relative h-[250px] w-[250px] overflow-hidden rounded-full sm:h-[280px] sm:w-[280px] md:h-[320px] md:w-[320px] lg:h-[360px] lg:w-[360px] xl:h-[400px] xl:w-[400px]">
+            <div className="relative h-[250px] w-[250px] sm:h-[280px] sm:w-[280px] md:h-[320px] md:w-[320px] lg:h-[360px] lg:w-[360px] xl:h-[400px] xl:w-[400px]">
               <Image
-                src="/assets/girl.png"
+                src="/assets/tax-advice-hero.png"
                 alt="Professional tax advisor support"
                 fill
                 className="object-cover"
@@ -137,37 +124,47 @@ export default function PersonalTaxHeroSection() {
             </div>
 
             {/* Floating Cards - Responsive positioning */}
-            <Card
-              data-card
-              className="absolute top-8 -left-2 max-w-[140px] bg-[#A4F5D3] shadow-lg transition-shadow duration-300 hover:shadow-xl sm:top-10 sm:left-2 sm:max-w-[160px] md:top-12 md:left-4 md:max-w-[380px] lg:top-14 lg:left-6"
-            >
-              <CardContent className="px-4">
-                <div className="flex items-center gap-1 sm:gap-2">
-                  <span className="max-w-[140px] text-xs font-medium text-gray-800 sm:text-sm md:text-base">
-                    Documents submitted
-                  </span>
-                  <div className="flex-shrink-0 rounded-full bg-white p-1">
-                    <Check className="h-3 w-3 text-green-600 sm:h-4 sm:w-4" />
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
 
-            <Card
-              data-card
-              className="absolute -right-2 bottom-8 max-w-[140px] bg-[#FFF4A0] shadow-lg transition-shadow duration-300 hover:shadow-xl sm:right-2 sm:bottom-10 sm:max-w-[160px] md:right-8 md:bottom-12 md:max-w-[180px] lg:right-12 lg:bottom-12"
-            >
-              <CardContent className="px-4">
-                <div className="flex items-center gap-1 sm:gap-2">
-                  <span className="max-w-[140px] text-xs font-medium text-gray-800 sm:text-sm md:text-base">
-                    Ready to approve
-                  </span>
-                  <div className="flex-shrink-0 rounded-full bg-white p-1">
-                    <Plus className="h-3 w-3 text-blue-600 sm:h-4 sm:w-4" />
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+            <TagCard
+              title="Childcare"
+              checked={true}
+              className="top-0 left-20"
+            />
+
+            <TagCard
+              title="Profit Extraction"
+              checked={false}
+              className="top-0 right-20"
+            />
+
+            <TagCard
+              title="Pensions"
+              checked={false}
+              className="top-30 left-0"
+            />
+
+            <TagCard
+              title="Trusts"
+              checked={true}
+              className="top-45 right-10"
+            />
+
+            <TagCard
+              title="Tax Residency"
+              checked={true}
+              className="bottom-10 left-10"
+            />
+
+            <TagCard
+              title="Property Incorporation"
+              checked={false}
+              className="right-10 bottom-12 pb-5"
+            />
+            <TagCard
+              title="Legacy Planning"
+              checked={true}
+              className="-bottom-10"
+            />
 
             {/* Additional mobile-friendly floating elements */}
             <div className="absolute top-1/2 -right-4 -translate-y-1/2 transform sm:-right-6 md:-right-8 lg:hidden">

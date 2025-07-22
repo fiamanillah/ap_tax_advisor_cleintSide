@@ -3,10 +3,9 @@ import TaxAdviceServiceSection from "@/components/Shared/TaxAdviceServiceSection
 import TestimonialSection from "@/components/Shared/TestimonialSection";
 import ConsultantSection from "@/components/tax-advice/ConsultantSection";
 import Feature from "@/components/tax-advice/Feature";
+import HeroSection from "@/components/tax-advice/heroSection";
 import TaxCategorySection from "@/components/tax-advice/TaxCategorySection";
 import { delay } from "@/lib/utils";
-import Hero from "../../../components/Shared/Hero";
-import { heroSectionProps } from "./heroData";
 import { serviceSectionProps } from "./servicesData";
 import { TaxAdviceServiceProps } from "./taxAdviceServices";
 import { taxCategoryProps } from "./taxCategoryData";
@@ -15,7 +14,7 @@ export default async function page() {
   await delay(1000);
   return (
     <main className="space-y-8">
-      <Hero {...heroSectionProps} />
+      <HeroSection />
       <TestimonialSection />
       <TaxCategorySection {...taxCategoryProps} />
       <ConsultantSection />
