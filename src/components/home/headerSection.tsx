@@ -50,7 +50,7 @@ export default function HeaderSection() {
                   key={item.name}
                   href={item.href}
                   className={cn(
-                    "text-md text-foreground h-full rounded-t-4xl px-8 py-4 font-medium transition duration-150 ease-in-out",
+                    "text-md text-foreground h-full rounded-t-4xl px-8 py-4 font-medium",
                     {
                       "bg-primary-gradient text-background curve": isActive,
                     },
