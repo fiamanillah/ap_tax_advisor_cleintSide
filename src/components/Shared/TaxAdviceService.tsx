@@ -6,7 +6,7 @@ type Step = {
   icon: string; // Path to the icon image
   title: string;
   description: string;
-  cta: string;
+  cta?: string;
 };
 
 interface TaxAdviceServiceProps {

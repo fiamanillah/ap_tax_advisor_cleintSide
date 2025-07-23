@@ -8,7 +8,7 @@ interface ApproachCardProps {
   description: string;
   index: number;
   icon: string;
-  cta: string;
+  cta?: string;
 }
 
 export default function ApproachCard({

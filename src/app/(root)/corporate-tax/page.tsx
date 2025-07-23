@@ -8,7 +8,6 @@ import ConsultantSection from "@/components/tax-advice/ConsultantSection";
 import { delay } from "@/lib/utils";
 import { FAQSectionProps } from "./faqdata";
 import { serviceSectionProps } from "./servicesData";
-import { subscriptionProps } from "./subscriptionData";
 import { TaxAdviceServiceProps } from "./taxAdviceServices";
 
 export default async function page() {
@@ -29,7 +28,7 @@ export default async function page() {
       <ConsultantSection buttonText="Book now" />
       <FAQSection {...FAQSectionProps} />
       {/* <CompanyTaxReturn {...newFormedProps} /> */}
-      <SubscriptionPlan {...subscriptionProps} />
+      <SubscriptionPlan />
 
       {/* <GetStarted
         title="Why choose AP Tax Advisor?"
