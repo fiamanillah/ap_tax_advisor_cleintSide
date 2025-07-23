@@ -3,13 +3,13 @@ export default function Feature() {
     <section>
       <div className="container mx-auto py-8">
         <div className="section-inverted-radius-reverse">
-          <div className="grid grid-cols-1 gap-8 p-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-32 px-6 md:grid-cols-2 lg:grid-cols-3">
             {data.map((feature, idx) => (
               <div key={idx} className="space-y-4">
-                <h2 className="text-primary-foreground text-center text-2xl font-semibold">
+                <h2 className="text-primary-foreground text-center text-2xl font-medium">
                   {feature.title}
                 </h2>
-                <p className="text-muted-foreground text-center text-base">
+                <p className="text-muted-foreground text-center text-sm">
                   {feature.description}
                 </p>
               </div>

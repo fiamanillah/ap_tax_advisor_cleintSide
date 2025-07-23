@@ -1,7 +1,11 @@
 import Image from "next/image";
 import { AppButton } from "../Shared/AppButton";
 
-export default function ConsultantSection() {
+export default function ConsultantSection({
+  buttonText = "Learn more",
+}: {
+  buttonText?: string;
+}) {
   return (
     <section>
       <div className="container mx-auto py-8 md:py-12 lg:py-16">
@@ -31,7 +35,7 @@ export default function ConsultantSection() {
                 needs and provide a bespoke fixed quote before anything begins.
               </p>
 
-              <AppButton className="mt-6">Learn more</AppButton>
+              <AppButton className="mt-6">{buttonText}</AppButton>
             </div>
           </div>
         </div>

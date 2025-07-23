@@ -3,12 +3,12 @@ import { list2 } from "@/app/(root)/(home)/list";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import Image from "next/image";
+
 import { useRef } from "react";
 import { AppButton } from "../Shared/AppButton";
 import Icon from "../Shared/Icon";
-import TagCard from "../Shared/TagCard";
 
-export default function PersonalTaxHeroSection() {
+export default function HeroSection() {
   const container = useRef(null);
   useGSAP(
     () => {
@@ -75,14 +75,24 @@ export default function PersonalTaxHeroSection() {
             className="w-full max-w-none space-y-4 sm:space-y-5 md:space-y-6 lg:max-w-[700px]"
           >
             <h2 className="text-primary-foreground text-2xl leading-tight font-semibold sm:text-3xl md:text-4xl lg:text-[36px] xl:text-[40px]">
-              We handle the numbers so you don&apos;t have to
+              From compliance to strategy, we handle the detail so you can focus
+              on growth.
             </h2>
             <p className="text-primary-foreground text-sm leading-relaxed sm:text-base md:text-lg">
-              Whether you’re a high earner, landlord, freelancer, have overseas
-              income or multiple income sources, we take the stress out of Self
-              Assessment. Our process is simple, professional and designed to
-              give you complete peace of mind no guesswork, no generic software,
-              just a real tax expert handling your return.
+              Running a company comes with complex tax responsibilities, but
+              with the right support, it doesn’t have to be difficult.
+            </p>
+            <p className="text-primary-foreground text-sm leading-relaxed sm:text-base md:text-lg">
+              At AP Tax Advisors, we take care of the compliance essentials and
+              CFO-level support, while also helping directors, shareholders, and
+              growing businesses plan ahead with confidence.
+            </p>
+
+            <p className="text-primary-foreground text-sm leading-relaxed sm:text-base md:text-lg">
+              Whether you need a trusted compliance partner or strategic tax
+              advice around structuring, profit extraction or future exit, we’ll
+              make sure your business is fully supported and fully
+              tax-efficient.
             </p>
 
             <div className="max-w-2xl">
@@ -112,7 +122,7 @@ export default function PersonalTaxHeroSection() {
           >
             <div className="relative h-[250px] w-[250px] overflow-hidden rounded-full sm:h-[280px] sm:w-[280px] md:h-[320px] md:w-[320px] lg:h-[360px] lg:w-[360px] xl:h-[400px] xl:w-[400px]">
               <Image
-                src="/assets/personal-tax-hero.png"
+                src="/assets/corporate-tax-hero.png"
                 alt="Professional tax advisor support"
                 fill
                 className="object-cover"
@@ -120,31 +130,6 @@ export default function PersonalTaxHeroSection() {
                 sizes="(max-width: 640px) 250px, (max-width: 768px) 280px, (max-width: 1024px) 320px, (max-width: 1280px) 360px, 400px"
               />
             </div>
-
-            {/* Floating Cards - Responsive positioning */}
-            <TagCard
-              title="Tax 24/7 Advisor"
-              checked={true}
-              className="top-30 left-10"
-            />
-
-            <TagCard
-              title="Pensions"
-              checked={false}
-              className="top-15 right-20"
-            />
-
-            <TagCard
-              title="Reliefs"
-              checked={false}
-              className="bottom-10 left-15"
-            />
-
-            <TagCard
-              title="Tax Return"
-              checked={true}
-              className="right-10 bottom-20"
-            />
           </div>
         </div>
       </div>

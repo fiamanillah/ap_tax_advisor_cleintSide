@@ -1,24 +1,20 @@
+import HeroSection from "@/components/corporate-tax/HeroSection";
 import SubscriptionPlan from "@/components/corporate-tax/SubscriptionPlan";
 import ServicesSection from "@/components/home/servicesSection";
 import { FAQSection } from "@/components/Shared/FAQSection";
-import Hero from "@/components/Shared/Hero";
 import TaxAdviceServiceSection from "@/components/Shared/TaxAdviceServiceSection";
 import TestimonialSection from "@/components/Shared/TestimonialSection";
-import CompanyTaxReturn from "@/components/tax-advice/CompanyTaxReturn";
+import ConsultantSection from "@/components/tax-advice/ConsultantSection";
 import { delay } from "@/lib/utils";
-import { companyTaxReturnProps } from "./companyTaxReturnData";
 import { FAQSectionProps } from "./faqdata";
-import { heroSectionProps } from "./heroData";
-import { newFormedProps } from "./newFormedData";
 import { serviceSectionProps } from "./servicesData";
-import { subscriptionProps } from "./subscriptionData";
 import { TaxAdviceServiceProps } from "./taxAdviceServices";
 
 export default async function page() {
   await delay(1000);
   return (
     <main className="space-y-8">
-      <Hero {...heroSectionProps} />
+      <HeroSection />
       <TestimonialSection />
       <TaxAdviceServiceSection {...TaxAdviceServiceProps} />
       <ServicesSection {...serviceSectionProps} />
@@ -28,10 +24,11 @@ export default async function page() {
         buttonText="Get Started"
         classNames="bg-[#FFF6BD]"
       /> */}
-      <CompanyTaxReturn {...companyTaxReturnProps} />
+      {/* <CompanyTaxReturn {...companyTaxReturnProps} /> */}
+      <ConsultantSection buttonText="Book now" />
       <FAQSection {...FAQSectionProps} />
-      <CompanyTaxReturn {...newFormedProps} />
-      <SubscriptionPlan {...subscriptionProps} />
+      {/* <CompanyTaxReturn {...newFormedProps} /> */}
+      <SubscriptionPlan />
 
       {/* <GetStarted
         title="Why choose AP Tax Advisor?"

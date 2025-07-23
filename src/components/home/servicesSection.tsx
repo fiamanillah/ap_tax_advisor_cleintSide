@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 import { TService } from "@/types/TService";
 import Image from "next/image";
-import { Card } from "../ui/card";
+import Icon from "../Shared/Icon";
 // data/services-data.ts
 
 export default function ServicesSection({ data }: TService) {
@@ -37,36 +37,20 @@ export default function ServicesSection({ data }: TService) {
                       <ul className="text-muted-foreground max-w-xl space-y-2">
                         {service.items.map((item, idx) => (
                           <li key={idx} className="flex items-start gap-2">
-                            <Image
-                              src="/icons/check.svg"
-                              alt="Check"
-                              width={24}
-                              height={24}
-                            />
+                            <Icon src="/icons/check.svg" className="mt-1.5" />
                             <span>{item}</span>
                           </li>
                         ))}
                       </ul>
                     </div>
 
-                    <Card className="from-secondary-gradient to-primary-gradient relative flex w-full flex-col items-center border-0 bg-gradient-to-bl p-4 shadow-xl sm:w-fit">
-                      <Image
-                        src={service.image}
-                        alt="Separator"
-                        width={150}
-                        height={150}
-                      />
-                      <h1 className="text-muted-foreground max-w-[250px] text-center text-xl font-medium">
-                        {service.imageTitle}
-                      </h1>
-                      <Image
-                        src={service.verifyLogo}
-                        alt="Separator"
-                        width={50}
-                        height={50}
-                        className="absolute -top-5 -right-5"
-                      />
-                    </Card>
+                    <Image
+                      src={service.image}
+                      alt="Separator"
+                      width={400}
+                      height={400}
+                      className="object-cover"
+                    />
                   </div>
                 )}
 

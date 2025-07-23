@@ -20,11 +20,4 @@ export const OurApproachData = [
     description:
       "You’ll receive a clear proposal with transparent pricing. Once approved, we’ll get you fully onboarded with minimal admin.",
   },
-  // {
-  //     step: 'Step 4',
-  //     title: 'We deliver and support you year-round',
-  //     icon: '/icons/Step4.svg',
-  //     description:
-  //         'From filings to ongoing advice, we handle it all and stay by your side – proactive, responsive, and always looking ahead.',
-  // },
 ];
