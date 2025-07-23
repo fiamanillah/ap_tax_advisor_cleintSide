@@ -1,9 +1,9 @@
-import QueryMethodSelectionForm from "@/components/contact/QueryMethodSelectionForm";
+import EmailQueryForm from "@/components/contact/EmailQueryForm";
 
 export default async function page() {
   return (
     <>
-      <QueryMethodSelectionForm />
+      <EmailQueryForm />
     </>
   );
 }

@@ -38,7 +38,7 @@ const SelectInput: React.FC<SelectInputProps> = ({
       <SelectTrigger
         className={cn(
           className,
-          "text-muted-foreground border-muted-foreground/20 focus:border-muted-foreground/20 focus-visible:border-muted-foreground/20 border !bg-white focus:ring-0 focus:ring-offset-0 focus-visible:ring-0 focus-visible:ring-offset-0",
+          "text-muted-foreground border-muted-foreground/20 focus:border-muted-foreground/20 focus-visible:border-muted-foreground/20 placeholder:text-muted-foreground/50 border !bg-white focus:ring-0 focus:ring-offset-0 focus-visible:ring-0 focus-visible:ring-offset-0",
         )}
       >
         <SelectValue placeholder={placeholder} />
