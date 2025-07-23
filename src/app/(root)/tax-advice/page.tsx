@@ -2,7 +2,6 @@ import ServicesSection from "@/components/home/servicesSection";
 import { FAQSection } from "@/components/Shared/FAQSection";
 import TaxAdviceServiceSection from "@/components/Shared/TaxAdviceServiceSection";
 import TestimonialSection from "@/components/Shared/TestimonialSection";
-import ComparisonTable from "@/components/tax-advice/ComparisonTable";
 import ConsultantSection from "@/components/tax-advice/ConsultantSection";
 import Feature from "@/components/tax-advice/Feature";
 import HeroSection from "@/components/tax-advice/heroSection";
@@ -30,7 +29,6 @@ export default async function page() {
         classNames="bg-[#FFF6BD]"
       /> */}
       <Feature />
-      <ComparisonTable />
       <FAQSection {...FAQSectionProps} />
       {/* 
       <CompanyTaxReturn {...companyTaxReturnProps} /> */}
