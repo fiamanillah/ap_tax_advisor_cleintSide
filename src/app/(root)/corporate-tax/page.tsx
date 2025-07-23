@@ -4,11 +4,9 @@ import ServicesSection from "@/components/home/servicesSection";
 import { FAQSection } from "@/components/Shared/FAQSection";
 import TaxAdviceServiceSection from "@/components/Shared/TaxAdviceServiceSection";
 import TestimonialSection from "@/components/Shared/TestimonialSection";
-import CompanyTaxReturn from "@/components/tax-advice/CompanyTaxReturn";
 import ConsultantSection from "@/components/tax-advice/ConsultantSection";
 import { delay } from "@/lib/utils";
 import { FAQSectionProps } from "./faqdata";
-import { newFormedProps } from "./newFormedData";
 import { serviceSectionProps } from "./servicesData";
 import { subscriptionProps } from "./subscriptionData";
 import { TaxAdviceServiceProps } from "./taxAdviceServices";
@@ -30,7 +28,7 @@ export default async function page() {
       {/* <CompanyTaxReturn {...companyTaxReturnProps} /> */}
       <ConsultantSection buttonText="Book now" />
       <FAQSection {...FAQSectionProps} />
-      <CompanyTaxReturn {...newFormedProps} />
+      {/* <CompanyTaxReturn {...newFormedProps} /> */}
       <SubscriptionPlan {...subscriptionProps} />
 
       {/* <GetStarted
