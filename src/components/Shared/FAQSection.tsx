@@ -1,8 +1,5 @@
-"use client";
 import { TFAQSectionProps } from "@/types/faq";
-import { useGSAP } from "@gsap/react";
-import gsap, { ScrollTrigger } from "gsap/all";
-import { useRef } from "react";
+import SlideIn from "../animated/SlideIn";
 import {
   AccordionContent,
   AccordionCustom,
@@ -11,29 +8,8 @@ import {
 } from "../ui/accordionCustom";
 import { AppButton } from "./AppButton";
 export function FAQSection(FAQSectionProps: TFAQSectionProps) {
-  const container = useRef<HTMLDivElement>(null);
-
-  // Image section animation (from right)
-  useGSAP(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    gsap.fromTo(
-      container.current,
-      { opacity: 0, x: -200 },
-      {
-        opacity: 1,
-        x: 0,
-        duration: 1.2,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: container.current,
-          start: "top 85%",
-        },
-      },
-    );
-  }, []);
-
   return (
-    <section ref={container}>
+    <SlideIn section>
       <div className="container mx-auto my-10 flex gap-5 py-16 max-md:flex-col">
         <div className="section-inverted-radius">
           <div className="flex">
@@ -64,6 +40,6 @@ export function FAQSection(FAQSectionProps: TFAQSectionProps) {
           </div>
         </div>
       </div>
-    </section>
+    </SlideIn>
   );
 }

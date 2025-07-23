@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { AppButton } from "../Shared/AppButton";
+import SlideIn from "../animated/SlideIn";
 
 export default function ConsultantSection({
   buttonText = "Learn more",
@@ -7,7 +8,7 @@ export default function ConsultantSection({
   buttonText?: string;
 }) {
   return (
-    <section>
+    <SlideIn section direction="right">
       <div className="container mx-auto py-8 md:py-12 lg:py-16">
         <div className="section-inverted-radius-reverse">
           <div className="flex flex-col items-center justify-center gap-8 md:gap-12 lg:flex-row lg:gap-20">
@@ -40,6 +41,6 @@ export default function ConsultantSection({
           </div>
         </div>
       </div>
-    </section>
+    </SlideIn>
   );
 }

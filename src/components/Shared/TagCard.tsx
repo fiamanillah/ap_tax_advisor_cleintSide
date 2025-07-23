@@ -1,16 +1,46 @@
+"use client";
+
 import { cn } from "@/lib/utils";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 import { Check, Plus } from "lucide-react";
+import { useRef } from "react";
 import { Card, CardContent } from "../ui/card";
 
 interface TagCardProps {
   title: string;
   checked: boolean;
+  axis?: "y" | "x";
+  distance?: number;
+  duration?: number;
+  repeat?: boolean;
+  yoyo?: boolean;
   className?: string;
 }
-export default function TagCard({ title, checked, className }: TagCardProps) {
+export default function TagCard({
+  title,
+  checked,
+  axis = "y",
+  distance = 10,
+  duration = 1,
+  repeat = true,
+  yoyo = true,
+  className = "",
+}: TagCardProps) {
+  const ref = useRef<HTMLDivElement>(null);
+  useGSAP(() => {
+    gsap.to(ref.current, {
+      [axis]: distance,
+      duration,
+      repeat: repeat ? -1 : 0,
+      yoyo,
+      ease: "power1.inOut",
+    });
+  }, [axis, distance, duration, repeat, yoyo]);
+
   return (
     <Card
-      data-card
+      ref={ref}
       className={cn(
         "absolute max-w-[230px] border-0 px-4 pt-4 pb-7 shadow-lg transition-shadow duration-300",
         {
