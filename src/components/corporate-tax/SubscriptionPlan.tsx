@@ -1,8 +1,9 @@
+import SlideIn from "../animated/SlideIn";
 import ComparisonTable from "../tax-advice/ComparisonTable";
 
 export default function SubscriptionPlan() {
   return (
-    <section>
+    <SlideIn section direction="right">
       <div className="container mx-auto">
         <div className="section-inverted-radius-reverse py-8">
           {/* Section Header */}
@@ -30,6 +31,6 @@ export default function SubscriptionPlan() {
           </p>
         </div>
       </div>
-    </section>
+    </SlideIn>
   );
 }
