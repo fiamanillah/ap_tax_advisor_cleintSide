@@ -1,5 +1,5 @@
+import HeroSection from "@/components/corporate-tax/HeroSection";
 import SubscriptionPlan from "@/components/corporate-tax/SubscriptionPlan";
-import HeroSection from "@/components/home/heroSection";
 import ServicesSection from "@/components/home/servicesSection";
 import { FAQSection } from "@/components/Shared/FAQSection";
 import TaxAdviceServiceSection from "@/components/Shared/TaxAdviceServiceSection";
