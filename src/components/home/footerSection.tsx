@@ -1,11 +1,14 @@
 "use client";
 
 import { useGSAP } from "@gsap/react";
-import gsap from "gsap/all";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
 import Icon from "../Shared/Icon";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function FooterSection() {
   const container = useRef<HTMLDivElement>(null);
