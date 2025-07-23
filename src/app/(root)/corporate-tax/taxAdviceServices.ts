@@ -3,35 +3,47 @@ import { TTaxAdviceServiceProps } from "@/types/TaxAdviceService";
 export const steps = [
   {
     id: 1,
-    icon: "/icons/company.svg", // Placeholder for Q&A icon
-    title: "Tell us about your company",
+    icon: "/icons/qa.svg", // Placeholder for Q&A icon
+    title: "Answer a few simple questions",
+    cta: "Get started",
     description:
-      "Answer a few questions about your company and then create an account to get started.",
+      "send us a quick summary of your tax situation and we'll respond within 24-48 hours and confirm whether its something we can help with.",
   },
   {
     id: 2,
-    icon: "/icons/service.svg", // Placeholder for Users icon
-    title: "We’ll match you with our relevant service",
+    icon: "/icons/bookmeeting.svg", // Placeholder for Users icon
+    title: "Book a meeting",
+    cta: "Get started",
     description:
-      "Based on your answers we’ll match you with the relevant service for your company and your own personal accredited accountant. Your accountant will be on hand whenever you need them.",
+      "send us a quick summary of your tax situation and we'll respond within 24-48 hours and confirm whether its something we can help with.",
   },
   {
     id: 3,
-    icon: "/icons/tax.svg", // Placeholder for Documents icon
-    title: "We’ll file your company accounts and tax return for you!",
+    icon: "/icons/bookproposal.svg", // Placeholder for Documents icon
+    title: "Receive your bespoke proposal",
+    cta: "Get started",
     description:
-      "Provide some final information and documents. Your accountant will then prepare your year-end accounts and corporate tax return and submit them to Companies House and HMRC.",
+      "Osend us a quick summary of your tax situation and we'll respond within 24-48 hours and confirm whether its something we can help with.",
   },
   {
     id: 4,
-    icon: "/icons/tax.svg", // Placeholder for Documents icon
-    title: "We’ll file your company accounts and tax return for you!",
+    icon: "/icons/delivery-report.svg", // Placeholder for Documents icon
+    title: "We file your Self Assessment for you",
+    cta: "Get started",
     description:
-      "Provide some final information and documents. Your accountant will then prepare your year-end accounts and corporate tax return and submit them to Companies House and HMRC.",
+      "Osend us a quick summary of your tax situation and we'll respond within 24-48 hours and confirm whether its something we can help with.",
+  },
+  {
+    id: 4,
+    icon: "/icons/support-report.svg", // Placeholder for Documents icon
+    title: "Post-report support",
+    cta: "Get started",
+    description:
+      "send us a quick summary of your tax situation and we'll respond within 24-48 hours and confirm whether its something we can help with.",
   },
 ];
 
 export const TaxAdviceServiceProps: TTaxAdviceServiceProps = {
   data: steps,
-  sectionMainTitle: "How Our @Corporate Tax service@ works",
+  sectionMainTitle: "How Our Corporate Tax service works",
 };

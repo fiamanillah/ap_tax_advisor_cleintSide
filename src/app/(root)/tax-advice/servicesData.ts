@@ -13,7 +13,7 @@ export const services = [
       "Support with implementation of structures and liaison with, HMRC, Lawyers, IFA's, Accountants and Third Parties",
       "Ongoing updates on relevant tax changes",
     ],
-    image: "/assets/customerSupport.png",
+    image: "/assets/tax-advice-include.png",
     imageTitle: "Human customer support",
     verifyLogo: "/icons/verifiedYellow.svg",
   },

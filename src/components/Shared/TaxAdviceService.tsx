@@ -6,6 +6,7 @@ type Step = {
   icon: string; // Path to the icon image
   title: string;
   description: string;
+  cta?: string;
 };
 
 interface TaxAdviceServiceProps {
@@ -28,6 +29,7 @@ export default function TaxAdviceService({ data }: TaxAdviceServiceProps) {
             icon={step.icon}
             description={step.description}
             index={idx}
+            cta={step.cta} // Using title as the call to action
           />
         ))}
       </div>
