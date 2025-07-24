@@ -1,19 +1,19 @@
+import HeroSection from "@/components/about-us/HeroSection";
 import OurMission from "@/components/about-us/OurMission";
-import OurValues from "@/components/about-us/OurValues";
 import WhyChooseUs from "@/components/about-us/WhyChooseUs";
-import Hero from "@/components/Shared/Hero";
+import { FAQSection } from "@/components/Shared/FAQSection";
 import TestimonialSection from "@/components/Shared/TestimonialSection";
-import { heroSectionProps } from "./heroData";
-import { ourValueSectionProps } from "./ourValueData";
+import { FAQSectionProps } from "./faqData";
 
 export default async function page() {
   return (
     <main>
-      <Hero {...heroSectionProps} />
+      <HeroSection />
       <TestimonialSection />
       <OurMission />
-      <OurValues {...ourValueSectionProps} />
+      {/* <OurValues {...ourValueSectionProps} /> */}
       {/* <OurInSights /> */}
+      <FAQSection {...FAQSectionProps} />
       <WhyChooseUs />
     </main>
   );

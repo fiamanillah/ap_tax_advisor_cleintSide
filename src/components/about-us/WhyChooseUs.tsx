@@ -1,9 +1,10 @@
+import SlideIn from "../animated/SlideIn";
 import { AppButton } from "../Shared/AppButton";
 import ChooseCard from "./ChooseCard";
 
 export default function WhyChooseUs() {
   return (
-    <section className="py-12 sm:py-16 md:py-20 lg:py-24">
+    <SlideIn section className="py-12 sm:py-16 md:py-20 lg:py-24">
       <div className="container mx-auto">
         <div className="section-inverted-radius">
           <div className="max-w-md space-y-5 sm:space-y-6 lg:max-w-2xl lg:space-y-8">
@@ -55,6 +56,6 @@ export default function WhyChooseUs() {
           </div>
         </div>
       </div>
-    </section>
+    </SlideIn>
   );
 }
