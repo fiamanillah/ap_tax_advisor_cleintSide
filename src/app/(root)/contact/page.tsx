@@ -1,9 +1,9 @@
-import EmailQueryForm from "@/components/contact/EmailQueryForm";
+import QueryForm from "@/components/contact/QueryForm";
 
 export default async function page() {
   return (
     <>
-      <EmailQueryForm />
+      <QueryForm />
     </>
   );
 }

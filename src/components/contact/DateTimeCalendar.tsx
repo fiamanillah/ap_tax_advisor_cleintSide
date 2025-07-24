@@ -1,82 +1,212 @@
+import React, { useState } from "react";
+import { Calendar as CalendarIcon } from "lucide-react";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { FaEarthAsia } from "react-icons/fa6";
+import { Button } from "@/components/ui/button";
+import { Calendar as CalendarComponent } from "@/components/ui/calendar";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
-import { format } from "date-fns";
-import { useState } from "react";
-import { IoMdArrowDropdown } from "react-icons/io";
-import { Button } from "../ui/button";
-import { CustomCalendar } from "./customCalendar";
+type DateTimePopupProps = {
+  value?: string;
+  onChange: (value: string) => void;
+  placeholder?: string;
+  className?: string;
+};
 
-export default function DateTimeCalendar() {
-  const [date, setDate] = useState<Date | undefined>();
+type TimeState = {
+  hours: string;
+  minutes: string;
+};
+
+const DateTimePopup = ({
+  value,
+  onChange,
+  placeholder = "Select date and time",
+  className = "",
+}: DateTimePopupProps) => {
+  const [open, setOpen] = useState<boolean>(false);
+  const [selectedDate, setSelectedDate] = useState<Date | undefined>(
+    value ? new Date(value) : undefined,
+  );
+  const [selectedTime, setSelectedTime] = useState<TimeState>(
+    value
+      ? {
+          hours: new Date(value).getHours().toString().padStart(2, "0"),
+          minutes: new Date(value).getMinutes().toString().padStart(2, "0"),
+        }
+      : {
+          hours: "03",
+          minutes: "10",
+        },
+  );
+
+  const handleDateSelect = (date: Date | undefined) => {
+    setSelectedDate(date);
+    if (date) {
+      updateDateTime(date, selectedTime);
+    }
+  };
+
+  const handleTimeChange = (type: keyof TimeState, value: string) => {
+    const newTime = { ...selectedTime, [type]: value };
+    setSelectedTime(newTime);
+    if (selectedDate) {
+      updateDateTime(selectedDate, newTime);
+    }
+  };
+
+  const updateDateTime = (date: Date, time: TimeState) => {
+    const newDateTime = new Date(date);
+    newDateTime.setHours(parseInt(time.hours), parseInt(time.minutes), 0, 0);
+    onChange(newDateTime.toISOString());
+  };
+
+  const handleNow = () => {
+    const now = new Date();
+    setSelectedDate(now);
+    const nowTime: TimeState = {
+      hours: now.getHours().toString().padStart(2, "0"),
+      minutes: now.getMinutes().toString().padStart(2, "0"),
+    };
+    setSelectedTime(nowTime);
+    updateDateTime(now, nowTime);
+  };
+
+  const handleOK = () => {
+    setOpen(false);
+  };
+
+  const formatDate = (date: Date): string => {
+    const months = [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec",
+    ];
+    return `${months[date.getMonth()]} ${date.getDate().toString().padStart(2, "0")}, ${date.getFullYear()}`;
+  };
+
+  const displayValue = selectedDate
+    ? `${formatDate(selectedDate)} at ${selectedTime.hours}:${selectedTime.minutes}`
+    : "";
 
   return (
-    <Popover>
+    <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
         <Button
           variant="outline"
-          className="hover:text-muted-foreground flex h-auto w-full flex-wrap items-center justify-between rounded-none !bg-white font-normal"
+          className={`text-muted-foreground !border-muted-foreground/20 focus:border-muted-foreground/20 focus-visible:border-muted-foreground/20 placeholder:text-muted-foreground/50 hover:text-muted-foreground flex w-full items-center justify-between !border !bg-white focus:ring-0 focus:ring-offset-0 focus-visible:ring-0 focus-visible:ring-offset-0 ${className}`}
         >
-          <span className="max-2xs:text-xs text-wrap">
-            {date
-              ? format(date, "PPP")
-              : "You can call a meeting for 30 mins in available time"}
-          </span>
-          <IoMdArrowDropdown className="max-2xs:hidden size-5" />
+          {displayValue || (
+            <span className="text-muted-foreground/50">{placeholder}</span>
+          )}
+          <CalendarIcon className="text-muted-foreground" />
         </Button>
       </PopoverTrigger>
 
-      <PopoverContent className="flex h-100 w-full p-0 md:h-124" align="center">
-        <div className="border-r border-gray-200">
-          <p className="hover:text-muted-foreground px-4 pt-4 text-[20px] font-semibold">
-            Select a Date & Time
-          </p>
-          <CustomCalendar
-            mode="single"
-            selected={date}
-            onSelect={setDate}
-            autoFocus
-          />
-          <div className="space-y-1 px-4 pb-4">
-            <p className="hover:text-muted-foreground text-[16px] font-bold">
-              Time zone
-            </p>
-            <div className="flex items-center gap-2">
-              <FaEarthAsia className="size-4" />
-              <span className="hover:text-muted-foreground text-sm font-normal">
-                Central European Time (8:11pm)
-              </span>
+      <PopoverContent className="bg-foreground w-auto p-0" align="end">
+        <div className="flex">
+          {/* Calendar Section */}
+          <div className="border-r">
+            <CalendarComponent
+              mode="single"
+              selected={selectedDate}
+              onSelect={handleDateSelect}
+              autoFocus
+              className="text-muted-foreground p-0"
+            />
+          </div>
+
+          {/* Time Picker Section */}
+          <div className="w-40">
+            <div className="text-muted-foreground border-b py-3 text-center">
+              {selectedTime.hours}:{selectedTime.minutes}:00
+            </div>
+
+            <div className="flex gap-2">
+              {/* Hours */}
+              <div className="w-1/2 border-r">
+                <ScrollArea className="h-70">
+                  <div className="p-1">
+                    {Array.from({ length: 24 }, (_, i) =>
+                      i.toString().padStart(2, "0"),
+                    ).map((hour) => (
+                      <button
+                        key={hour}
+                        type="button"
+                        onClick={() => handleTimeChange("hours", hour)}
+                        className={`w-full rounded px-2 py-1 text-center text-xs hover:bg-gray-100 ${
+                          selectedTime.hours === hour
+                            ? "bg-blue-100 font-medium text-blue-600"
+                            : "text-gray-700"
+                        }`}
+                      >
+                        {hour}
+                      </button>
+                    ))}
+                  </div>
+                </ScrollArea>
+              </div>
+
+              {/* Minutes */}
+              <div className="w-1/2 border-r">
+                <ScrollArea className="h-64">
+                  <div className="p-1">
+                    {Array.from({ length: 60 }, (_, i) =>
+                      i.toString().padStart(2, "0"),
+                    ).map((minute) => (
+                      <button
+                        key={minute}
+                        type="button"
+                        onClick={() => handleTimeChange("minutes", minute)}
+                        className={`w-full rounded px-2 py-1 text-center text-xs hover:bg-gray-100 ${
+                          selectedTime.minutes === minute
+                            ? "bg-blue-100 font-medium text-blue-600"
+                            : "text-gray-700"
+                        }`}
+                      >
+                        {minute}
+                      </button>
+                    ))}
+                  </div>
+                </ScrollArea>
+              </div>
             </div>
           </div>
         </div>
-        {/* Time Slots */}
-        <div className="grid grid-cols-1 gap-2 overflow-y-auto p-4">
-          {[
-            "12:00",
-            "12:30",
-            "13:00",
-            "13:30",
-            "14:00",
-            "14:30",
-            "15:00",
-            "15:30",
-            "16:00",
-            "16:30",
-          ].map((time) => (
-            <Button
-              key={time}
-              variant="outline"
-              className="border border-[#0069FF]/50 text-[16px] text-[#0069FF] hover:bg-[#0069FF]/10 md:px-6"
-            >
-              {time}
-            </Button>
-          ))}
+
+        {/* Footer */}
+        <div className="flex items-center justify-between border-t bg-gray-50 p-2">
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={handleNow}
+            className="text-blue-500 hover:bg-blue-50 hover:text-blue-600"
+          >
+            Now
+          </Button>
+          <Button
+            size="sm"
+            onClick={handleOK}
+            className="bg-blue-600 text-white hover:bg-blue-700"
+          >
+            OK
+          </Button>
         </div>
       </PopoverContent>
     </Popover>
   );
-}
+};
+
+export default DateTimePopup;
