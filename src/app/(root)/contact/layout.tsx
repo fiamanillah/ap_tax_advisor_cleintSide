@@ -1,7 +1,8 @@
+import SlideIn from "@/components/animated/SlideIn";
 import type { Metadata } from "next";
-import "../../globals.css";
 import Image from "next/image";
 import { Toaster } from "sonner";
+import "../../globals.css";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,11 +18,11 @@ export default function ContactLayout({
     <main>
       <section className="container mx-auto -mt-1">
         {/* Form Section */}
-        <div className="main-gradient flex flex-col items-center justify-around gap-10 rounded-tl-xl rounded-b-xl py-20 md:flex-row lg:px-40">
-          <div className="w-full self-start md:w-[50%]">{children}</div>
+        <div className="main-gradient flex flex-col items-center justify-around gap-10 rounded-tl-4xl rounded-b-4xl py-20 md:flex-row lg:px-40">
+          <SlideIn className="w-full self-start md:w-[50%]">{children}</SlideIn>
 
           {/* Next Steps Flow */}
-          <div className="space-y-6">
+          <SlideIn direction="right" className="space-y-6">
             <h2 className="text-muted-foreground text-2xl font-medium">
               Next Steps:
             </h2>
@@ -32,7 +33,7 @@ export default function ContactLayout({
               height={500}
               className="w-[300px]"
             />
-          </div>
+          </SlideIn>
         </div>
       </section>
       <Toaster position="top-center" />

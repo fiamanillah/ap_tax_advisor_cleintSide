@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
@@ -9,18 +9,18 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import SelectInput from "../selectInput";
-import { Textarea } from "../ui/textarea";
-import { formSchema } from "./formSchema";
-import DateTimePopup from "./DateTimeCalendar";
 import { DialogModal } from "../dialog-modal";
-import { useRouter } from "next/navigation";
+import SelectInput from "../selectInput";
 import Icon from "../Shared/Icon";
+import { Textarea } from "../ui/textarea";
+import DateTimeCalendar from "./DateTimeCalendar";
+import { formSchema } from "./formSchema";
 
 export default function QueryForm() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -191,7 +191,7 @@ export default function QueryForm() {
                     <span className="-ml-1 text-red-500">*</span>
                   </FormLabel>
                   <FormControl>
-                    <DateTimePopup
+                    <DateTimeCalendar
                       value={field.value}
                       onChange={field.onChange}
                       placeholder="Select date and time"

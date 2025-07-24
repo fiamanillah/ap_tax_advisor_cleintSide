@@ -147,7 +147,7 @@ export default function TaxQueryForm() {
           <FormLabel className="text-muted-foreground hover:text-muted-foreground text-[16px]">
             Schedule a meeting (if required)
           </FormLabel>
-          <DateTimeCalendar />
+          <DateTimeCalendar value={""} onChange={() => {}} />
         </div>
 
         {/* Query */}
