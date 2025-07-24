@@ -17,59 +17,10 @@ import { z } from "zod";
 import SelectInput from "../selectInput";
 import { toast } from "sonner";
 import { Textarea } from "../ui/textarea";
-import DateTimeCalendar from "./DateTimeCalendar";
+import { formSchema } from "./formSchema";
+import DateTimePopup from "./DateTimeCalendar";
 
-const formSchema = z
-  .object({
-    firstName: z.string().min(1, { message: "First name is required" }),
-    lastName: z.string().min(1, { message: "Last name is required" }),
-    queryMethod: z.string().min(1, { message: "Query method is required" }),
-    emailAddress: z.string().optional(),
-    query: z.string().optional(),
-    phone: z.string().optional(),
-  })
-  .superRefine((data, ctx) => {
-    // Conditional validation: If queryMethod is 'email', then emailAddress and query are required
-    if (data.queryMethod === "email") {
-      if (!data.emailAddress || data.emailAddress.trim() === "") {
-        ctx.addIssue({
-          code: z.ZodIssueCode.custom,
-          message: "Email address is required when query method is Email",
-          path: ["emailAddress"],
-        });
-      } else if (!z.string().email().safeParse(data.emailAddress).success) {
-        ctx.addIssue({
-          code: z.ZodIssueCode.custom,
-          message: "Invalid email address",
-          path: ["emailAddress"],
-        });
-      }
-    }
-
-    // Conditional validation: If queryMethod is 'p[hone', then phoneNumber, date-time calendar and query are required
-    if (data.queryMethod === "phone") {
-      if (!data.phone || data.phone.trim() === "") {
-        ctx.addIssue({
-          code: z.ZodIssueCode.custom,
-          message: "Phone number is required when query method is Phone",
-          path: ["phone"],
-        });
-      }
-    }
-
-    // Conditional validation: If queryMethod is 'email' OR 'phone', then query is required
-    if (data.queryMethod === "email" || data.queryMethod === "phone") {
-      if (!data.query || data.query.trim() === "") {
-        ctx.addIssue({
-          code: z.ZodIssueCode.custom,
-          message: "Query details are required for the selected method",
-          path: ["query"],
-        });
-      }
-    }
-  });
-
-export default function EmailQueryForm() {
+export default function QueryForm() {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -215,12 +166,28 @@ export default function EmailQueryForm() {
                 </FormItem>
               )}
             />
-            <div className="text-muted-foreground hover:text-muted-foreground">
-              <FormLabel className="text-muted-foreground hover:text-muted-foreground text-[16px]">
-                Schedule a meeting (if required)
-              </FormLabel>
-              <DateTimeCalendar />
-            </div>
+
+            <FormField
+              control={form.control}
+              name="callTime"
+              render={({ field }) => (
+                <FormItem className="w-full">
+                  <FormLabel className="text-muted-foreground text-[16px]">
+                    When we call you?
+                    <span className="-ml-1 text-red-500">*</span>
+                  </FormLabel>
+                  <FormControl>
+                    <DateTimePopup
+                      value={field.value}
+                      onChange={field.onChange}
+                      placeholder="Select date and time"
+                      className="w-full"
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
           </div>
         )}
 
