@@ -2,11 +2,12 @@ import { cn } from "@/lib/utils";
 import { TService } from "@/types/TService";
 import Image from "next/image";
 import Icon from "../Shared/Icon";
+import SlideIn from "../animated/SlideIn";
 // data/services-data.ts
 
 export default function ServicesSection({ data }: TService) {
   return (
-    <section>
+    <SlideIn section>
       <div className="container mx-auto py-8">
         <div className="section-inverted-radius-reverse">
           <h1 className="text-background mb-8 text-center text-[40px] font-medium">
@@ -60,6 +61,6 @@ export default function ServicesSection({ data }: TService) {
           </div>
         </div>
       </div>
-    </section>
+    </SlideIn>
   );
 }

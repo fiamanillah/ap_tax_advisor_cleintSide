@@ -2,19 +2,17 @@ import ServicesSection from "@/components/home/servicesSection";
 import { FAQSection } from "@/components/Shared/FAQSection";
 import TaxAdviceServiceSection from "@/components/Shared/TaxAdviceServiceSection";
 import TestimonialSection from "@/components/Shared/TestimonialSection";
-import ComparisonTable from "@/components/tax-advice/ComparisonTable";
 import ConsultantSection from "@/components/tax-advice/ConsultantSection";
 import Feature from "@/components/tax-advice/Feature";
 import HeroSection from "@/components/tax-advice/heroSection";
 import TaxCategorySection from "@/components/tax-advice/TaxCategorySection";
-import { delay } from "@/lib/utils";
 import { FAQSectionProps } from "./faqdata";
 import { serviceSectionProps } from "./servicesData";
 import { TaxAdviceServiceProps } from "./taxAdviceServices";
 import { taxCategoryProps } from "./taxCategoryData";
 
 export default async function page() {
-  await delay(1000);
+  // await delay(1000);
   return (
     <main className="space-y-8">
       <HeroSection />
@@ -30,7 +28,6 @@ export default async function page() {
         classNames="bg-[#FFF6BD]"
       /> */}
       <Feature />
-      <ComparisonTable />
       <FAQSection {...FAQSectionProps} />
       {/* 
       <CompanyTaxReturn {...companyTaxReturnProps} /> */}

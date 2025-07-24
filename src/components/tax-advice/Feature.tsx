@@ -1,6 +1,8 @@
+import SlideIn from "../animated/SlideIn";
+
 export default function Feature() {
   return (
-    <section>
+    <SlideIn section direction="right">
       <div className="container mx-auto py-8">
         <div className="section-inverted-radius-reverse">
           <div className="grid grid-cols-1 gap-32 px-6 md:grid-cols-2 lg:grid-cols-3">
@@ -17,7 +19,7 @@ export default function Feature() {
           </div>
         </div>
       </div>
-    </section>
+    </SlideIn>
   );
 }
 
