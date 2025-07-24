@@ -17,31 +17,25 @@ export default function SmoothScroll({
   useGSAP(
     () => {
       gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
-
-      // Kill previous instance if exists
-      if (smoother.current) {
-        smoother.current.kill();
-        smoother.current = null;
-      }
-
       smoother.current = ScrollSmoother.create({
-        smooth: 0.8, // less aggressive, less shaking
+        smooth: 0.5,
         effects: true,
       });
-
-      return () => {
-        if (smoother.current) {
-          smoother.current.kill();
-          smoother.current = null;
-        }
-      };
     },
-    { dependencies: [pathname] },
+    {
+      dependencies: [pathname],
+    },
   );
 
   return (
-    <main id="smooth-wrapper" style={{ overflow: "hidden" }}>
-      <div id="smooth-content" style={{ willChange: "transform" }}>
+    <main
+      id="smooth-wrapper"
+      style={{ overflow: "hidden", margin: 0, padding: 0 }}
+    >
+      <div
+        id="smooth-content"
+        style={{ willChange: "transform", margin: 0, padding: 0 }}
+      >
         {children}
       </div>
     </main>

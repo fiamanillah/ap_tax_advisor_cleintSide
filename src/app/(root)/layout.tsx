@@ -24,13 +24,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`antialiased ${poppins.className}`}>
-        {/* <SmoothCursor />; */}
+        {/* Header should be outside SmoothScroll */}
+
         <SmoothScroll>
           <HeaderSection />
           {children}
           <FooterSection />
         </SmoothScroll>
-        {/* WhatsApp Floating Icon */}
         <FloatingIcon />
       </body>
     </html>
