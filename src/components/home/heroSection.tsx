@@ -10,7 +10,7 @@ export default function HeroSection() {
       <div className="container mx-auto">
         <div className="main-gradient rounded-4xl py-20">
           {/* Text Section */}
-          <div className="mx-auto flex max-w-7xl">
+          <div className="mx-auto flex max-w-7xl gap-10">
             <SlideIn className="w-full max-w-none space-y-4 sm:space-y-5 md:space-y-6 lg:max-w-[700px]">
               <h2 className="text-primary-foreground text-2xl leading-tight font-semibold sm:text-3xl md:text-4xl lg:text-[36px] xl:text-[40px]">
                 Tax doesn&apos;t have to be taxing.
@@ -62,30 +62,30 @@ export default function HeroSection() {
               direction="right"
               className="relative mt-8 flex w-full max-w-[400px] items-center justify-center sm:max-w-[450px] md:max-w-[500px] lg:mt-0 lg:max-w-[600px]"
             >
-              <div className="relative h-[250px] w-[250px] overflow-hidden rounded-full sm:h-[280px] sm:w-[280px] md:h-[320px] md:w-[320px] lg:h-[360px] lg:w-[360px] xl:h-[400px] xl:w-[400px]">
+              <div className="relative h-[300px] w-[300px] sm:h-[340px] sm:w-[340px] md:h-[400px] md:w-[400px] lg:h-[460px] lg:w-[460px] xl:h-[520px] xl:w-[520px]">
                 <Image
                   src="/assets/girl.png"
                   alt="Professional tax advisor support"
                   fill
-                  className="object-cover"
+                  className="object-fill"
                   priority
-                  sizes="(max-width: 640px) 250px, (max-width: 768px) 280px, (max-width: 1024px) 320px, (max-width: 1280px) 360px, 400px"
+                  sizes="(max-width: 640px) 300px, (max-width: 768px) 340px, (max-width: 1024px) 400px, (max-width: 1280px) 460px, 520px"
+                />
+
+                {/* Floating Cards - Responsive positioning */}
+
+                <TagCard
+                  title="Documents submitted"
+                  checked={true}
+                  className="top-20 -left-15 z-10"
+                />
+
+                <TagCard
+                  title="Ready to approve"
+                  checked={false}
+                  className="-right-10 bottom-36 transform"
                 />
               </div>
-
-              {/* Floating Cards - Responsive positioning */}
-
-              <TagCard
-                title="Documents submitted"
-                checked={true}
-                className="top-20 left-20"
-              />
-
-              <TagCard
-                title="Ready to approve"
-                checked={false}
-                className="right-0 bottom-20"
-              />
             </SlideIn>
           </div>
         </div>
