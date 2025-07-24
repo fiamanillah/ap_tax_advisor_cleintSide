@@ -4,7 +4,7 @@ import SectionInvert from "../Shared/SectionInvert";
 export default function Feature() {
   return (
     <SlideIn section direction="right">
-      <div className="container mx-auto py-8">
+      <div className="container mx-auto">
         <SectionInvert className="gradient-180">
           <div className="mx-auto grid max-w-7xl grid-cols-1 gap-32 px-6 py-16 md:grid-cols-2 lg:grid-cols-3">
             {data.map((feature, idx) => (

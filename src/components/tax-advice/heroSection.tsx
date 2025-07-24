@@ -7,7 +7,7 @@ import SlideIn from "../animated/SlideIn";
 
 export default function HeroSection() {
   return (
-    <section className="">
+    <section>
       <div className="container mx-auto">
         <div className="main-gradient rounded-4xl">
           <div className="mx-auto flex max-w-7xl flex-col items-center justify-center gap-8 py-32 sm:gap-10 lg:flex-row">

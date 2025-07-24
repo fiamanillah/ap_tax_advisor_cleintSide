@@ -4,7 +4,7 @@ import SectionInvert from "../Shared/SectionInvert";
 
 export default function OurMission() {
   return (
-    <SlideIn section direction="right" className="py-8">
+    <SlideIn section direction="right">
       <div className="container mx-auto">
         <SectionInvert className="gradient-90">
           <div className="mx-auto flex max-w-6xl items-center gap-20">

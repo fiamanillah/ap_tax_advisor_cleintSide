@@ -5,7 +5,7 @@ import SlideIn from "../animated/SlideIn";
 
 export default function FooterSection() {
   return (
-    <footer className="px-16 md:mt-10">
+    <footer className="mt-32">
       <SlideIn direction="right" className="container mx-auto">
         <div className="gradient-0 rounded-4xl py-6 sm:gap-10 sm:py-8 lg:flex-row lg:gap-12 lg:p-10 xl:gap-16 xl:px-20">
           <div className="flex flex-col justify-between px-12 max-md:gap-4 md:flex-row">

@@ -9,7 +9,7 @@ import SectionInvert from "../Shared/SectionInvert";
 export default function ServicesSection({ data }: TService) {
   return (
     <SlideIn section>
-      <div className="container mx-auto py-8">
+      <div className="container mx-auto">
         <SectionInvert className="gradient-90">
           <h1 className="text-background mb-8 text-center text-[40px] font-medium">
             What&apos;s Included

@@ -10,7 +10,7 @@ export default function ConsultantSection({
 }) {
   return (
     <SlideIn section direction="right">
-      <div className="container mx-auto py-8 md:py-12 lg:py-16">
+      <div className="container mx-auto">
         <SectionInvert className="gradient-180">
           <div className="mx-auto max-w-7xl pt-10 pb-6">
             <div className="flex flex-col items-center justify-between gap-8 md:gap-12 lg:flex-row lg:gap-20">

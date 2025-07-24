@@ -6,7 +6,7 @@ import TagCard from "../Shared/TagCard";
 
 export default function HeroSection() {
   return (
-    <section className="">
+    <section>
       <div className="container mx-auto">
         <div className="main-gradient rounded-4xl py-20">
           {/* Text Section */}

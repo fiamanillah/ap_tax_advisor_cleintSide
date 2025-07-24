@@ -11,7 +11,7 @@ import { TaxAdviceServiceProps } from "./taxAdviceServices";
 
 export default async function page() {
   return (
-    <main className="space-y-8">
+    <main className="space-y-32">
       <HeroSection />
       <TestimonialSection />
       <TaxAdviceServiceSection {...TaxAdviceServiceProps} />

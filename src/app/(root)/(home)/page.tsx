@@ -9,7 +9,7 @@ import { OurApproachData } from "./ourApproachData";
 
 export default async function Home() {
   return (
-    <main>
+    <main className="space-y-32">
       <HeroSection />
       <TestimonialSection />
       <OurApproach OurApproachData={OurApproachData} />

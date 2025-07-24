@@ -10,7 +10,7 @@ export default function TaxCategorySection({
 }: TTaxCategoryProps) {
   return (
     <section>
-      <div className="container mx-auto flex flex-col items-center px-4 py-8 lg:max-w-6xl">
+      <div className="container mx-auto flex max-w-6xl flex-col items-center">
         <h2 className="mb-4 text-center text-[40px] font-medium">
           Need clarity on your tax situation?
         </h2>
