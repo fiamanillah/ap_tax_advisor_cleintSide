@@ -8,7 +8,7 @@ export default function WhyChooseUs() {
       <div className="container mx-auto">
         <div className="section-inverted-radius">
           <div className="max-w-md space-y-5 sm:space-y-6 lg:max-w-2xl lg:space-y-8">
-            <h2 className="text-background mb-4 text-2xl leading-tight font-semibold sm:mb-6 sm:text-3xl md:text-4xl lg:text-[40px]">
+            <h2 className="text-background mb-4 text-2xl leading-tight font-medium sm:mb-6 sm:text-3xl md:text-4xl lg:text-[40px]">
               Why Choose Us
             </h2>
             <p className="text-muted-foreground text-sm leading-relaxed">

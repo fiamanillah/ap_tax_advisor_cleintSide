@@ -1,11 +1,12 @@
 import SlideIn from "../animated/SlideIn";
+import SectionInvert from "../Shared/SectionInvert";
 
 export default function Feature() {
   return (
     <SlideIn section direction="right">
       <div className="container mx-auto py-8">
-        <div className="section-inverted-radius-reverse">
-          <div className="grid grid-cols-1 gap-32 px-6 md:grid-cols-2 lg:grid-cols-3">
+        <SectionInvert className="gradient-180">
+          <div className="mx-auto grid max-w-7xl grid-cols-1 gap-32 px-6 py-16 md:grid-cols-2 lg:grid-cols-3">
             {data.map((feature, idx) => (
               <div key={idx} className="space-y-4">
                 <h2 className="text-primary-foreground text-center text-2xl font-medium">
@@ -17,7 +18,7 @@ export default function Feature() {
               </div>
             ))}
           </div>
-        </div>
+        </SectionInvert>
       </div>
     </SlideIn>
   );

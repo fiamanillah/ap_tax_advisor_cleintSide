@@ -56,7 +56,7 @@ export default function TaxCategories({
               key={idx}
               data-animate-card
               className={cn(
-                "flex w-full flex-col items-center rounded-xl border-none px-4",
+                "flex w-full flex-col items-center rounded-3xl border-none px-4",
                 {
                   "main-gradient": idx % 2 === 0,
                   "main-gradient-reverse": idx % 2 !== 0,

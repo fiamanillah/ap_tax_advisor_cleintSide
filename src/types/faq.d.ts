@@ -12,4 +12,5 @@ export interface TFAQSectionProps {
   description?: string;
   contactEmail?: string;
   contactText?: string;
+  page?: string;
 }

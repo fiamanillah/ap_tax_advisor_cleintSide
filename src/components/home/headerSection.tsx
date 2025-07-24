@@ -63,8 +63,8 @@ export default function HeaderSection() {
                       layoutId="clickedbutton"
                       transition={{
                         type: "spring",
-                        bounce: 0.3,
-                        duration: 0.6,
+                        bounce: 0.2,
+                        duration: 0.8,
                       }}
                       className={cn(
                         "curve absolute inset-0 -z-1 rounded-t-4xl",

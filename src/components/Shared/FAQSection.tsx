@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import { TFAQSectionProps } from "@/types/faq";
 import SlideIn from "../animated/SlideIn";
 import {
@@ -7,12 +8,17 @@ import {
   AccordionTrigger,
 } from "../ui/accordionCustom";
 import { AppButton } from "./AppButton";
+import SectionInvert from "./SectionInvert";
 export function FAQSection(FAQSectionProps: TFAQSectionProps) {
   return (
     <SlideIn section>
-      <div className="container mx-auto my-10 flex gap-5 py-16 max-md:flex-col">
-        <div className="section-inverted-radius">
-          <div className="flex">
+      <div className="container mx-auto">
+        <SectionInvert
+          className={cn("gradient-reverse-180", {
+            "gradient-180": FAQSectionProps.page === "tax-advice",
+          })}
+        >
+          <div className="mx-auto flex max-w-7xl pt-10">
             <div className={"flex basis-1/2 flex-col gap-4"}>
               <h2 className="text-background text-[40px] leading-tight font-medium">
                 {FAQSectionProps.title}
@@ -38,7 +44,7 @@ export function FAQSection(FAQSectionProps: TFAQSectionProps) {
               </AccordionCustom>
             </div>
           </div>
-        </div>
+        </SectionInvert>
       </div>
     </SlideIn>
   );

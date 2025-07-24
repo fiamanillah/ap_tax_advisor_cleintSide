@@ -7,8 +7,8 @@ export default function FooterSection() {
   return (
     <footer className="px-16 md:mt-10">
       <SlideIn direction="right" className="container mx-auto">
-        <div className="main-gradient rounded-xl py-6 sm:gap-10 sm:py-8 lg:flex-row lg:gap-12 lg:p-10 xl:gap-16 xl:px-20">
-          <div className="flex flex-col justify-between max-md:gap-4 md:flex-row">
+        <div className="gradient-0 rounded-4xl py-6 sm:gap-10 sm:py-8 lg:flex-row lg:gap-12 lg:p-10 xl:gap-16 xl:px-20">
+          <div className="flex flex-col justify-between px-12 max-md:gap-4 md:flex-row">
             {/* Left Section */}
             <div className="flex flex-col space-y-4 max-md:items-center">
               <div className="">
@@ -67,9 +67,9 @@ export default function FooterSection() {
             </div>
           </div>
 
-          <hr className="border-muted-foreground mt-4" />
+          <hr className="border-muted-foreground mx-auto mt-4 max-w-7xl px-12" />
 
-          <div className="text-muted-foreground mt-4 flex flex-col justify-between md:flex-row">
+          <div className="text-muted-foreground mt-4 flex flex-col justify-between px-12 md:flex-row">
             <p>@ 2025 AP Tax Advisors. All right reserved</p>
             <div className="flex gap-4">
               <Link href="#">Privacy Policy</Link>

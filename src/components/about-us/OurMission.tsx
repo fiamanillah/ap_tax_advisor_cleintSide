@@ -19,7 +19,7 @@ export default function OurMission() {
             </div>
 
             <div className="order-1 w-full text-center md:order-2 md:w-1/2 md:text-left">
-              <h2 className="text-background mb-4 text-2xl leading-tight font-semibold sm:mb-5 sm:text-3xl md:mb-6 md:text-4xl lg:text-[40px]">
+              <h2 className="text-background mb-4 text-2xl leading-tight font-medium sm:mb-5 sm:text-3xl md:mb-6 md:text-4xl lg:text-[40px]">
                 Our Mission
               </h2>
               <p className="text-muted-foreground mx-auto max-w-md text-sm leading-relaxed sm:text-base md:mx-0 md:max-w-none">
