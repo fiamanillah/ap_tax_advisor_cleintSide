@@ -72,6 +72,7 @@ export default function HeaderSection() {
                       style={{ backgroundColor: item.bg }}
                     />
                   )}
+
                   <span>{item.name}</span>
                 </Link>
               );
