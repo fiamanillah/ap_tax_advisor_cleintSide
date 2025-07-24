@@ -1,11 +1,12 @@
 import SlideIn from "../animated/SlideIn";
+import SectionInvert from "../Shared/SectionInvert";
 import ComparisonTable from "../tax-advice/ComparisonTable";
 
 export default function SubscriptionPlan() {
   return (
     <SlideIn section direction="right">
       <div className="container mx-auto">
-        <div className="section-inverted-radius-reverse py-8">
+        <SectionInvert className="gradient-180">
           {/* Section Header */}
           <div className="mx-auto mb-12 max-w-3xl text-center">
             <h2 className="text-background mb-4 text-4xl font-medium">
@@ -29,7 +30,7 @@ export default function SubscriptionPlan() {
             thinking, and clear communication to give you tax advice that’s
             smarter, sharper, and built entirely around you.
           </p>
-        </div>
+        </SectionInvert>
       </div>
     </SlideIn>
   );

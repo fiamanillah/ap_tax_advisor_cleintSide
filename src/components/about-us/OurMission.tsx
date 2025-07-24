@@ -1,11 +1,12 @@
 import Image from "next/image";
 import SlideIn from "../animated/SlideIn";
+import SectionInvert from "../Shared/SectionInvert";
 
 export default function OurMission() {
   return (
-    <SlideIn section className="py-8 sm:py-12 md:py-16 lg:py-20">
+    <SlideIn section direction="right" className="py-8">
       <div className="container mx-auto">
-        <div className="section-inverted-radius">
+        <SectionInvert className="gradient-90">
           <div className="mx-auto flex max-w-6xl items-center gap-20">
             <div className="order-2 md:order-1">
               <Image
@@ -31,7 +32,7 @@ export default function OurMission() {
               </p>
             </div>
           </div>
-        </div>
+        </SectionInvert>
       </div>
     </SlideIn>
   );

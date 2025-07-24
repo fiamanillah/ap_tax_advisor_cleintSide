@@ -9,7 +9,7 @@ export default function PersonalTaxHeroSection() {
   return (
     <section>
       <div className="container mx-auto">
-        <div className="main-gradient flex flex-col items-center justify-center gap-8 rounded-3xl py-6 sm:gap-10 sm:py-8 lg:flex-row lg:gap-12 lg:p-10 xl:gap-16 xl:p-20">
+        <div className="main-gradient mx-auto flex items-center justify-center rounded-4xl py-32">
           {/* Text Section */}
           <SlideIn className="w-full max-w-none space-y-4 sm:space-y-5 md:space-y-6 lg:max-w-[700px]">
             <h2 className="text-primary-foreground text-2xl leading-tight font-semibold sm:text-3xl md:text-4xl lg:text-[36px] xl:text-[40px]">
