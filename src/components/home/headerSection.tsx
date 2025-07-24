@@ -5,7 +5,6 @@ import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { ReactSVG } from "react-svg";
 import {
   Drawer,
   DrawerClose,
@@ -15,6 +14,7 @@ import {
 } from "../ui/drawer";
 
 import { motion } from "motion/react";
+import { ReactSVG } from "react-svg";
 
 const navItems = [
   { name: "Home", href: "/", bg: "#F9F6F3" },
@@ -84,7 +84,7 @@ export default function HeaderSection() {
           <Link
             href="/contact"
             className={cn(
-              "text-md text-foreground flex h-full items-center gap-2 rounded-t-4xl px-8 py-4 font-medium transition duration-150 ease-in-out",
+              "text-md text-foreground flex h-full items-center gap-2 rounded-t-4xl px-8 py-5 font-medium",
               {
                 "bg-secondary-gradient text-background contact-curve":
                   pathname === "/contact",
@@ -94,7 +94,6 @@ export default function HeaderSection() {
             <span>Contact us</span>
             <ReactSVG src="/icons/arrow-circle-right.svg" />
           </Link>
-
           {/* Mobile Menu Button */}
           <div className="md:hidden">
             <button

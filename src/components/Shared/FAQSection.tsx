@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import { TFAQSectionProps } from "@/types/faq";
+import Link from "next/link";
 import SlideIn from "../animated/SlideIn";
 import {
   AccordionContent,
@@ -27,7 +28,9 @@ export function FAQSection(FAQSectionProps: TFAQSectionProps) {
                 {FAQSectionProps.description}
               </p>
 
-              <AppButton className="w-fit">Contact us</AppButton>
+              <Link href="/contact">
+                <AppButton className="w-fit">Contact us</AppButton>
+              </Link>
             </div>
             <div className={"basis-1/2"}>
               <AccordionCustom type="single" collapsible className="w-full">

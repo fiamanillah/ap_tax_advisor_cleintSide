@@ -2,6 +2,7 @@
 
 import { useGSAP } from "@gsap/react";
 import gsap, { ScrollTrigger } from "gsap/all";
+import { usePathname } from "next/navigation";
 import { useRef } from "react";
 
 type SlideInProps = {
@@ -24,6 +25,7 @@ export default function SlideIn({
   section = false,
 }: SlideInProps) {
   const container = useRef<HTMLDivElement>(null);
+  const pathname = usePathname();
 
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -47,7 +49,7 @@ export default function SlideIn({
         },
       },
     );
-  }, [direction, repeat, yoyo, duration]);
+  }, [direction, repeat, yoyo, duration, pathname]);
 
   return section ? (
     <section ref={container} className={className}>
