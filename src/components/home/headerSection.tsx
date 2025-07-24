@@ -29,7 +29,7 @@ export default function HeaderSection() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
 
   return (
-    <header className="">
+    <header>
       <div className="container mx-auto flex items-center justify-between">
         <div className="flex items-center gap-4">
           {/* Logo Section */}
@@ -72,6 +72,7 @@ export default function HeaderSection() {
                       style={{ backgroundColor: item.bg }}
                     />
                   )}
+
                   <span>{item.name}</span>
                 </Link>
               );

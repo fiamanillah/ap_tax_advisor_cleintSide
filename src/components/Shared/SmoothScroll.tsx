@@ -18,7 +18,7 @@ export default function SmoothScroll({
     () => {
       gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
       smoother.current = ScrollSmoother.create({
-        smooth: 2,
+        smooth: 0.5,
         effects: true,
       });
     },
@@ -28,8 +28,16 @@ export default function SmoothScroll({
   );
 
   return (
-    <div id="smooth-wrapper">
-      <div id="smooth-content">{children}</div>
-    </div>
+    <main
+      id="smooth-wrapper"
+      style={{ overflow: "hidden", margin: 0, padding: 0 }}
+    >
+      <div
+        id="smooth-content"
+        style={{ willChange: "transform", margin: 0, padding: 0 }}
+      >
+        {children}
+      </div>
+    </main>
   );
 }

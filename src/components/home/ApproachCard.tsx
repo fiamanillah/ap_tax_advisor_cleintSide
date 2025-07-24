@@ -33,7 +33,7 @@ export default function ApproachCard({
         { rotateY: 0 },
         {
           rotateY: 180,
-          duration: 1,
+          duration: 0.5,
           ease: "power2.out",
           scrollTrigger: {
             trigger: cardRef.current,
@@ -48,7 +48,7 @@ export default function ApproachCard({
         { rotateY: 0 },
         {
           rotateY: 180,
-          duration: 1,
+          duration: 0.5,
           ease: "power2.out",
           scrollTrigger: {
             trigger: indexRef.current,
@@ -64,13 +64,13 @@ export default function ApproachCard({
   const handleMouseEnter = () => {
     gsap.to(cardRef.current, {
       rotateY: 180,
-      duration: 0.7,
+      duration: 0.5,
       ease: "power2.inOut",
     });
 
     gsap.to(indexRef.current, {
       rotateY: 180,
-      duration: 0.7,
+      duration: 0.5,
       ease: "power2.inOut",
     });
   };
