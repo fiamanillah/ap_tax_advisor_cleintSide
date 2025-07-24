@@ -106,7 +106,7 @@ const DateTimePopup = ({
       <PopoverTrigger asChild>
         <Button
           variant="outline"
-          className={`text-muted-foreground !border-muted-foreground/20 focus:border-muted-foreground/20 focus-visible:border-muted-foreground/20 placeholder:text-muted-foreground/50 flex w-full items-center justify-between !border !bg-white focus:ring-0 focus:ring-offset-0 focus-visible:ring-0 focus-visible:ring-offset-0 ${className}`}
+          className={`text-muted-foreground !border-muted-foreground/20 focus:border-muted-foreground/20 focus-visible:border-muted-foreground/20 placeholder:text-muted-foreground/50 hover:text-muted-foreground flex w-full items-center justify-between !border !bg-white focus:ring-0 focus:ring-offset-0 focus-visible:ring-0 focus-visible:ring-offset-0 ${className}`}
         >
           {displayValue || (
             <span className="text-muted-foreground/50">{placeholder}</span>
@@ -129,16 +129,15 @@ const DateTimePopup = ({
           </div>
 
           {/* Time Picker Section */}
-          <div className="w-24 p-4">
-            <div className="text-muted-foreground">
+          <div className="w-40">
+            <div className="text-muted-foreground border-b py-3 text-center">
               {selectedTime.hours}:{selectedTime.minutes}:00
             </div>
 
-            <div className="space-y-4">
+            <div className="flex gap-2">
               {/* Hours */}
-              <div>
-                <div className="mb-2 text-center text-xs text-gray-500">H</div>
-                <ScrollArea className="h-32 rounded border">
+              <div className="w-1/2 border-r">
+                <ScrollArea className="h-70">
                   <div className="p-1">
                     {Array.from({ length: 24 }, (_, i) =>
                       i.toString().padStart(2, "0"),
@@ -161,9 +160,8 @@ const DateTimePopup = ({
               </div>
 
               {/* Minutes */}
-              <div>
-                <div className="mb-2 text-center text-xs text-gray-500">M</div>
-                <ScrollArea className="h-32 rounded border">
+              <div className="w-1/2 border-r">
+                <ScrollArea className="h-64">
                   <div className="p-1">
                     {Array.from({ length: 60 }, (_, i) =>
                       i.toString().padStart(2, "0"),
@@ -189,7 +187,7 @@ const DateTimePopup = ({
         </div>
 
         {/* Footer */}
-        <div className="flex items-center justify-between border-t bg-gray-50 p-4">
+        <div className="flex items-center justify-between border-t bg-gray-50 p-2">
           <Button
             variant="ghost"
             size="sm"
@@ -201,7 +199,7 @@ const DateTimePopup = ({
           <Button
             size="sm"
             onClick={handleOK}
-            className="bg-blue-500 hover:bg-blue-600"
+            className="bg-blue-600 text-white hover:bg-blue-700"
           >
             OK
           </Button>
