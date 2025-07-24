@@ -17,11 +17,11 @@ import {
 import { motion } from "motion/react";
 
 const navItems = [
-  { name: "Home", href: "/" },
-  { name: "Tax advice", href: "/tax-advice" },
-  { name: "Personal Tax", href: "/personal-tax" },
-  { name: "Corporate Tax", href: "/corporate-tax" },
-  { name: "About Us", href: "/about-us" },
+  { name: "Home", href: "/", bg: "#F9F6F3" },
+  { name: "Tax advice", href: "/tax-advice", bg: "#F8F4F0" },
+  { name: "Personal Tax", href: "/personal-tax", bg: "#F9F4EE" },
+  { name: "Corporate Tax", href: "/corporate-tax", bg: "#F9F3EB" },
+  { name: "About Us", href: "/about-us", bg: "#F8F1E8" },
 ];
 
 export default function HeaderSection() {
@@ -67,32 +67,15 @@ export default function HeaderSection() {
                         duration: 0.6,
                       }}
                       className={cn(
-                        "curve bg-primary-gradient absolute inset-0 -z-1 rounded-t-4xl",
+                        "curve absolute inset-0 -z-1 rounded-t-4xl",
                       )}
+                      style={{ backgroundColor: item.bg }}
                     />
                   )}
                   <span>{item.name}</span>
                 </Link>
               );
             })}
-            {/* {navItems.map((item) => {
-              const isActive = pathname === item.href;
-
-              return (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className={cn(
-                    "text-md text-foreground h-full rounded-t-4xl px-8 py-4 font-medium",
-                    {
-                      "bg-primary-gradient text-background curve": isActive,
-                    },
-                  )}
-                >
-                  {item.name}
-                </Link>
-              );
-            })} */}
           </nav>
         </div>
 
