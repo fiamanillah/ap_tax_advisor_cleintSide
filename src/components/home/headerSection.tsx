@@ -14,6 +14,8 @@ import {
   DrawerTitle,
 } from "../ui/drawer";
 
+import { motion } from "motion/react";
+
 const navItems = [
   { name: "Home", href: "/" },
   { name: "Tax advice", href: "/tax-advice" },
@@ -39,10 +41,41 @@ export default function HeaderSection() {
               AP
             </Link>
           </div>
-
+          {/* bg-primary-gradient */}
           {/* Navigation Links */}
           <nav className="hidden h-full space-x-2 pt-2 md:flex">
             {navItems.map((item) => {
+              const isActive = pathname === item.href;
+
+              return (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className={cn(
+                    "text-md text-foreground relative h-full rounded-t-4xl px-8 py-4 font-medium",
+                    {
+                      "text-black": isActive,
+                    },
+                  )}
+                >
+                  {isActive && (
+                    <motion.div
+                      layoutId="clickedbutton"
+                      transition={{
+                        type: "spring",
+                        bounce: 0.3,
+                        duration: 0.6,
+                      }}
+                      className={cn(
+                        "curve bg-primary-gradient absolute inset-0 -z-1 rounded-t-4xl",
+                      )}
+                    />
+                  )}
+                  <span>{item.name}</span>
+                </Link>
+              );
+            })}
+            {/* {navItems.map((item) => {
               const isActive = pathname === item.href;
 
               return (
@@ -59,7 +92,7 @@ export default function HeaderSection() {
                   {item.name}
                 </Link>
               );
-            })}
+            })} */}
           </nav>
         </div>
 
