@@ -40,7 +40,11 @@ export const formSchema = z
     }
 
     // Conditional validation: If queryMethod is 'email' OR 'phone', then query is required
-    if (data.queryMethod === "email" || data.queryMethod === "phone") {
+    if (
+      data.queryMethod === "email" ||
+      data.queryMethod === "phone" ||
+      data.queryMethod === "meeting"
+    ) {
       if (!data.query || data.query.trim() === "") {
         ctx.addIssue({
           code: z.ZodIssueCode.custom,
@@ -51,7 +55,7 @@ export const formSchema = z
     }
 
     // Conditional validation: If queryMethod is 'phone', then callTime is required
-    if (data.queryMethod === "phone") {
+    if (data.queryMethod === "phone" || data.queryMethod === "meeting") {
       if (!data.callTime || data.callTime.trim() === "") {
         ctx.addIssue({
           code: z.ZodIssueCode.custom,
