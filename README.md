@@ -1,8 +1,101 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AP Tax Advisor Client Side
+
+AP Tax Advisor is a modern web application for UK tax services, providing professional tax advice, returns, and consultation for individuals and businesses. This is the client-side (frontend) codebase, built with Next.js, TypeScript, Tailwind CSS, and GSAP for smooth animations.
+
+## Features
+
+- Responsive, mobile-friendly design
+- Animated smooth scrolling and transitions
+- Tax advice, personal tax, and corporate tax service pages
+- FAQ, testimonials, and contact form
+- Accessible and SEO-friendly
+
+## Tech Stack
+
+- Next.js 15
+- TypeScript
+- Tailwind CSS
+- GSAP (GreenSock Animation Platform)
+- Sonner (toast notifications)
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js (v18 or higher recommended)
+- Bun (or npm/yarn)
+
+### Installation
+
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/fiamanillah/ap_tax_advisor_cleintSide.git
+   cd ap_tax_advisor_cleintSide
+   ```
+2. Install dependencies:
+   ```sh
+   bun install
+   # or
+   npm install
+   # or
+   yarn install
+   ```
+
+### Running the Development Server
+
+```sh
+bun run dev
+# or
+npm run dev
+# or
+yarn dev
+```
+
+Visit [http://localhost:3000](http://localhost:3000) in your browser.
+
+### Building for Production
+
+```sh
+bun run build
+# or
+npm run build
+# or
+yarn build
+```
+
+### Linting & Formatting
+
+```sh
+bun run lint
+# or
+npm run lint
+# or
+yarn lint
+```
+
+## Folder Structure
+
+- `src/app/` — Next.js app directory
+- `src/components/` — Reusable React components
+- `src/types/` — TypeScript types
+- `public/` — Static assets (images, icons, videos)
+
+## Customization
+
+- Update content and assets in the `public/` and `src/components/` folders.
+- Modify styles in `src/app/globals.css` and Tailwind config.
+
+## License
+
+This project is licensed under the MIT License.
+
+## Author
+
+- [fiamanillah](https://github.com/fiamanillah)
+
+---
+
+For any questions or support, please open an issue on GitHub.
 
 ```bash
 npm run dev
