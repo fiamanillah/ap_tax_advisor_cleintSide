@@ -25,7 +25,7 @@ export default function SubscriptionPlan() {
             <ComparisonTable />
           </div>
 
-          <p className="text-muted-foreground mx-auto mt-8 max-w-3xl text-center text-sm max-md:pb-5">
+          <p className="text-muted-foreground mx-auto mt-8 max-w-3xl text-center text-xs max-md:pb-5 sm:text-sm">
             Why settle for compliance when you can have clarity, confidence and
             tax done properly? With AP Tax Advisors, you don’t just stay
             compliant. You stay ahead. We combine technical expertise, strategic
