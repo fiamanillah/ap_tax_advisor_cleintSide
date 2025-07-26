@@ -538,6 +538,17 @@ html {
   -webkit-mask-repeat: no-repeat;
 }
 
+@media screen and (max-width: 768px) {
+  .section-inverted-radius {
+    --r: 18px;
+    --s: 18px;
+    --x: 50px;
+    --y: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+
 .gradient-90 {
   background: linear-gradient(
     90deg,

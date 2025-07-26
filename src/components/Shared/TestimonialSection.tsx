@@ -5,14 +5,14 @@ import SectionInvert from "./SectionInvert";
 
 export default function TestimonialSection() {
   return (
-    <SlideIn section>
+    <SlideIn section className="px-2">
       <div className="container mx-auto">
         <h2 className="text-foreground border-muted mx-auto mb-8 w-fit border-b-2 pb-8 text-center text-xl font-medium md:text-3xl lg:text-[40px]">
           What are people saying
         </h2>
 
         <SectionInvert className="gradient-reverse-180">
-          <div className="mx-auto max-w-7xl pt-16">
+          <div className="mx-auto max-w-7xl lg:pt-16">
             <Testimonial />
             <p className="text-background mt-5 text-center text-sm">
               Rated 4.5 / 5 based on 6230 reviews, Showing our latest reviews.
