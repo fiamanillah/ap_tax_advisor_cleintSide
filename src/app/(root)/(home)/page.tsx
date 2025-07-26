@@ -1,6 +1,8 @@
+import FeatureSection from "@/components/home/featureSection";
 import HeroSection from "@/components/home/heroSection";
 import OurApproach from "@/components/Shared/OurApproach";
 import TestimonialSection from "@/components/Shared/TestimonialSection";
+import { featureData } from "./featureData";
 import { OurApproachData } from "./ourApproachData";
 
 export default async function Home() {
@@ -9,7 +11,7 @@ export default async function Home() {
       <HeroSection />
       <TestimonialSection />
       <OurApproach OurApproachData={OurApproachData} />
-      {/* <FeatureSection data={featureData} /> */}
+      <FeatureSection data={featureData} />
       {/* <SupportHighlights /> */}
       {/* <ServicesSection {...serviceSectionProps} /> */}
       {/* <FAQSection {...FAQSectionProps} /> */}

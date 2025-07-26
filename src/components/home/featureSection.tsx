@@ -9,7 +9,7 @@ interface FeatureSectionProps {
 
 export default function FeatureSection({ data }: FeatureSectionProps) {
   return (
-    <SlideIn section direction="right">
+    <SlideIn section direction="right" className="px-2">
       <div className="container mx-auto">
         <SectionInvert className="gradient-reverse-90">
           <div className="mx-auto max-w-7xl pt-5">
