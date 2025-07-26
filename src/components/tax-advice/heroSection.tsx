@@ -8,9 +8,9 @@ import SlideIn from "../animated/SlideIn";
 export default function HeroSection() {
   return (
     <section>
-      <div className="container mx-auto">
-        <div className="main-gradient rounded-4xl">
-          <div className="mx-auto flex max-w-7xl flex-col items-center justify-center gap-8 py-32 sm:gap-10 lg:flex-row">
+      <div className="container mx-auto px-2">
+        <div className="main-gradient rounded-2xl py-10 md:py-20 lg:rounded-4xl">
+          <div className="mx-auto flex flex-col-reverse gap-10 max-xl:items-center max-md:px-10 max-sm:px-5 md:max-w-xl lg:max-w-3xl xl:max-w-5xl xl:flex-row 2xl:max-w-7xl">
             {/* Text Section */}
             <SlideIn className="w-full max-w-none space-y-4 sm:space-y-5 md:space-y-6 lg:max-w-[700px]">
               <h2 className="text-primary-foreground text-2xl leading-tight font-semibold sm:text-3xl md:text-4xl lg:text-[36px] xl:text-[40px]">
@@ -31,7 +31,7 @@ export default function HeroSection() {
                   Accreditations
                 </p>
 
-                <ul className="text-primary-foreground grid grid-cols-2 items-start gap-y-4">
+                <ul className="text-primary-foreground grid items-start gap-y-4 md:grid-cols-2">
                   {list2.map(({ icon, text }, idx) => (
                     <li key={idx} className="flex items-start gap-2 sm:gap-3">
                       <Icon className="h-5 w-5" src={icon} />
@@ -47,70 +47,63 @@ export default function HeroSection() {
             </SlideIn>
 
             {/* Image Section */}
+
             <SlideIn
               direction="right"
               className="relative mt-8 flex w-full max-w-[400px] items-center justify-center sm:max-w-[450px] md:max-w-[500px] lg:mt-0 lg:max-w-[600px]"
             >
-              <div className="relative h-[250px] w-[250px] sm:h-[280px] sm:w-[280px] md:h-[320px] md:w-[320px] lg:h-[360px] lg:w-[360px] xl:h-[400px] xl:w-[400px]">
+              <div className="relative h-[300px] w-[300px] sm:h-[340px] sm:w-[340px] md:h-[400px] md:w-[400px] lg:h-[460px] lg:w-[460px] xl:h-[520px] xl:w-[520px]">
                 <Image
                   src="/assets/tax-advice-hero.png"
                   alt="Professional tax advisor support"
                   fill
-                  className="object-cover"
+                  className="object-fill"
                   priority
-                  sizes="(max-width: 640px) 250px, (max-width: 768px) 280px, (max-width: 1024px) 320px, (max-width: 1280px) 360px, 400px"
+                  sizes="(max-width: 640px) 300px, (max-width: 768px) 340px, (max-width: 1024px) 400px, (max-width: 1280px) 460px, 520px"
                 />
-              </div>
 
-              {/* Floating Cards - Responsive positioning */}
+                {/* Floating Cards - Responsive positioning */}
 
-              <TagCard
-                title="Childcare"
-                checked={true}
-                className="top-0 left-20"
-              />
+                <TagCard
+                  title="Childcare"
+                  checked={true}
+                  className="top-0 sm:top-0 sm:left-0"
+                />
 
-              <TagCard
-                title="Profit Extraction"
-                checked={false}
-                className="top-0 right-20"
-              />
+                <TagCard
+                  title="Profit Extraction"
+                  checked={false}
+                  className="top-3 -right-5 md:top-10 md:right-5"
+                />
 
-              <TagCard
-                title="Pensions"
-                checked={false}
-                className="top-30 left-0"
-              />
+                <TagCard
+                  title="Pensions"
+                  checked={false}
+                  className="top-15 sm:-left-10 md:top-30 lg:top-40"
+                />
 
-              <TagCard
-                title="Trusts"
-                checked={true}
-                className="top-45 right-10"
-              />
+                <TagCard
+                  title="Trusts"
+                  checked={true}
+                  className="top-25 right-0 sm:-right-10 md:top-40 lg:top-60"
+                />
 
-              <TagCard
-                title="Tax Residency"
-                checked={true}
-                className="bottom-10 left-10"
-              />
+                <TagCard
+                  title="Tax Residency"
+                  checked={true}
+                  className="bottom-30 sm:bottom-25 sm:-left-10"
+                />
 
-              <TagCard
-                title="Property Incorporation"
-                checked={false}
-                className="right-10 bottom-12 pb-5"
-              />
-              <TagCard
-                title="Legacy Planning"
-                checked={true}
-                className="-bottom-10"
-              />
-
-              {/* Additional mobile-friendly floating elements */}
-              <div className="absolute top-1/2 -right-4 -translate-y-1/2 transform sm:-right-6 md:-right-8 lg:hidden">
-                <div className="h-3 w-3 animate-pulse rounded-full bg-green-400 sm:h-4 sm:w-4"></div>
-              </div>
-              <div className="absolute top-1/4 -left-4 sm:-left-6 md:-left-8 lg:hidden">
-                <div className="h-2 w-2 animate-bounce rounded-full bg-blue-400 sm:h-3 sm:w-3"></div>
+                <TagCard
+                  title="Property Incorporation"
+                  checked={false}
+                  className="right-0 bottom-15 sm:-right-10 md:-right-5 lg:bottom-12"
+                />
+                <TagCard
+                  title="Legacy Planning"
+                  checked={true}
+                  className="-bottom-5 left-10 md:left-30"
+                />
               </div>
             </SlideIn>
           </div>

@@ -1,5 +1,4 @@
 "use client";
-import FloatingIcon from "@/components/floatingIcon";
 import FooterSection from "@/components/home/footerSection";
 import HeaderSection from "@/components/home/headerSection";
 import SmoothScroll from "@/components/Shared/SmoothScroll";
@@ -18,7 +17,7 @@ export default function RootLayout({
         <FooterSection />
       </SmoothScroll>
 
-      <FloatingIcon />
+      {/* <FloatingIcon /> */}
     </>
   );
 }
