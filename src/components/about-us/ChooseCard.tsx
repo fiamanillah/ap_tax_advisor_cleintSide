@@ -15,7 +15,7 @@ export default function ChooseCard({
   return (
     <div
       className={cn(
-        "group flex flex-1 flex-col gap-4 p-6 transition-all duration-300 sm:flex-row sm:items-start sm:gap-6 sm:p-8",
+        "group flex flex-1 flex-col gap-4 pb-6 transition-all duration-300 max-md:px-6 sm:gap-6 md:flex-row md:items-start",
         className,
       )}
     >
@@ -31,10 +31,10 @@ export default function ChooseCard({
         </div>
       </div>
       <div className="space-y-3 text-center sm:space-y-4 sm:text-left">
-        <h3 className="text-muted-foreground text-lg font-bold transition-colors duration-300">
+        <h3 className="text-muted-foreground text-base font-bold transition-colors duration-300 sm:text-lg">
           {title}
         </h3>
-        <p className="text-sm leading-relaxed font-medium text-gray-600">
+        <p className="text-xs leading-relaxed font-medium text-gray-600 sm:text-sm">
           {description}
         </p>
       </div>

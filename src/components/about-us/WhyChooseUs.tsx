@@ -5,15 +5,15 @@ import ChooseCard from "./ChooseCard";
 
 export default function WhyChooseUs() {
   return (
-    <SlideIn section>
+    <SlideIn section className="px-2">
       <div className="container mx-auto">
-        <SectionInvert className="gradient-90">
-          <div className="mx-auto max-w-7xl py-10">
+        <SectionInvert className="gradient-90 px-5">
+          <div className="mx-auto max-w-3xl py-10 xl:max-w-5xl 2xl:max-w-7xl">
             <div className="max-w-sm space-y-5 sm:space-y-6 lg:max-w-2xl lg:space-y-8">
               <h2 className="text-background mb-4 text-2xl leading-tight font-medium sm:mb-6 sm:text-3xl md:text-4xl lg:text-[40px]">
                 Why Choose Us
               </h2>
-              <p className="text-muted-foreground text-sm leading-relaxed">
+              <p className="text-muted-foreground text-xs leading-relaxed sm:text-sm">
                 At AP Tax Advisor, we go beyond the numbers. Our mission is
                 simple: make tax feel manageable, personal, and strategic — not
                 just something you &quot;get through.&quot; Whether you&apos;re
