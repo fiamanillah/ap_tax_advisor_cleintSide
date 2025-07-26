@@ -7,7 +7,7 @@ import { FAQSectionProps } from "./faqData";
 
 export default async function page() {
   return (
-    <main className="space-y-32">
+    <main className="space-y-16 lg:space-y-32">
       <HeroSection />
       <TestimonialSection />
       <OurMission />

@@ -12,7 +12,7 @@ export default function TestimonialSection() {
         </h2>
 
         <SectionInvert className="gradient-reverse-180">
-          <div className="mx-auto max-w-7xl lg:pt-16">
+          <div className="mx-auto max-w-3xl lg:pt-16 xl:max-w-5xl 2xl:max-w-7xl">
             <Testimonial />
             <p className="text-background mt-5 text-center text-sm">
               Rated 4.5 / 5 based on 6230 reviews, Showing our latest reviews.

@@ -20,16 +20,15 @@ export default function Testimonial() {
 
   return (
     <div className="relative mt-8 w-full">
-      <Carousel className="mx-auto max-w-7xl" setApi={setApi}>
-        <CarouselContent>
+      <Carousel setApi={setApi}>
+        <CarouselContent className="">
           {testimonials.map((testimonial, index) => (
             <CarouselItem
               key={index}
-              className="basis-full pl-4 md:basis-1/2 lg:basis-1/4"
+              className="basis-full px-2 sm:basis-3/4 md:basis-1/2 lg:basis-1/3 xl:basis-1/4"
             >
-              {/* Removed the extra p-1 div around the Card, as CardContent handles padding */}
               <Card className="bg-primary-gradient h-full rounded-none border-none shadow-none">
-                <CardContent className="flex flex-col items-start justify-start p-6">
+                <CardContent className="flex flex-col items-start justify-start p-4 sm:p-6">
                   <div className="mb-2 flex items-center space-x-1">
                     {Array.from({ length: Math.floor(testimonial.stars) }).map(
                       (_, starIndex) => (
@@ -76,13 +75,13 @@ export default function Testimonial() {
                       </div>
                     )}
                   </div>
-                  <h3 className="text-background mb-2 text-lg font-semibold">
+                  <h3 className="text-background mb-2 text-base font-semibold">
                     {testimonial.title}
                   </h3>
-                  <p className="text-muted-foreground mb-4 flex-grow text-xs font-semibold">
+                  <p className="text-muted-foreground mb-4 flex-grow text-xs font-semibold sm:text-sm">
                     {testimonial.review}
                   </p>
-                  <div className="mt-auto text-xs">
+                  <div className="mt-auto text-xs sm:text-sm">
                     <span className="font-semibold text-gray-600">
                       {testimonial.author},{" "}
                     </span>
@@ -96,13 +95,13 @@ export default function Testimonial() {
           ))}
         </CarouselContent>
         <button
-          className="text-background absolute top-1/2 left-2 z-10 -translate-y-1/2 cursor-pointer transition-all duration-200 disabled:opacity-50 md:-left-8 lg:-left-12"
+          className="text-background absolute top-1/2 left-2 z-10 -translate-y-1/2 cursor-pointer transition-all duration-200 disabled:opacity-50 max-md:hidden md:-left-8 lg:-left-12"
           onClick={() => api?.scrollPrev()}
         >
           <CircleChevronLeft size={20} strokeWidth={1.5} />
         </button>
         <button
-          className="text-background absolute top-1/2 right-2 z-10 -translate-y-1/2 cursor-pointer transition-all duration-200 disabled:opacity-50 md:-right-8 lg:-right-12"
+          className="text-background absolute top-1/2 right-2 z-10 -translate-y-1/2 cursor-pointer transition-all duration-200 disabled:opacity-50 max-md:hidden md:-right-8 lg:-right-12"
           onClick={() => api?.scrollNext()}
         >
           <CircleChevronRight size={20} strokeWidth={1.5} />
