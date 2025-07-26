@@ -14,7 +14,7 @@ import { taxCategoryProps } from "./taxCategoryData";
 export default async function page() {
   // await delay(1000);
   return (
-    <main className="space-y-32">
+    <main className="space-y-16 lg:space-y-32">
       <HeroSection />
       <TestimonialSection />
       <TaxCategorySection {...taxCategoryProps} />

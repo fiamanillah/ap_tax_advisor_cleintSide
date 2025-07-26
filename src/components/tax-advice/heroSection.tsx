@@ -1,9 +1,9 @@
 import { list2 } from "@/app/(root)/(home)/list";
 import Image from "next/image";
-import { AppButton } from "../Shared/AppButton";
-import Icon from "../Shared/Icon";
-import TagCard from "../Shared/TagCard";
 import SlideIn from "../animated/SlideIn";
+import Accreditation from "../Shared/Accreditation";
+import { AppButton } from "../Shared/AppButton";
+import TagCard from "../Shared/TagCard";
 
 export default function HeroSection() {
   return (
@@ -26,24 +26,8 @@ export default function HeroSection() {
                 succession... whatever your ambitions.
               </p>
 
-              <div className="max-w-2xl">
-                <p className="text-primary-foreground border-primary-foreground mb-4 border-b-2 pb-2 text-sm leading-relaxed sm:text-base md:text-lg">
-                  Accreditations
-                </p>
-
-                <ul className="text-primary-foreground grid items-start gap-y-4 md:grid-cols-2">
-                  {list2.map(({ icon, text }, idx) => (
-                    <li key={idx} className="flex items-start gap-2 sm:gap-3">
-                      <Icon className="h-5 w-5" src={icon} />
-                      <span className="text-muted-foreground text-sm">
-                        {text}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-
-                <AppButton className="mt-10">Get started</AppButton>
-              </div>
+              <Accreditation list={list2} />
+              <AppButton className="">Get started</AppButton>
             </SlideIn>
 
             {/* Image Section */}

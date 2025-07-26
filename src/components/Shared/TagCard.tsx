@@ -59,7 +59,7 @@ export default function TagCard({
             {checked ? (
               <Check
                 strokeWidth={4}
-                className="text-muted-foreground ms:h-3 h-2 w-2 font-semibold sm:w-3"
+                className="text-muted-foreground h-2 w-2 font-semibold sm:h-3 sm:w-3"
               />
             ) : (
               <Plus

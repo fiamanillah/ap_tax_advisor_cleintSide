@@ -1,6 +1,7 @@
 import { list1, list2 } from "@/app/(root)/(home)/list";
 import Image from "next/image";
 import SlideIn from "../animated/SlideIn";
+import Accreditation from "../Shared/Accreditation";
 import Icon from "../Shared/Icon";
 import TagCard from "../Shared/TagCard";
 
@@ -9,8 +10,8 @@ export default function HeroSection() {
     <section>
       <div className="container mx-auto px-2">
         <div className="main-gradient rounded-2xl py-10 md:py-20 lg:rounded-4xl">
-          {/* Text Section */}
           <div className="mx-auto flex flex-col-reverse gap-10 max-xl:items-center max-md:px-10 max-sm:px-5 md:max-w-xl lg:max-w-3xl xl:max-w-5xl xl:flex-row 2xl:max-w-7xl">
+            {/* Text Section */}
             <SlideIn className="w-full max-w-none space-y-4 sm:space-y-5 md:space-y-6 lg:max-w-[700px]">
               <h2 className="text-primary-foreground text-2xl leading-tight font-semibold sm:text-3xl md:text-4xl lg:text-[36px] xl:text-[40px]">
                 Tax doesn&apos;t have to be taxing.
@@ -40,22 +41,7 @@ export default function HeroSection() {
                 straightforward, stress-free, and even a little bit human.
               </p>
 
-              <div className="max-w-2xl">
-                <p className="text-primary-foreground border-primary-foreground mb-4 border-b-2 pb-2 text-sm leading-relaxed sm:text-base md:text-lg">
-                  Accreditations
-                </p>
-
-                <ul className="text-primary-foreground grid grid-cols-1 items-start gap-2 sm:grid-cols-2 sm:gap-4">
-                  {list2.map(({ icon, text }, idx) => (
-                    <li key={idx} className="flex items-start gap-2 sm:gap-3">
-                      <Icon className="h-5 w-5" src={icon} />
-                      <span className="text-muted-foreground text-sm">
-                        {text}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              <Accreditation list={list2} />
             </SlideIn>
             {/* Image Section */}
             <SlideIn
