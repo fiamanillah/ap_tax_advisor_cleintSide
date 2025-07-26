@@ -21,7 +21,7 @@ export default function TaxAdviceService({ data }: TaxAdviceServiceProps) {
 
   return (
     <>
-      <div className={cn("flex items-center justify-center gap-10")}>
+      <div className={cn("flex flex-wrap items-center justify-center gap-10")}>
         {data.map((step, idx) => (
           <ApproachCard
             key={idx}
