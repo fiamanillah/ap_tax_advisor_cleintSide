@@ -12,19 +12,19 @@ import { AppButton } from "./AppButton";
 import SectionInvert from "./SectionInvert";
 export function FAQSection(FAQSectionProps: TFAQSectionProps) {
   return (
-    <SlideIn section>
+    <SlideIn section className="px-2">
       <div className="container mx-auto">
         <SectionInvert
           className={cn("gradient-reverse-180", {
             "gradient-180": FAQSectionProps.page === "tax-advice",
           })}
         >
-          <div className="mx-auto flex max-w-7xl pt-10">
+          <div className="mx-auto flex max-w-xl flex-col gap-5 pt-10 max-lg:px-4 lg:max-w-3xl lg:flex-row xl:max-w-5xl 2xl:max-w-7xl">
             <div className={"flex basis-1/2 flex-col gap-4"}>
-              <h2 className="text-background text-[40px] leading-tight font-medium">
+              <h2 className="text-background text-2xl leading-tight font-medium sm:text-3xl md:text-4xl lg:text-[40px]">
                 {FAQSectionProps.title}
               </h2>
-              <p className="text-muted-foreground lg:w-2/3">
+              <p className="text-muted-foreground text-sm sm:text-base md:text-lg lg:w-2/3 lg:text-xl xl:text-2xl">
                 {FAQSectionProps.description}
               </p>
 
@@ -36,10 +36,10 @@ export function FAQSection(FAQSectionProps: TFAQSectionProps) {
               <AccordionCustom type="single" collapsible className="w-full">
                 {FAQSectionProps.faqs.map((faq) => (
                   <AccordionItem key={faq.id} value={faq.id}>
-                    <AccordionTrigger className="text-muted-foreground cursor-pointer text-left">
+                    <AccordionTrigger className="text-muted-foreground cursor-pointer text-left text-sm sm:text-base md:text-lg lg:text-xl">
                       <span className="font-medium">{faq.question}</span>
                     </AccordionTrigger>
-                    <AccordionContent className="text-muted-foreground mb-4 border-l pl-4">
+                    <AccordionContent className="text-muted-foreground mb-4 border-l pl-4 text-xs sm:text-sm md:text-base lg:text-lg">
                       {faq.answer}
                     </AccordionContent>
                   </AccordionItem>

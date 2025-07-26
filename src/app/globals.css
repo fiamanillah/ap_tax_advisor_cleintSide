@@ -538,7 +538,29 @@ html {
   -webkit-mask-repeat: no-repeat;
 }
 
-@media screen and (max-width: 768px) {
+@media (max-width: 1200px) {
+  .section-inverted-radius {
+    --r: 26px;
+    --s: 24px;
+    --x: 120px;
+    --y: 10px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}
+
+@media (max-width: 992px) {
+  .section-inverted-radius {
+    --r: 22px;
+    --s: 20px;
+    --x: 80px;
+    --y: 10px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
+
+@media (max-width: 768px) {
   .section-inverted-radius {
     --r: 18px;
     --s: 18px;
@@ -546,6 +568,17 @@ html {
     --y: 10px;
     padding-top: 20px;
     padding-bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-inverted-radius {
+    --r: 12px;
+    --s: 12px;
+    --x: 20px;
+    --y: 8px;
+    padding-top: 12px;
+    padding-bottom: 12px;
   }
 }
 
