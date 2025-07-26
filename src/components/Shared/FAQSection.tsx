@@ -24,7 +24,7 @@ export function FAQSection(FAQSectionProps: TFAQSectionProps) {
               <h2 className="text-background text-2xl leading-tight font-medium sm:text-3xl md:text-4xl lg:text-[40px]">
                 {FAQSectionProps.title}
               </h2>
-              <p className="text-muted-foreground text-sm sm:text-base md:text-lg lg:w-2/3 lg:text-xl xl:text-2xl">
+              <p className="text-muted-foreground text-sm md:text-lg lg:w-2/3">
                 {FAQSectionProps.description}
               </p>
 
@@ -36,10 +36,10 @@ export function FAQSection(FAQSectionProps: TFAQSectionProps) {
               <AccordionCustom type="single" collapsible className="w-full">
                 {FAQSectionProps.faqs.map((faq) => (
                   <AccordionItem key={faq.id} value={faq.id}>
-                    <AccordionTrigger className="text-muted-foreground cursor-pointer text-left text-sm sm:text-base md:text-lg lg:text-xl">
-                      <span className="font-medium">{faq.question}</span>
+                    <AccordionTrigger className="text-muted-foreground cursor-pointer text-left text-sm sm:text-base">
+                      <span>{faq.question}</span>
                     </AccordionTrigger>
-                    <AccordionContent className="text-muted-foreground mb-4 border-l pl-4 text-xs sm:text-sm md:text-base lg:text-lg">
+                    <AccordionContent className="text-muted-foreground mb-4 border-l pl-4 text-xs sm:text-sm">
                       {faq.answer}
                     </AccordionContent>
                   </AccordionItem>

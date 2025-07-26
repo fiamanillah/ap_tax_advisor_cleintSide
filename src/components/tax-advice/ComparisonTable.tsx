@@ -3,7 +3,7 @@ import Icon from "../Shared/Icon";
 const ComparisonTable = () => {
   return (
     <table className="mx-auto w-full max-w-3xl">
-      <thead className="">
+      <thead>
         <tr className="flex h-16 gap-1">
           <th className="w-[253px] px-6 py-3 text-left text-xs font-medium"></th>
           <th className="text-muted-foreground flex w-[230px] items-center bg-[#E6E6E6] px-4 text-center text-base font-medium">
