@@ -56,7 +56,7 @@ export default function TaxCategories({
               key={idx}
               data-animate-card
               className={cn(
-                "flex w-full flex-col items-center rounded-3xl border-none px-4",
+                "flex w-full flex-col items-center rounded-xl border-none px-4 md:rounded-3xl",
                 {
                   "main-gradient": idx % 2 === 0,
                   "main-gradient-reverse": idx % 2 !== 0,
@@ -64,17 +64,17 @@ export default function TaxCategories({
               )}
             >
               <CardHeader className="flex w-full flex-col items-start justify-center px-2">
-                <CardTitle className="text-background w-full text-center text-xl font-medium">
+                <CardTitle className="text-background w-full text-center text-base font-medium sm:text-lg md:text-xl lg:text-2xl">
                   {category.title}
                 </CardTitle>
-                <CardDescription className="text-muted-foreground text-sm">
+                <CardDescription className="text-muted-foreground text-xs sm:text-sm">
                   {category.questions[0]}
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <ul className="text-muted-foreground list-disc space-y-2">
                   {category.questions.slice(1).map((question, index) => (
-                    <li key={index} className="pl-2 text-sm">
+                    <li key={index} className="pl-2 text-xs sm:text-sm">
                       {question}
                     </li>
                   ))}

@@ -3,10 +3,10 @@ import SectionInvert from "../Shared/SectionInvert";
 
 export default function Feature() {
   return (
-    <SlideIn section direction="right">
+    <SlideIn section direction="right" className="px-2">
       <div className="container mx-auto">
         <SectionInvert className="gradient-180">
-          <div className="mx-auto grid max-w-7xl grid-cols-1 gap-32 px-6 py-16 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mx-auto grid max-w-3xl grid-cols-1 gap-8 px-6 py-16 md:grid-cols-2 lg:grid-cols-3 lg:gap-16 xl:max-w-5xl 2xl:max-w-7xl 2xl:gap-32">
             {data.map((feature, idx) => (
               <div key={idx} className="space-y-4">
                 <h2 className="text-primary-foreground text-center text-2xl font-medium">

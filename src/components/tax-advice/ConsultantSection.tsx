@@ -9,11 +9,11 @@ export default function ConsultantSection({
   buttonText?: string;
 }) {
   return (
-    <SlideIn section direction="right">
+    <SlideIn section direction="right" className="px-2">
       <div className="container mx-auto">
         <SectionInvert className="gradient-180">
-          <div className="mx-auto max-w-7xl pt-10 pb-6">
-            <div className="flex flex-col items-center justify-between gap-8 md:gap-12 lg:flex-row lg:gap-20">
+          <div className="mx-auto max-w-3xl pt-10 pb-6 max-lg:px-4 xl:max-w-5xl 2xl:max-w-7xl">
+            <div className="flex flex-col-reverse items-center justify-between gap-8 md:gap-12 lg:flex-row lg:gap-20">
               {/* Left Section - Image */}
               <div className="order-2 flex w-full max-w-md items-center justify-center lg:order-1">
                 <div className="relative w-full max-w-md lg:max-w-lg">
