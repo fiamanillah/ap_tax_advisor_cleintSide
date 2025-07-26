@@ -56,12 +56,12 @@ export default function QueryForm() {
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
           {/* First And Last Name */}
           <div className="space-y-2">
-            <div className="flex gap-4">
+            <div className="flex flex-col gap-4 sm:flex-row">
               <FormField
                 control={form.control}
                 name="firstName"
                 render={({ field }) => (
-                  <FormItem className="w-1/2">
+                  <FormItem className="w-full sm:w-1/2 md:w-full lg:w-1/2">
                     <FormLabel className="text-muted-foreground text-[16px]">
                       <p>
                         First name <span className="-ml-1 text-red-500">*</span>
@@ -83,7 +83,7 @@ export default function QueryForm() {
                 control={form.control}
                 name="lastName"
                 render={({ field }) => (
-                  <FormItem className="w-1/2">
+                  <FormItem className="w-full sm:w-1/2 md:w-full lg:w-1/2">
                     <FormLabel className="text-muted-foreground text-[16px]">
                       Last name <span className="-ml-1 text-red-500">*</span>
                     </FormLabel>

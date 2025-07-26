@@ -16,8 +16,6 @@ export default function RootLayout({
         {children}
         <FooterSection />
       </SmoothScroll>
-
-      {/* <FloatingIcon /> */}
     </>
   );
 }

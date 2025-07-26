@@ -29,7 +29,7 @@ export default function HeaderSection() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
 
   return (
-    <header>
+    <header className="px-2">
       <div className="container mx-auto flex items-center justify-between">
         <div className="flex items-center gap-4">
           {/* Logo Section */}
@@ -43,7 +43,7 @@ export default function HeaderSection() {
           </div>
           {/* bg-primary-gradient */}
           {/* Navigation Links */}
-          <nav className="hidden h-full space-x-2 pt-2 lg:flex">
+          <nav className="hidden h-full pt-2 lg:flex">
             {navItems.map((item) => {
               const isActive = pathname === item.href;
 
@@ -52,7 +52,7 @@ export default function HeaderSection() {
                   key={item.name}
                   href={item.href}
                   className={cn(
-                    "text-md text-foreground relative h-full rounded-t-4xl py-4 font-medium text-nowrap md:px-4 lg:px-8",
+                    "text-md text-foreground relative h-full rounded-t-4xl px-4 py-4 font-medium text-nowrap xl:px-8",
                     {
                       "text-black": isActive,
                     },
@@ -84,7 +84,7 @@ export default function HeaderSection() {
           <Link
             href="/contact"
             className={cn(
-              "text-md text-foreground hidden h-full items-center gap-2 rounded-t-4xl px-8 py-5 font-medium text-nowrap lg:flex",
+              "text-md text-foreground hidden h-full items-center gap-2 rounded-t-4xl px-4 py-5 font-medium text-nowrap lg:flex lg:px-8",
               {
                 "bg-secondary-gradient text-background contact-curve":
                   pathname === "/contact",
@@ -112,7 +112,7 @@ export default function HeaderSection() {
         onOpenChange={setIsMobileMenuOpen}
         direction="left"
       >
-        <DrawerContent>
+        <DrawerContent className="w-full max-w-none px-0">
           <DrawerHeader>
             <DrawerTitle className="sr-only">Navigation Menu</DrawerTitle>
             <div className="flex justify-end">
@@ -142,6 +142,20 @@ export default function HeaderSection() {
                 </DrawerClose>
               );
             })}
+            <DrawerClose asChild>
+              <Link
+                href="/contact"
+                className={cn(
+                  "hover:text-primary text-md text-foreground border-t border-gray-200 pt-2 font-medium transition duration-150 ease-in-out last:border-b last:pb-2",
+                  {
+                    "text-primary": pathname === "/contact",
+                  },
+                )}
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Contact us
+              </Link>
+            </DrawerClose>
           </div>
         </DrawerContent>
       </Drawer>
