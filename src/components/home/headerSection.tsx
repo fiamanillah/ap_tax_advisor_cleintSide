@@ -33,7 +33,7 @@ export default function HeaderSection() {
       <div className="container mx-auto flex items-center justify-between">
         <div className="flex items-center gap-4">
           {/* Logo Section */}
-          <div className="ml-10 flex items-center">
+          <div className="flex items-center lg:ml-10">
             <Link
               href="/"
               className="text-foreground flex items-center text-4xl font-semibold"

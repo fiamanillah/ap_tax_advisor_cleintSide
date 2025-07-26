@@ -39,7 +39,9 @@ export default function ConsultantSection({
                   begins.
                 </p>
 
-                <AppButton className="mt-6">{buttonText}</AppButton>
+                <AppButton className="mt-6 max-sm:w-full">
+                  {buttonText}
+                </AppButton>
               </div>
             </div>
           </div>

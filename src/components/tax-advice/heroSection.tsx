@@ -1,5 +1,6 @@
 import { list2 } from "@/app/(root)/(home)/list";
 import Image from "next/image";
+import Link from "next/link";
 import SlideIn from "../animated/SlideIn";
 import Accreditation from "../Shared/Accreditation";
 import { AppButton } from "../Shared/AppButton";
@@ -9,7 +10,7 @@ export default function HeroSection() {
   return (
     <section>
       <div className="container mx-auto px-2">
-        <div className="main-gradient rounded-2xl py-10 md:py-20 lg:rounded-4xl">
+        <div className="main-gradient rounded-2xl pb-10 md:py-20 lg:rounded-4xl">
           <div className="mx-auto flex flex-col-reverse gap-10 max-xl:items-center max-md:px-10 max-sm:px-5 md:max-w-xl lg:max-w-3xl xl:max-w-5xl xl:flex-row 2xl:max-w-7xl">
             {/* Text Section */}
             <SlideIn className="w-full max-w-none space-y-4 sm:space-y-5 md:space-y-6 lg:max-w-[700px]">
@@ -27,7 +28,11 @@ export default function HeroSection() {
               </p>
 
               <Accreditation list={list2} />
-              <AppButton className="">Get started</AppButton>
+              <Link href="/contact">
+                <AppButton className="w-fit max-sm:w-full">
+                  Get started
+                </AppButton>
+              </Link>
             </SlideIn>
 
             {/* Image Section */}

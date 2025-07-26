@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import SlideIn from "../animated/SlideIn";
 import { AppButton } from "../Shared/AppButton";
 export default function HeroSection() {
@@ -34,7 +35,11 @@ export default function HeroSection() {
                 human touch. <br /> (set out our accreditations here)
               </p>
 
-              <AppButton className="mt-4">Get Started</AppButton>
+              <Link href="/contact">
+                <AppButton className="w-fit max-sm:w-full">
+                  Get started
+                </AppButton>
+              </Link>
             </SlideIn>
 
             {/* Image Section */}

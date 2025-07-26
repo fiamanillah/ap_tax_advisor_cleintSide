@@ -29,7 +29,9 @@ export function FAQSection(FAQSectionProps: TFAQSectionProps) {
               </p>
 
               <Link href="/contact">
-                <AppButton className="w-fit">Contact us</AppButton>
+                <AppButton className="w-fit max-sm:w-full">
+                  Contact us
+                </AppButton>
               </Link>
             </div>
             <div className={"basis-1/2"}>

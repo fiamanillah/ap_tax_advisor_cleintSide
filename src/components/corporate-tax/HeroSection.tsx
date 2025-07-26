@@ -2,6 +2,7 @@
 import { list2 } from "@/app/(root)/(home)/list";
 import Image from "next/image";
 
+import Link from "next/link";
 import SlideIn from "../animated/SlideIn";
 import Accreditation from "../Shared/Accreditation";
 import { AppButton } from "../Shared/AppButton";
@@ -32,7 +33,11 @@ export default function HeroSection() {
               </p>
 
               <Accreditation list={list2} />
-              <AppButton className="mt-8">Get started</AppButton>
+              <Link href="/contact">
+                <AppButton className="w-fit max-sm:w-full">
+                  Get started
+                </AppButton>
+              </Link>
             </SlideIn>
 
             {/* Image Section */}

@@ -9,7 +9,7 @@ export default function HeroSection() {
   return (
     <section>
       <div className="container mx-auto px-2">
-        <div className="main-gradient rounded-2xl py-10 md:py-20 lg:rounded-4xl">
+        <div className="main-gradient rounded-2xl pb-10 md:py-20 lg:rounded-4xl">
           <div className="mx-auto flex flex-col-reverse gap-10 max-xl:items-center max-md:px-10 max-sm:px-5 md:max-w-xl lg:max-w-3xl xl:max-w-5xl xl:flex-row 2xl:max-w-7xl">
             {/* Text Section */}
             <SlideIn className="w-full max-w-none space-y-4 sm:space-y-5 md:space-y-6 lg:max-w-[700px]">

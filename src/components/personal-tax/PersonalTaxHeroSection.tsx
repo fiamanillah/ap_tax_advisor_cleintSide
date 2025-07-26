@@ -1,7 +1,9 @@
 import { list2 } from "@/app/(root)/(home)/list";
 import Image from "next/image";
+import Link from "next/link";
 import SlideIn from "../animated/SlideIn";
 import Accreditation from "../Shared/Accreditation";
+import { AppButton } from "../Shared/AppButton";
 import TagCard from "../Shared/TagCard";
 
 export default function PersonalTaxHeroSection() {
@@ -24,6 +26,12 @@ export default function PersonalTaxHeroSection() {
               </p>
 
               <Accreditation list={list2} />
+
+              <Link href="/contact">
+                <AppButton className="w-fit max-sm:w-full">
+                  Get started
+                </AppButton>
+              </Link>
             </SlideIn>
 
             {/* Image Section */}
