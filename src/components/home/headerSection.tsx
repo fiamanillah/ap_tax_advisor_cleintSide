@@ -43,7 +43,7 @@ export default function HeaderSection() {
           </div>
           {/* bg-primary-gradient */}
           {/* Navigation Links */}
-          <nav className="hidden h-full space-x-2 pt-2 md:flex">
+          <nav className="hidden h-full space-x-2 pt-2 lg:flex">
             {navItems.map((item) => {
               const isActive = pathname === item.href;
 
@@ -52,7 +52,7 @@ export default function HeaderSection() {
                   key={item.name}
                   href={item.href}
                   className={cn(
-                    "text-md text-foreground relative h-full rounded-t-4xl px-8 py-4 font-medium",
+                    "text-md text-foreground relative h-full rounded-t-4xl py-4 font-medium text-nowrap md:px-4 lg:px-8",
                     {
                       "text-black": isActive,
                     },
@@ -84,7 +84,7 @@ export default function HeaderSection() {
           <Link
             href="/contact"
             className={cn(
-              "text-md text-foreground flex h-full items-center gap-2 rounded-t-4xl px-8 py-5 font-medium",
+              "text-md text-foreground hidden h-full items-center gap-2 rounded-t-4xl px-8 py-5 font-medium text-nowrap lg:flex",
               {
                 "bg-secondary-gradient text-background contact-curve":
                   pathname === "/contact",
@@ -95,7 +95,7 @@ export default function HeaderSection() {
             <ReactSVG src="/icons/arrow-circle-right.svg" />
           </Link>
           {/* Mobile Menu Button */}
-          <div className="md:hidden">
+          <div className="lg:hidden">
             <button
               className="flex items-center"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}

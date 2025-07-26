@@ -7,10 +7,10 @@ import TagCard from "../Shared/TagCard";
 export default function HeroSection() {
   return (
     <section>
-      <div className="container mx-auto">
-        <div className="main-gradient rounded-4xl py-20">
+      <div className="container mx-auto px-2">
+        <div className="main-gradient rounded-2xl py-10 md:py-20 lg:rounded-4xl">
           {/* Text Section */}
-          <div className="mx-auto flex max-w-7xl gap-10">
+          <div className="mx-auto flex flex-col-reverse gap-10 max-xl:items-center max-md:px-10 max-sm:px-5 md:max-w-xl lg:max-w-3xl xl:max-w-5xl xl:flex-row 2xl:max-w-7xl">
             <SlideIn className="w-full max-w-none space-y-4 sm:space-y-5 md:space-y-6 lg:max-w-[700px]">
               <h2 className="text-primary-foreground text-2xl leading-tight font-semibold sm:text-3xl md:text-4xl lg:text-[36px] xl:text-[40px]">
                 Tax doesn&apos;t have to be taxing.
@@ -77,13 +77,13 @@ export default function HeroSection() {
                 <TagCard
                   title="Documents submitted"
                   checked={true}
-                  className="top-20 -left-15 z-10"
+                  className="top-0 left-0 z-10 sm:top-20 sm:-left-15"
                 />
 
                 <TagCard
                   title="Ready to approve"
                   checked={false}
-                  className="-right-10 bottom-36 transform"
+                  className="right-0 bottom-0 transform sm:-right-10 sm:bottom-36"
                 />
               </div>
             </SlideIn>
