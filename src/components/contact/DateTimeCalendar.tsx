@@ -8,6 +8,7 @@ import {
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Calendar as CalendarIcon } from "lucide-react";
 import { useState } from "react";
+import { Input } from "../ui/input";
 
 type DateTimePopupProps = {
   value?: string;
@@ -116,7 +117,7 @@ const DateTimePopup = ({
       </PopoverTrigger>
 
       <PopoverContent className="bg-foreground w-auto p-0" align="end">
-        <div className="flex">
+        <div className="flex flex-col md:flex-row">
           {/* Calendar Section */}
           <div className="border-r">
             <CalendarComponent
@@ -129,7 +130,7 @@ const DateTimePopup = ({
           </div>
 
           {/* Time Picker Section */}
-          <div className="w-40">
+          <div className="max-md:hidden md:w-40">
             <div className="text-muted-foreground border-b py-3 text-center">
               {selectedTime.hours}:{selectedTime.minutes}:00
             </div>
@@ -183,6 +184,16 @@ const DateTimePopup = ({
                 </ScrollArea>
               </div>
             </div>
+          </div>
+
+          <div className="mx-auto my-2 md:hidden">
+            <Input
+              type="time"
+              id="time-picker"
+              step="1"
+              defaultValue="10:30:00"
+              className="text-muted-foreground appearance-none border-0 shadow-none focus:ring-0 focus:ring-offset-0 focus:outline-none focus-visible:ring-0 focus-visible:ring-offset-0 [&::-webkit-calendar-picker-indicator]:hidden [&::-webkit-calendar-picker-indicator]:appearance-none"
+            />
           </div>
         </div>
 
