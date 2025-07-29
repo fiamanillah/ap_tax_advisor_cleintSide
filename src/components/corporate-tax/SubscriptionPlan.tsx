@@ -21,7 +21,7 @@ export default function SubscriptionPlan() {
           </div>
 
           {/* Comparison Table */}
-          <div className="overflow-x-scroll">
+          <div className="max-lg:overflow-x-scroll">
             <ComparisonTable />
           </div>
 
