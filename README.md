@@ -1,3 +1,27 @@
+# STATUS OF THE DAY: 27/07/2025
+Frontend (Night)
+
+Client Name: akashpatel002
+Project: AP Tax Advisor
+
+## Project Progress Update
+Here’s what has been added to the website so far today:
+
+*   **Font Consistency & Hydration Fixes**
+    *   Removed all Geist font usage and applied Poppins font globally across the entire project for a consistent look.
+    *   Standardized the use of `poppins.className` in all layouts to resolve hydration mismatch errors.
+    *   Audited the codebase for sources of hydration errors (e.g., Date.now(), Math.random(), invalid HTML nesting, external changing data) and removed or fixed any problematic code.
+    *   Deleted the unused SmoothCursor component to prevent potential hydration issues.
+
+*   **UI Improvements**
+    *   Reduced the size of the "Our Mission" image for better visual balance.
+    *   Ensured all images use appropriate width/height and responsive sizing for performance and consistency.
+
+*   **General Maintenance**
+    *   Cleaned up and refactored layout and footer components for clarity and maintainability.
+
+Github URL: https://github.com/fiamanillah/ap_tax_advisor_cleintSide
+
 # AP Tax Advisor Client Side
 
 AP Tax Advisor is a modern web application for UK tax services, providing professional tax advice, returns, and consultation for individuals and businesses. This is the client-side (frontend) codebase, built with Next.js, TypeScript, Tailwind CSS, and GSAP for smooth animations.
