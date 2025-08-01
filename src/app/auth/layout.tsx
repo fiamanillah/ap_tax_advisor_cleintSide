@@ -13,7 +13,7 @@ export default function AuthLayout({
             alt="Authentication Illustration"
             width={1280}
             height={720}
-            className="mb-4 h-full w-full rounded-l-4xl object-fill"
+            className="mb-4 h-full w-full rounded-l-4xl object-cover"
           />
         </div>
         {children}
