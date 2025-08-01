@@ -3,9 +3,11 @@
 import { AppButton } from "@/components/Shared/AppButton";
 import Icon from "@/components/Shared/Icon";
 import { Button } from "@/components/ui/button";
+import { Checkbox } from "@/components/ui/checkbox";
 import {
   Form,
   FormControl,
+  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -30,7 +32,7 @@ export default function Register() {
             onSubmit={form.handleSubmit(onSubmit)}
             className="w-full space-y-8 p-8"
           >
-            <div className="flex gap-4">
+            <div className="grid grid-cols-2 gap-4">
               <FormField
                 control={form.control}
                 name="firstName"
@@ -70,6 +72,10 @@ export default function Register() {
                   </FormItem>
                 )}
               />
+
+              <FormDescription className="text-muted-foreground col-span-2">
+                Please enter your full legal name and not your nickname!
+              </FormDescription>
             </div>
 
             <FormField
@@ -132,21 +138,54 @@ export default function Register() {
               )}
             />
 
+            <div className="flex items-center">
+              <FormField
+                control={form.control}
+                name="terms"
+                render={({ field }) => (
+                  <FormItem>
+                    <div className="flex items-center">
+                      <FormControl>
+                        <Checkbox
+                          checked={field.value}
+                          onCheckedChange={field.onChange}
+                          className="border-muted-foreground mr-2"
+                        />
+                      </FormControl>
+                      <FormDescription>
+                        <span className="text-muted-foreground text-sm">
+                          By signing up, you agree to our{" "}
+                          <Link
+                            href="/terms"
+                            className="text-blue-500 hover:underline"
+                          >
+                            Terms of Service
+                          </Link>{" "}
+                          and{" "}
+                          <Link
+                            href="/privacy"
+                            className="text-blue-500 hover:underline"
+                          >
+                            Privacy Policy
+                          </Link>
+                        </span>
+                      </FormDescription>
+                    </div>
+
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            </div>
+
             <AppButton type="submit" className="w-full">
               Submit
             </AppButton>
-            <div className="flex justify-end">
-              <Link href="/auth/forgot-password">
-                <span className="text-muted-foreground hover:text-primary text-sm">
-                  Forgot password?
-                </span>
-              </Link>
-            </div>
           </form>
         </Form>
         <div className="mb-5 flex items-center gap-x-10 px-10">
           <span className="bg-muted-foreground/30 block h-0.5 flex-1"></span>
-          <span className="text-muted-foreground">or Log in with</span>
+          <span className="text-muted-foreground">or sing up with</span>
           <span className="bg-muted-foreground/30 block h-0.5 flex-1"></span>
         </div>
         <div className="flex items-center justify-center gap-10 px-16">
