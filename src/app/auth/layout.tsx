@@ -7,7 +7,7 @@ export default function AuthLayout({
   return (
     <main className="bg-background flex h-screen w-full flex-col items-center justify-center">
       <div className="container mx-auto flex items-stretch">
-        <div className="h-full w-7/12">
+        <div className="h-full w-7/12 max-lg:hidden">
           <Image
             src="/assets/auth.png"
             alt="Authentication Illustration"

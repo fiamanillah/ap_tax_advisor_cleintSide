@@ -22,7 +22,7 @@ import PasswordInput from "../_components/PasswordInput";
 export default function Register() {
   const { form, onSubmit } = useRegister();
   return (
-    <div className="gradient-90 relative right-10 flex h-full w-6/12 items-center justify-center rounded-4xl">
+    <div className="gradient-90 relative flex h-full w-full items-center justify-center rounded-4xl py-10 lg:right-10 lg:w-6/12">
       <GoBack />
 
       <div className="w-full max-w-xl">
