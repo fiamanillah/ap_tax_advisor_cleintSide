@@ -14,17 +14,15 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import Link from "next/link";
+import GoBack from "../_components/GoBack";
+import PasswordInput from "../_components/PasswordInput";
 
 export default function LoginPage() {
   const { form, onSubmit } = useLogin();
 
   return (
     <div className="gradient-90 relative right-10 flex h-full w-6/12 items-center justify-center rounded-4xl">
-      <Link href="/auth/register">
-        <Button className="absolute top-8 left-8" variant="ghost">
-          <Icon src="/icons/back.svg" />
-        </Button>
-      </Link>
+      <GoBack />
       <div className="w-full max-w-xl">
         <Form {...form}>
           <form
@@ -60,7 +58,7 @@ export default function LoginPage() {
                     Password*
                   </FormLabel>
                   <FormControl>
-                    <Input
+                    <PasswordInput
                       {...field}
                       className="text-muted-foreground placeholder:text-muted-foreground !bg-white"
                     />

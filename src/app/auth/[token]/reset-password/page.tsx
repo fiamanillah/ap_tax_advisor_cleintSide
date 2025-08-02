@@ -1,5 +1,7 @@
 "use client";
 
+import useResetPassword from "@/hooks/use-reset-password";
+
 import { AppButton } from "@/components/Shared/AppButton";
 import {
   Form,
@@ -9,12 +11,11 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import useForgotPassword from "@/hooks/use-forgot-password";
-import GoBack from "../_components/GoBack";
+import GoBack from "../../_components/GoBack";
+import PasswordInput from "../../_components/PasswordInput";
 
-export default function ForgotPassword() {
-  const { form, onSubmit } = useForgotPassword();
+export default function ResetPassword() {
+  const { form, onSubmit } = useResetPassword();
 
   return (
     <div className="gradient-90 relative right-10 flex h-full w-6/12 items-center justify-center rounded-4xl">
@@ -28,16 +29,36 @@ export default function ForgotPassword() {
           >
             <FormField
               control={form.control}
-              name="email"
+              name="password"
               render={({ field }) => (
                 <FormItem className="flex-1">
                   <FormLabel className="text-muted-foreground">
-                    Email address*
+                    Password*
                   </FormLabel>
                   <FormControl>
-                    <Input
+                    <PasswordInput
                       {...field}
-                      className="text-muted-foreground placeholder:text-muted-foreground rounded-sm border !bg-white"
+                      className="text-muted-foreground placeholder:text-muted-foreground !bg-white"
+                    />
+                  </FormControl>
+
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            <FormField
+              control={form.control}
+              name="confirmPassword"
+              render={({ field }) => (
+                <FormItem className="flex-1">
+                  <FormLabel className="text-muted-foreground">
+                    Confirm Password*
+                  </FormLabel>
+                  <FormControl>
+                    <PasswordInput
+                      {...field}
+                      className="text-muted-foreground placeholder:text-muted-foreground !bg-white"
                     />
                   </FormControl>
 

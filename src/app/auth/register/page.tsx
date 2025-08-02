@@ -16,16 +16,15 @@ import {
 import { Input } from "@/components/ui/input";
 import useRegister from "@/hooks/use-register";
 import Link from "next/link";
+import GoBack from "../_components/GoBack";
+import PasswordInput from "../_components/PasswordInput";
 
 export default function Register() {
   const { form, onSubmit } = useRegister();
   return (
     <div className="gradient-90 relative right-10 flex h-full w-6/12 items-center justify-center rounded-4xl">
-      <Link href="/auth/register">
-        <Button className="absolute top-8 left-8" variant="ghost">
-          <Icon src="/icons/back.svg" />
-        </Button>
-      </Link>
+      <GoBack />
+
       <div className="w-full max-w-xl">
         <Form {...form}>
           <form
@@ -107,7 +106,7 @@ export default function Register() {
                     Password*
                   </FormLabel>
                   <FormControl>
-                    <Input
+                    <PasswordInput
                       {...field}
                       className="text-muted-foreground placeholder:text-muted-foreground !bg-white"
                     />
@@ -127,7 +126,7 @@ export default function Register() {
                     Confirm password*
                   </FormLabel>
                   <FormControl>
-                    <Input
+                    <PasswordInput
                       {...field}
                       className="text-muted-foreground placeholder:text-muted-foreground !bg-white"
                     />
