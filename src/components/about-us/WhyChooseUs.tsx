@@ -1,3 +1,4 @@
+import Link from "next/link";
 import SlideIn from "../animated/SlideIn";
 import { AppButton } from "../Shared/AppButton";
 import SectionInvert from "../Shared/SectionInvert";
@@ -20,9 +21,11 @@ export default function WhyChooseUs() {
                 self-employed, running a company, or planning ahead, here&apos;s
                 what makes our approach different:
               </p>
-              <AppButton className="px-6 py-3 text-base font-semibold sm:px-8 sm:py-4 sm:text-lg">
-                Contact Us
-              </AppButton>
+              <Link href="/contact">
+                <AppButton className="px-6 py-3 text-base font-semibold sm:px-8 sm:py-4 sm:text-lg">
+                  Contact Us
+                </AppButton>
+              </Link>
             </div>
 
             <div className="flex max-md:mt-10 sm:mt-12 md:mt-16 lg:justify-end">

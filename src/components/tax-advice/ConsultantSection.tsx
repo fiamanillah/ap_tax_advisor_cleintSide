@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import SlideIn from "../animated/SlideIn";
 import { AppButton } from "../Shared/AppButton";
 import SectionInvert from "../Shared/SectionInvert";
@@ -39,9 +40,11 @@ export default function ConsultantSection({
                   begins.
                 </p>
 
-                <AppButton className="mt-6 max-sm:w-full">
-                  {buttonText}
-                </AppButton>
+                <Link href="/contact">
+                  <AppButton className="mt-6 max-sm:w-full">
+                    {buttonText}
+                  </AppButton>
+                </Link>
               </div>
             </div>
           </div>

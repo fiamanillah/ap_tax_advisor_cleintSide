@@ -33,7 +33,7 @@ export default function HeroSection() {
               </p>
 
               <Accreditation list={list2} />
-              <Link href="/contact">
+              <Link href="/auth/login">
                 <AppButton className="w-fit max-sm:w-full">
                   Get started
                 </AppButton>

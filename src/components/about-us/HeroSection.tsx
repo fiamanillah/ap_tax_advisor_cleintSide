@@ -35,7 +35,7 @@ export default function HeroSection() {
                 human touch. <br /> (set out our accreditations here)
               </p>
 
-              <Link href="/contact">
+              <Link href="/auth/login">
                 <AppButton className="w-fit max-sm:w-full">
                   Get started
                 </AppButton>
