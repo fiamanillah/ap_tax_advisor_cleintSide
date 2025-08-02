@@ -76,7 +76,7 @@ export default function LoginPage() {
             </AppButton>
             <div className="flex justify-end">
               <Link href="/auth/forgot-password">
-                <span className="text-muted-foreground hover:text-primary text-sm">
+                <span className="text-muted-foreground hover:text-muted-foreground text-sm">
                   Forgot password?
                 </span>
               </Link>
