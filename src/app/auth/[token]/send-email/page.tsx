@@ -21,7 +21,7 @@ export default function VerifyCode() {
   const { form, onSubmit } = useVerifyCode();
 
   return (
-    <div className="gradient-90 relative flex h-full w-full items-center justify-center rounded-4xl py-10 lg:right-10 lg:w-6/12">
+    <div className="gradient-90 relative flex h-full w-full items-center justify-center rounded-4xl py-10 lg:right-16 lg:w-6/12">
       <GoBack />
 
       <div className="w-full max-w-xl">
@@ -73,7 +73,7 @@ export default function VerifyCode() {
               )}
             />
 
-            <AppButton type="submit" className="w-full">
+            <AppButton type="submit" className="w-full text-lg">
               Submit
             </AppButton>
           </form>

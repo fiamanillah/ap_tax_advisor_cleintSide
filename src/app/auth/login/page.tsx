@@ -21,7 +21,7 @@ export default function LoginPage() {
   const { form, onSubmit } = useLogin();
 
   return (
-    <div className="gradient-90 relative flex h-full w-full items-center justify-center rounded-4xl py-10 lg:right-10 lg:w-6/12">
+    <div className="gradient-90 relative flex h-full w-full items-center justify-center rounded-4xl py-10 lg:right-16 lg:w-6/12">
       <GoBack />
       <div className="w-full max-w-xl">
         <Form {...form}>
@@ -40,7 +40,7 @@ export default function LoginPage() {
                   <FormControl>
                     <Input
                       {...field}
-                      className="text-muted-foreground placeholder:text-muted-foreground rounded-sm border !bg-white"
+                      className="text-muted-foreground placeholder:text-muted-foreground rounded-sm border border-[#CDCDCD] !bg-white shadow-sm"
                     />
                   </FormControl>
 
@@ -60,7 +60,7 @@ export default function LoginPage() {
                   <FormControl>
                     <PasswordInput
                       {...field}
-                      className="text-muted-foreground placeholder:text-muted-foreground !bg-white"
+                      className="text-muted-foreground placeholder:text-muted-foreground border-[#CDCDCD] !bg-white shadow-sm"
                     />
                   </FormControl>
 
@@ -69,10 +69,10 @@ export default function LoginPage() {
               )}
             />
 
-            <AppButton type="submit" className="w-full">
-              Submit
+            <AppButton type="submit" className="w-full text-lg">
+              Login
             </AppButton>
-            <div className="flex justify-end">
+            <div className="-mt-4 flex justify-end">
               <Link href="/auth/forgot-password">
                 <span className="text-muted-foreground hover:text-muted-foreground text-sm">
                   Forgot password?
@@ -103,6 +103,12 @@ export default function LoginPage() {
             <Icon src="/icons/google.svg" /> <span>Google</span>
           </Button>
         </div>
+        <p className="mt-5 text-center text-sm text-[#807D7A]">
+          Don’t have an account?{" "}
+          <Link href="/auth/register" className="text-background">
+            Sign up
+          </Link>
+        </p>
       </div>
     </div>
   );
