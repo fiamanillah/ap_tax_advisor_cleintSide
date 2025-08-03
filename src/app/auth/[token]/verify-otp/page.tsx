@@ -36,7 +36,7 @@ export default function VerifyCode() {
               render={({ field }) => (
                 <FormItem className="flex-1">
                   <FormLabel className="text-muted-foreground">
-                    Verification Code*
+                    Verification Code
                   </FormLabel>
                   <FormControl>
                     <InputOTP maxLength={6} {...field}>

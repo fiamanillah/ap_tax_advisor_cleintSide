@@ -35,7 +35,7 @@ export default function LoginPage() {
               render={({ field }) => (
                 <FormItem className="flex-1">
                   <FormLabel className="text-muted-foreground">
-                    Email address*
+                    Email address<span className="-ml-2 text-red-500">*</span>
                   </FormLabel>
                   <FormControl>
                     <Input
@@ -55,7 +55,7 @@ export default function LoginPage() {
               render={({ field }) => (
                 <FormItem className="flex-1">
                   <FormLabel className="text-muted-foreground">
-                    Password*
+                    Password<span className="-ml-2 text-red-500">*</span>
                   </FormLabel>
                   <FormControl>
                     <PasswordInput
@@ -86,10 +86,10 @@ export default function LoginPage() {
           <span className="text-muted-foreground">or Log in with</span>
           <span className="bg-muted-foreground/30 block h-0.5 flex-1"></span>
         </div>
-        <div className="flex items-center justify-center gap-10 px-16">
+        <div className="flex flex-col items-center justify-center gap-10 px-16 lg:flex-row">
           <Button
             variant="outline"
-            className="text-muted-foreground !border-muted-foreground hover:text-muted-foreground flex-1 cursor-pointer rounded-2xl"
+            className="text-muted-foreground hover:text-muted-foreground flex-1 cursor-pointer rounded-2xl !border-[#777471]"
             size="lg"
           >
             <Icon src="/icons/apple.svg" /> <span>Apple ID</span>
@@ -97,7 +97,7 @@ export default function LoginPage() {
 
           <Button
             variant="outline"
-            className="text-muted-foreground !border-muted-foreground hover:text-muted-foreground flex-1 cursor-pointer rounded-2xl"
+            className="text-muted-foreground hover:text-muted-foreground flex-1 cursor-pointer rounded-2xl !border-[#777471]"
             size="lg"
           >
             <Icon src="/icons/google.svg" /> <span>Google</span>

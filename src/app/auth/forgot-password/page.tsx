@@ -32,7 +32,7 @@ export default function ForgotPassword() {
               render={({ field }) => (
                 <FormItem className="flex-1">
                   <FormLabel className="text-muted-foreground">
-                    Email address*
+                    Email address<span className="-ml-2 text-red-500">*</span>
                   </FormLabel>
                   <FormControl>
                     <Input

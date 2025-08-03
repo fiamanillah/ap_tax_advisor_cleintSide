@@ -38,7 +38,7 @@ export default function Register() {
                 render={({ field }) => (
                   <FormItem className="flex-1">
                     <FormLabel className="text-muted-foreground">
-                      First name*
+                      First name<span className="-ml-2 text-red-500">*</span>
                     </FormLabel>
                     <FormControl>
                       <Input
@@ -58,7 +58,8 @@ export default function Register() {
                 render={({ field }) => (
                   <FormItem className="flex-1">
                     <FormLabel className="text-muted-foreground">
-                      Last name*
+                      Last name
+                      <span className="-ml-2 text-red-500">*</span>
                     </FormLabel>
                     <FormControl>
                       <Input
@@ -72,7 +73,7 @@ export default function Register() {
                 )}
               />
 
-              <FormDescription className="text-muted-foreground col-span-2">
+              <FormDescription className="col-span-2 font-normal text-[#121212]">
                 Please enter your full legal name and not your nickname!
               </FormDescription>
             </div>
@@ -83,7 +84,8 @@ export default function Register() {
               render={({ field }) => (
                 <FormItem className="flex-1">
                   <FormLabel className="text-muted-foreground">
-                    Email address*
+                    Email address
+                    <span className="-ml-2 text-red-500">*</span>
                   </FormLabel>
                   <FormControl>
                     <Input
@@ -103,7 +105,7 @@ export default function Register() {
               render={({ field }) => (
                 <FormItem className="flex-1">
                   <FormLabel className="text-muted-foreground">
-                    Password*
+                    Password<span className="-ml-2 text-red-500">*</span>
                   </FormLabel>
                   <FormControl>
                     <PasswordInput
@@ -123,7 +125,8 @@ export default function Register() {
               render={({ field }) => (
                 <FormItem className="flex-1">
                   <FormLabel className="text-muted-foreground">
-                    Confirm password*
+                    Confirm password
+                    <span className="-ml-2 text-red-500">*</span>
                   </FormLabel>
                   <FormControl>
                     <PasswordInput
@@ -148,11 +151,11 @@ export default function Register() {
                         <Checkbox
                           checked={field.value}
                           onCheckedChange={field.onChange}
-                          className="border-muted-foreground mr-2"
+                          className="mr-2 border-[#777471]"
                         />
                       </FormControl>
                       <FormDescription>
-                        <span className="text-muted-foreground text-sm">
+                        <span className="text-sm text-[#777471]">
                           By signing up, you agree to our{" "}
                           <Link
                             href="/terms"
@@ -183,14 +186,14 @@ export default function Register() {
           </form>
         </Form>
         <div className="mb-5 flex items-center gap-x-10 px-10">
-          <span className="bg-muted-foreground/30 block h-0.5 flex-1"></span>
+          <span className="block h-0.5 flex-1 bg-[#777471]/30"></span>
           <span className="text-muted-foreground">or sing up with</span>
-          <span className="bg-muted-foreground/30 block h-0.5 flex-1"></span>
+          <span className="block h-0.5 flex-1 bg-[#777471]/30"></span>
         </div>
-        <div className="flex items-center justify-center gap-10 px-16">
+        <div className="flex flex-col items-center justify-center gap-10 px-16 lg:flex-row">
           <Button
             variant="outline"
-            className="text-muted-foreground !border-muted-foreground hover:text-muted-foreground flex-1 cursor-pointer rounded-2xl"
+            className="text-muted-foreground hover:text-muted-foreground flex-1 cursor-pointer rounded-2xl !border-[#777471]"
             size="lg"
           >
             <Icon src="/icons/apple.svg" /> <span>Apple ID</span>
@@ -198,7 +201,7 @@ export default function Register() {
 
           <Button
             variant="outline"
-            className="text-muted-foreground !border-muted-foreground hover:text-muted-foreground flex-1 cursor-pointer rounded-2xl"
+            className="text-muted-foreground hover:text-muted-foreground flex-1 cursor-pointer rounded-2xl !border-[#777471]"
             size="lg"
           >
             <Icon src="/icons/google.svg" /> <span>Google</span>

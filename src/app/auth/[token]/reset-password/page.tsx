@@ -33,7 +33,7 @@ export default function ResetPassword() {
               render={({ field }) => (
                 <FormItem className="flex-1">
                   <FormLabel className="text-muted-foreground">
-                    Password*
+                    Password<span className="-ml-2 text-red-500">*</span>
                   </FormLabel>
                   <FormControl>
                     <PasswordInput
@@ -53,7 +53,8 @@ export default function ResetPassword() {
               render={({ field }) => (
                 <FormItem className="flex-1">
                   <FormLabel className="text-muted-foreground">
-                    Confirm Password*
+                    Confirm Password
+                    <span className="-ml-2 text-red-500">*</span>
                   </FormLabel>
                   <FormControl>
                     <PasswordInput

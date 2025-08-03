@@ -29,13 +29,9 @@ export default function PasswordInput({
         onClick={() => setIsShowPassword(!isShowPassword)}
       >
         {!isShowPassword ? (
-          <Eye size={16} strokeWidth={1.5} className="text-muted-foreground" />
+          <Eye size={16} strokeWidth={1.5} className="text-[#7D7F82]" />
         ) : (
-          <EyeOff
-            size={16}
-            strokeWidth={1.5}
-            className="text-muted-foreground"
-          />
+          <EyeOff size={16} strokeWidth={1.5} className="text-[#7D7F82]" />
         )}
       </Button>
     </div>
